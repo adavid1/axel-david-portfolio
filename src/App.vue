@@ -1,27 +1,13 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import HeaderComponent from './components/HeaderComponent.vue'
+import ExperienceComponent from './components/ExperienceComponent.vue'
 </script>
 
 <template>
-  <div>
-    <a
-      href="https://vite.dev"
-      target="_blank"
-    >
-      <img
-        src="/vite.svg"
-        alt="Vite logo"
-      >
-    </a>
-    <a
-      href="https://vuejs.org/"
-      target="_blank"
-    >
-      <img
-        src="./assets/vue.svg"
-        alt="Vue logo"
-      >
-    </a>
+  <div
+    class="space-y-8"
+  >
+    <HeaderComponent />
+    <ExperienceComponent />
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
