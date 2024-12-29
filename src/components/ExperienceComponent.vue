@@ -126,7 +126,7 @@ const astekMissions = ref([
   <div>
     <ul>
       <li class="mb-4 flex flex-row">
-        <div class="mr-4 w-1/4 rounded-lg bg-green-100 p-4 text-gray-800">
+        <div class="mr-4 w-1/4 rounded-lg border-2 border-green-500 bg-green-100 p-4 text-gray-800">
           <h3 class="text-lg font-semibold">
             {{ astekExp.title }}
           </h3>
@@ -144,7 +144,7 @@ const astekMissions = ref([
           <div
             v-for="mission in astekMissions"
             :key="mission.title"
-            class="flex flex-col rounded-lg bg-green-100 p-4 text-gray-800"
+            class="flex flex-col rounded-lg border-2 border-green-500 bg-green-100 p-4 text-gray-800"
           >
             <h3 class="text-lg font-semibold">
               {{ mission.title }}
@@ -162,7 +162,7 @@ const astekMissions = ref([
         </div>
       </li>
       <li class="mb-4 flex flex-row space-x-4">
-        <div class="w-1/2 rounded-lg bg-blue-100 p-4 text-gray-800">
+        <div class="w-1/2 rounded-lg border-2 border-blue-500 bg-blue-100 p-4 text-gray-800">
           <h3 class="text-lg font-semibold">
             {{ utbmSchool.title }}
           </h3>
@@ -176,7 +176,7 @@ const astekMissions = ref([
             {{ utbmSchool.description }}
           </p>
         </div>
-        <div class="w-1/2  rounded-lg bg-green-100 p-4 text-gray-800">
+        <div class="w-1/2  rounded-lg border-2 border-green-500 bg-green-100 p-4 text-gray-800">
           <h3 class="text-lg font-semibold">
             {{ geAprenticeship.title }}
           </h3>
@@ -191,20 +191,20 @@ const astekMissions = ref([
           </p>
         </div>
       </li>
-      <li class="rounded-lg bg-blue-100 p-4 text-gray-800">
-          <h3 class="text-lg font-semibold">
-            {{ iutSchool.title }}
-          </h3>
-          <p class="text-sm">
-            {{ iutSchool.school }}
-          </p>
-          <p class="text-sm">
-            {{ iutSchool.startDate }} - {{ iutSchool.endDate }}
-          </p>
-          <p class="text-sm">
-            {{ iutSchool.description }}
-          </p>
-        </li>
+      <li class="rounded-lg border-2 border-blue-500 bg-blue-100 p-4 text-gray-800">
+        <h3 class="text-lg font-semibold">
+          {{ iutSchool.title }}
+        </h3>
+        <p class="text-sm">
+          {{ iutSchool.school }}
+        </p>
+        <p class="text-sm">
+          {{ iutSchool.startDate }} - {{ iutSchool.endDate }}
+        </p>
+        <p class="text-sm">
+          {{ iutSchool.description }}
+        </p>
+      </li>
     </ul>
   </div>
 </template>
