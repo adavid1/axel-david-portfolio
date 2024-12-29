@@ -92,6 +92,18 @@ const atemeMission = {
   ],
 }
 
+const utbmSchool = {
+  title: "IT Engineer by apprenticeship",
+  school: "Université de Technologie de Belfort-Montbéliard",
+  location: "Belfort, France",
+  grade: "Master's Degree in Engineering",
+  startDate: "2017-09-01",
+  endDate: "2020-08-31",
+  description:
+  "- Complex computer systems: analysis, specification, design, modeling, development, administration, and industrialization" +
+  "- Project management and leadership - law - marketing - communication - finance"
+}
+
 const astekMissions = ref([
   atemeMission,
   navalGroupMission,
@@ -138,19 +150,35 @@ const astekMissions = ref([
           </div>
         </div>
       </li>
-      <li class="rounded-lg bg-gray-100 p-4 text-gray-800">
-        <h3 class="text-lg font-semibold">
-          {{ geAprenticeship.title }}
-        </h3>
-        <p class="text-sm">
-          {{ geAprenticeship.company }}
-        </p>
-        <p class="text-sm">
-          {{ geAprenticeship.startDate }} - {{ geAprenticeship.endDate }}
-        </p>
-        <p class="text-sm">
-          {{ geAprenticeship.description }}
-        </p>
+      <li class="mb-4 flex flex-row space-x-4">
+        <div class="w-1/2 rounded-lg bg-gray-100 p-4 text-gray-800">
+          <h3 class="text-lg font-semibold">
+            {{ utbmSchool.title }}
+          </h3>
+          <p class="text-sm">
+            {{ utbmSchool.school }}
+          </p>
+          <p class="text-sm">
+            {{ utbmSchool.startDate }} - {{ utbmSchool.endDate }}
+          </p>
+          <p class="text-sm">
+            {{ utbmSchool.description }}
+          </p>
+        </div>
+        <div class="w-1/2  rounded-lg bg-gray-100 p-4 text-gray-800">
+          <h3 class="text-lg font-semibold">
+            {{ geAprenticeship.title }}
+          </h3>
+          <p class="text-sm">
+            {{ geAprenticeship.company }}
+          </p>
+          <p class="text-sm">
+            {{ geAprenticeship.startDate }} - {{ geAprenticeship.endDate }}
+          </p>
+          <p class="text-sm">
+            {{ geAprenticeship.description }}
+          </p>
+        </div>
       </li>
     </ul>
   </div>
