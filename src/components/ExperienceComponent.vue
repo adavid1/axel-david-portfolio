@@ -20,13 +20,13 @@ const geAprenticeship = ref({
   startDate: "01-09-2017",
   endDate: "31-08-2020",
   description:
-  "Sandwich course with UTBM | REMOTE 💻" +
-  "- Developed applications to eliminate paper usage (C#, WPF)" +
-  "- Created databases related to the applications (SQL, MS SQL Server)" +
-  "- Worked directly with end-users" +
-  "- Used agile methodologies to structure projects" +
-  "- Worked for 2 years within the quality department based in the factory" +
-  "- Trained users" +
+  "Sandwich course with UTBM | REMOTE 💻<br>" +
+  "- Developed applications to eliminate paper usage (C#, WPF)<br>" +
+  "- Created databases related to the applications (SQL, MS SQL Server)<br>" +
+  "- Worked directly with end-users<br>" +
+  "- Used agile methodologies to structure projects<br>" +
+  "- Worked for 2 years within the quality department based in the factory<br>" +
+  "- Trained users<br>" +
   "- Wrote structural documentation",
   stack: ["C#", "WPF", "SQL", "MS SQL Server"],
 })
@@ -39,11 +39,11 @@ const fivesSylepsMission = {
   startDate: "01-12-2020",
   endDate: "31-07-2021",
   description:
-  "REMOTE 💻" +
-  "- Software development (C#, PL/SQL)" +
-  "- Integration of tools" +
-  "- Software configuration" +
-  "- Support and training" +
+  "REMOTE 💻<br>" +
+  "- Software development (C#, PL/SQL)<br>" +
+  "- Integration of tools<br>" +
+  "- Software configuration<br>" +
+  "- Support and training<br>" +
   "- Activity reporting",
   stack: ["C#", "PL/SQL", "Oracle"],
 }
@@ -56,13 +56,13 @@ const navalGroupMission = {
   startDate: "01-08-2021",
   endDate: "31-08-2022",
   description:
-  "- Ensured the operational maintenance and stability of the X3 software" +
-  "- Provided comprehensive support for the X3 software at Levels 1, 2, and 3" +
-  "- Conducted data extractions from X3 for migration to the eBusiness Suite R12" +
-  "- Archived X3 data using the MEMORY system" +
-  "- Finalized documentation related to the archiving of production management data (GPAO)" +
-  "- Coordinated and supervised the deletion of automatic scheduling plans" +
-  "- Decommissioned servers utilized by GPAO NA Cherbourg" +
+  "- Ensured the operational maintenance and stability of the X3 software<br>" +
+  "- Provided comprehensive support for the X3 software at Levels 1, 2, and 3<br>" +
+  "- Conducted data extractions from X3 for migration to the eBusiness Suite R12<br>" +
+  "- Archived X3 data using the MEMORY system<br>" +
+  "- Finalized documentation related to the archiving of production management data (GPAO)<br>" +
+  "- Coordinated and supervised the deletion of automatic scheduling plans<br>" +
+  "- Decommissioned servers utilized by GPAO NA Cherbourg<br>" +
   "- Automated daily SQL data extractions using Visual Basic",
   stack: ["X3", "eBusiness Suite R12", "MEMORY system", "GPAO", "Visual Basic"],
 }
@@ -76,9 +76,9 @@ const atemeMission = {
   endDate: "20-12-2024",
   description:
   "REMOTE 💻" +
-  "- Development across the stack: frontend (VueJs), backend (NodeJs, Express, GraphQL), integration (Docker, Kubernetes)" +
-  "- Participate in scrum ceremonies: sprint planning, daily standups, sprint reviews, retrospectives" +
-  "- Code quality and best practices: code reviews, testing (Jest, pytest), documentation writing" +
+  "- Development across the stack: frontend (VueJs), backend (NodeJs, Express, GraphQL), integration (Docker, Kubernetes)<br>" +
+  "- Participate in scrum ceremonies: sprint planning, daily standups, sprint reviews, retrospectives<br>" +
+  "- Code quality and best practices: code reviews, testing (Jest, pytest), documentation writing<br>" +
   "- Problem solving and troubleshooting: debugging, performance optimization",
   stack: [
   "VueJs",
@@ -100,7 +100,7 @@ const utbmSchool = {
   startDate: "01-09-2017",
   endDate: "31-08-2020",
   description:
-  "- Complex computer systems: analysis, specification, design, modeling, development, administration, and industrialization" +
+  "- Complex computer systems: analysis, specification, design, modeling, development, administration, and industrialization<br>" +
   "- Project management and leadership - law - marketing - communication - finance"
 }
 
@@ -112,7 +112,7 @@ const iutSchool = {
   startDate: "01-09-2015",
   endDate: "31-08-2017",
   description:
-  "- Physics - Chemistry - Mathematics - Computer Science - Electronics - Optics - Mechanics - Thermodynamics - Acoustics - Signal Processing - Metrology - Instrumentation - Industrial Data Processing - Quality - Safety - Environment"
+  "Physics - Chemistry - Mathematics - Computer Science - Electronics - Optics - Mechanics - Thermodynamics - Acoustics - Signal Processing - Metrology - Instrumentation - Industrial Data Processing - Quality - Safety - Environment"
 }
 
 const astekMissions = ref([
@@ -120,13 +120,22 @@ const astekMissions = ref([
   navalGroupMission,
   fivesSylepsMission,
 ])
+
+function formatDate(date: string): string {
+  const [day, month, year] = date.split("-")
+
+  const monthText = new Date(Number(year), Number(month) - 1, Number(day)).toLocaleString("default", { month: "long" })
+  const monthTextUpper = monthText.charAt(0).toUpperCase() + monthText.slice(1)
+
+  return `${monthTextUpper} ${year}`
+}
 </script>
 
 <template>
   <div>
     <ul>
       <li class="mb-4 flex flex-row">
-        <div class="mr-4 w-1/4 rounded-lg border-2 border-green-500 bg-green-100 p-4 text-gray-800">
+        <div class="mr-4 w-1/4 rounded-lg border-2 border-green-500 bg-green-100 p-4 text-gray-800 flex flex-col justify-center">
           <h3 class="text-lg font-semibold">
             {{ astekExp.title }}
           </h3>
@@ -134,11 +143,12 @@ const astekMissions = ref([
             {{ astekExp.company }}
           </p>
           <p class="text-sm">
-            {{ astekExp.startDate }} - {{ astekExp.endDate }}
+            {{ formatDate(astekExp.startDate) }} - {{ formatDate(astekExp.endDate) }}
           </p>
-          <p class="text-sm">
-            {{ astekExp.description }}
-          </p>
+          <p
+            class="text-sm"
+            v-html="astekExp.description"
+          />
         </div>
         <div class="flex w-3/4 flex-col space-y-4">
           <div
@@ -153,16 +163,17 @@ const astekMissions = ref([
               {{ mission.company }}
             </p>
             <p class="text-sm">
-              {{ mission.startDate }} - {{ mission.endDate }}
+              {{ formatDate(mission.startDate) }} - {{ formatDate(mission.endDate) }}
             </p>
-            <p class="text-sm">
-              {{ mission.description }}
-            </p>
+            <p
+              class="text-sm"
+              v-html="mission.description"
+            />
           </div>
         </div>
       </li>
       <li class="mb-4 flex flex-row space-x-4">
-        <div class="w-1/2 rounded-lg border-2 border-blue-500 bg-blue-100 p-4 text-gray-800">
+        <div class="w-1/2 rounded-lg border-2 border-blue-500 bg-blue-100 p-4 text-gray-800 flex flex-col justify-center">
           <h3 class="text-lg font-semibold">
             {{ utbmSchool.title }}
           </h3>
@@ -170,13 +181,14 @@ const astekMissions = ref([
             {{ utbmSchool.school }}
           </p>
           <p class="text-sm">
-            {{ utbmSchool.startDate }} - {{ utbmSchool.endDate }}
+            {{ formatDate(utbmSchool.startDate) }} - {{ formatDate(utbmSchool.endDate) }}
           </p>
-          <p class="text-sm">
-            {{ utbmSchool.description }}
-          </p>
+          <p
+            class="text-sm"
+            v-html="utbmSchool.description"
+          />
         </div>
-        <div class="w-1/2  rounded-lg border-2 border-green-500 bg-green-100 p-4 text-gray-800">
+        <div class="w-1/2  rounded-lg border-2 border-green-500 bg-green-100 p-4 text-gray-800 flex flex-col justify-center">
           <h3 class="text-lg font-semibold">
             {{ geAprenticeship.title }}
           </h3>
@@ -184,11 +196,12 @@ const astekMissions = ref([
             {{ geAprenticeship.company }}
           </p>
           <p class="text-sm">
-            {{ geAprenticeship.startDate }} - {{ geAprenticeship.endDate }}
+            {{ formatDate(geAprenticeship.startDate) }} - {{ formatDate(geAprenticeship.endDate) }}
           </p>
-          <p class="text-sm">
-            {{ geAprenticeship.description }}
-          </p>
+          <p
+            class="text-sm"
+            v-html="geAprenticeship.description"
+          />
         </div>
       </li>
       <li class="rounded-lg border-2 border-blue-500 bg-blue-100 p-4 text-gray-800">
@@ -199,11 +212,12 @@ const astekMissions = ref([
           {{ iutSchool.school }}
         </p>
         <p class="text-sm">
-          {{ iutSchool.startDate }} - {{ iutSchool.endDate }}
+          {{ formatDate(iutSchool.startDate) }} - {{ formatDate(iutSchool.endDate) }}
         </p>
-        <p class="text-sm">
-          {{ iutSchool.description }}
-        </p>
+        <p
+          class="text-sm"
+          v-html="iutSchool.description"
+        />
       </li>
     </ul>
   </div>
