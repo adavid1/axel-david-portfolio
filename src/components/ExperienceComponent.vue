@@ -6,8 +6,8 @@ const astekExp = ref({
   company: "Astek",
   location: "Rennes, France",
   type: "Full-time",
-  startDate: "2021-01-01",
-  endDate: "2024-12-20",
+  startDate: "01-01-2021",
+  endDate: "20-12-2024",
   description: "",
   stack: [],
 })
@@ -17,8 +17,8 @@ const geAprenticeship = ref({
   company: "GENERAL ELECTRIC",
   location: "Belfort, France",
   type: "Apprenticeship",
-  startDate: "2017-09-01",
-  endDate: "2020-08-31",
+  startDate: "01-09-2017",
+  endDate: "31-08-2020",
   description:
   "Sandwich course with UTBM | REMOTE 💻" +
   "- Developed applications to eliminate paper usage (C#, WPF)" +
@@ -36,8 +36,8 @@ const fivesSylepsMission = {
   company: "Fives Syleps",
   location: "Lorient, France",
   type: "Indirect Contract",
-  startDate: "2020-12-01",
-  endDate: "2021-07-31",
+  startDate: "01-12-2020",
+  endDate: "31-07-2021",
   description:
   "REMOTE 💻" +
   "- Software development (C#, PL/SQL)" +
@@ -53,8 +53,8 @@ const navalGroupMission = {
   company: "NAVAL GROUP",
   location: "Brest, France",
   type: "Indirect Contract",
-  startDate: "2021-08-01",
-  endDate: "2022-08-31",
+  startDate: "01-08-2021",
+  endDate: "31-08-2022",
   description:
   "- Ensured the operational maintenance and stability of the X3 software" +
   "- Provided comprehensive support for the X3 software at Levels 1, 2, and 3" +
@@ -72,8 +72,8 @@ const atemeMission = {
   company: "Ateme",
   location: "Rennes, France",
   type: "Indirect Contract",
-  startDate: "2022-09-01",
-  endDate: "2024-12-20",
+  startDate: "01-09-2022",
+  endDate: "20-12-2024",
   description:
   "REMOTE 💻" +
   "- Development across the stack: frontend (VueJs), backend (NodeJs, Express, GraphQL), integration (Docker, Kubernetes)" +
@@ -97,8 +97,8 @@ const utbmSchool = {
   school: "Université de Technologie de Belfort-Montbéliard",
   location: "Belfort, France",
   grade: "Master's Degree in Engineering",
-  startDate: "2017-09-01",
-  endDate: "2020-08-31",
+  startDate: "01-09-2017",
+  endDate: "31-08-2020",
   description:
   "- Complex computer systems: analysis, specification, design, modeling, development, administration, and industrialization" +
   "- Project management and leadership - law - marketing - communication - finance"
@@ -109,8 +109,8 @@ const iutSchool = {
   school: "IUT de Saint-Nazaire",
   location: "Saint-Nazaire, France",
   grade: "Diplôme Universitaire de Technologie",
-  startDate: "2015-09-01",
-  endDate: "2017-08-31",
+  startDate: "01-09-2015",
+  endDate: "31-08-2017",
   description:
   "- Physics - Chemistry - Mathematics - Computer Science - Electronics - Optics - Mechanics - Thermodynamics - Acoustics - Signal Processing - Metrology - Instrumentation - Industrial Data Processing - Quality - Safety - Environment"
 }
