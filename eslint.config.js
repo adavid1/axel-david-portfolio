@@ -1,13 +1,19 @@
-import pluginVue from 'eslint-plugin-vue'
+import js from '@eslint/js'
+import eslintPluginVue from 'eslint-plugin-vue'
+import ts from 'typescript-eslint'
+import tailwind from "eslint-plugin-tailwindcss"
 
 export default [
-  ...pluginVue.configs['flat/recommended'],
-  // ...pluginVue.configs['flat/strongly-recommended'],
-  // ...pluginVue.configs['flat/essential'],
+  js.configs.recommended,
+  ...ts.configs.recommended,
+  ...eslintPluginVue.configs['flat/recommended'],
+  ...tailwind.configs["flat/recommended"],
   {
-    rules: {
-      // override/add rules settings here, such as:
-      // 'vue/no-unused-vars': 'error'
+    files: ['*.vue', '*.js', '*.ts'],
+    languageOptions: {
+      parserOptions: {
+        parser: '@typescript-eslint/parser'
+      }
     }
   }
 ]
