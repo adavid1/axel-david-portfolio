@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import HeaderComponent from './components/HeaderComponent.vue'
 import ExperienceComponent from './components/ExperienceComponent.vue'
+import FooterComponent from './components/FooterComponent.vue'
 </script>
 
 <template>
@@ -9,5 +10,6 @@ import ExperienceComponent from './components/ExperienceComponent.vue'
   >
     <HeaderComponent />
     <ExperienceComponent />
+    <FooterComponent />
   </div>
 </template>
