@@ -20,13 +20,13 @@ const geAprenticeship = ref({
   startDate: "01-09-2017",
   endDate: "31-08-2020",
   description:
-  "Sandwich course with UTBM | REMOTE 💻<br>" +
-  "- Developed applications to eliminate paper usage (C#, WPF)<br>" +
-  "- Created databases related to the applications (SQL, MS SQL Server)<br>" +
-  "- Worked directly with end-users<br>" +
-  "- Used agile methodologies to structure projects<br>" +
-  "- Worked for 2 years within the quality department based in the factory<br>" +
-  "- Trained users<br>" +
+  "Sandwich course with UTBM | REMOTE 💻\n" +
+  "- Developed applications to eliminate paper usage (C#, WPF)\n" +
+  "- Created databases related to the applications (SQL, MS SQL Server)\n" +
+  "- Worked directly with end-users\n" +
+  "- Used agile methodologies to structure projects\n" +
+  "- Worked for 2 years within the quality department based in the factory\n" +
+  "- Trained users\n" +
   "- Wrote structural documentation",
   stack: ["C#", "WPF", "SQL", "MS SQL Server"],
 })
@@ -39,11 +39,11 @@ const fivesSylepsMission = {
   startDate: "01-12-2020",
   endDate: "31-07-2021",
   description:
-  "REMOTE 💻<br>" +
-  "- Software development (C#, PL/SQL)<br>" +
-  "- Integration of tools<br>" +
-  "- Software configuration<br>" +
-  "- Support and training<br>" +
+  "REMOTE 💻\n" +
+  "- Software development (C#, PL/SQL)\n" +
+  "- Integration of tools\n" +
+  "- Software configuration\n" +
+  "- Support and training\n" +
   "- Activity reporting",
   stack: ["C#", "PL/SQL", "Oracle"],
 }
@@ -56,13 +56,13 @@ const navalGroupMission = {
   startDate: "01-08-2021",
   endDate: "31-08-2022",
   description:
-  "- Ensured the operational maintenance and stability of the X3 software<br>" +
-  "- Provided comprehensive support for the X3 software at Levels 1, 2, and 3<br>" +
-  "- Conducted data extractions from X3 for migration to the eBusiness Suite R12<br>" +
-  "- Archived X3 data using the MEMORY system<br>" +
-  "- Finalized documentation related to the archiving of production management data (GPAO)<br>" +
-  "- Coordinated and supervised the deletion of automatic scheduling plans<br>" +
-  "- Decommissioned servers utilized by GPAO NA Cherbourg<br>" +
+  "- Ensured the operational maintenance and stability of the X3 software\n" +
+  "- Provided comprehensive support for the X3 software at Levels 1, 2, and 3\n" +
+  "- Conducted data extractions from X3 for migration to the eBusiness Suite R12\n" +
+  "- Archived X3 data using the MEMORY system\n" +
+  "- Finalized documentation related to the archiving of production management data (GPAO)\n" +
+  "- Coordinated and supervised the deletion of automatic scheduling plans\n" +
+  "- Decommissioned servers utilized by GPAO NA Cherbourg\n" +
   "- Automated daily SQL data extractions using Visual Basic",
   stack: ["X3", "eBusiness Suite R12", "MEMORY system", "GPAO", "Visual Basic"],
 }
@@ -76,9 +76,9 @@ const atemeMission = {
   endDate: "20-12-2024",
   description:
   "REMOTE 💻" +
-  "- Development across the stack: frontend (VueJs), backend (NodeJs, Express, GraphQL), integration (Docker, Kubernetes)<br>" +
-  "- Participate in scrum ceremonies: sprint planning, daily standups, sprint reviews, retrospectives<br>" +
-  "- Code quality and best practices: code reviews, testing (Jest, pytest), documentation writing<br>" +
+  "- Development across the stack: frontend (VueJs), backend (NodeJs, Express, GraphQL), integration (Docker, Kubernetes)\n" +
+  "- Participate in scrum ceremonies: sprint planning, daily standups, sprint reviews, retrospectives\n" +
+  "- Code quality and best practices: code reviews, testing (Jest, pytest), documentation writing\n" +
   "- Problem solving and troubleshooting: debugging, performance optimization",
   stack: [
   "VueJs",
@@ -100,7 +100,7 @@ const utbmSchool = {
   startDate: "01-09-2017",
   endDate: "31-08-2020",
   description:
-  "- Complex computer systems: analysis, specification, design, modeling, development, administration, and industrialization<br>" +
+  "- Complex computer systems: analysis, specification, design, modeling, development, administration, and industrialization\n" +
   "- Project management and leadership - law - marketing - communication - finance"
 }
 
@@ -129,6 +129,10 @@ function formatDate(date: string): string {
 
   return `${monthTextUpper} ${year}`
 }
+
+function splittedList(list: string): string[] {
+  return list.split("\n")
+}
 </script>
 
 <template>
@@ -146,9 +150,12 @@ function formatDate(date: string): string {
             {{ formatDate(astekExp.startDate) }} - {{ formatDate(astekExp.endDate) }}
           </p>
           <p
+            v-for="e in splittedList(astekExp.description)"
+            :key="e"
             class="text-sm"
-            v-html="astekExp.description"
-          />
+          >
+            {{ e }}
+          </p>
         </div>
         <div class="flex w-3/4 flex-col space-y-4">
           <div
@@ -166,9 +173,12 @@ function formatDate(date: string): string {
               {{ formatDate(mission.startDate) }} - {{ formatDate(mission.endDate) }}
             </p>
             <p
+              v-for="e in splittedList(mission.description)"
+              :key="e"
               class="text-sm"
-              v-html="mission.description"
-            />
+            >
+              {{ e }}
+            </p>
           </div>
         </div>
       </li>
@@ -184,9 +194,12 @@ function formatDate(date: string): string {
             {{ formatDate(utbmSchool.startDate) }} - {{ formatDate(utbmSchool.endDate) }}
           </p>
           <p
+            v-for="e in splittedList(utbmSchool.description)"
+            :key="e"
             class="text-sm"
-            v-html="utbmSchool.description"
-          />
+          >
+            {{ e }}
+          </p>
         </div>
         <div class="flex w-1/2 flex-col justify-center rounded-lg border-2 border-green-500 bg-green-100 p-4 text-gray-800">
           <h3 class="text-lg font-semibold">
@@ -199,9 +212,12 @@ function formatDate(date: string): string {
             {{ formatDate(geAprenticeship.startDate) }} - {{ formatDate(geAprenticeship.endDate) }}
           </p>
           <p
+            v-for="e in splittedList(geAprenticeship.description)"
+            :key="e"
             class="text-sm"
-            v-html="geAprenticeship.description"
-          />
+          >
+            {{ e }}
+          </p>
         </div>
       </li>
       <li class="rounded-lg border-2 border-blue-500 bg-blue-100 p-4 text-gray-800">
@@ -215,9 +231,12 @@ function formatDate(date: string): string {
           {{ formatDate(iutSchool.startDate) }} - {{ formatDate(iutSchool.endDate) }}
         </p>
         <p
+          v-for="e in splittedList(iutSchool.description)"
+          :key="e"
           class="text-sm"
-          v-html="iutSchool.description"
-        />
+        >
+          {{ e }}
+        </p>
       </li>
     </ul>
   </div>
