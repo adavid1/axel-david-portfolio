@@ -23,10 +23,5 @@
     "noUncheckedSideEffectImports": true
   },
 
-  "baseUrl": ".",
-  "paths": {
-    "@components/*": ["src/components/*"]
-  },
-
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
