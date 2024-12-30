@@ -135,7 +135,7 @@ function formatDate(date: string): string {
   <div>
     <ul>
       <li class="mb-4 flex flex-row">
-        <div class="mr-4 w-1/4 rounded-lg border-2 border-green-500 bg-green-100 p-4 text-gray-800 flex flex-col justify-center">
+        <div class="mr-4 flex w-1/4 flex-col justify-center rounded-lg border-2 border-green-500 bg-green-100 p-4 text-gray-800">
           <h3 class="text-lg font-semibold">
             {{ astekExp.title }}
           </h3>
@@ -173,7 +173,7 @@ function formatDate(date: string): string {
         </div>
       </li>
       <li class="mb-4 flex flex-row space-x-4">
-        <div class="w-1/2 rounded-lg border-2 border-blue-500 bg-blue-100 p-4 text-gray-800 flex flex-col justify-center">
+        <div class="flex w-1/2 flex-col justify-center rounded-lg border-2 border-blue-500 bg-blue-100 p-4 text-gray-800">
           <h3 class="text-lg font-semibold">
             {{ utbmSchool.title }}
           </h3>
@@ -188,7 +188,7 @@ function formatDate(date: string): string {
             v-html="utbmSchool.description"
           />
         </div>
-        <div class="w-1/2  rounded-lg border-2 border-green-500 bg-green-100 p-4 text-gray-800 flex flex-col justify-center">
+        <div class="flex w-1/2 flex-col justify-center rounded-lg border-2 border-green-500 bg-green-100 p-4 text-gray-800">
           <h3 class="text-lg font-semibold">
             {{ geAprenticeship.title }}
           </h3>
