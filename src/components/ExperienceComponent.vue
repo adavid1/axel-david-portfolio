@@ -1,275 +1,42 @@
 <script setup lang="ts">
-import { ref } from "vue"
+import EnterpriseExperienceComponent from "@/components/EnterpriseExperienceComponent.vue"
+import SchoolExperienceComponent from "@/components/SchoolExperienceComponent.vue"
 
-const astekExp = ref({
-  title: "IT Engineer",
-  company: "Astek",
-  companyLink: "https://astekgroup.fr/?lang=en",
-  location: "Rennes, France",
-  type: "Full-time",
-  startDate: "01-01-2021",
-  endDate: "20-12-2024",
-  description: "",
-  stack: [],
-})
+import { astekExp, astekMissions, geApprenticeship, iutSchool, utbmSchool } from "@/experienceData.ts"
 
-const geAprenticeship = ref({
-  title: "Apprentice IT Engineer",
-  company: "GENERAL ELECTRIC",
-  companyLink: "https://www.ge.com/",
-  location: "Belfort, France",
-  type: "Apprenticeship",
-  startDate: "01-09-2017",
-  endDate: "31-08-2020",
-  description:
-  "Sandwich course with UTBM | REMOTE 💻\n" +
-  "- Developed applications to eliminate paper usage (C#, WPF)\n" +
-  "- Created databases related to the applications (SQL, MS SQL Server)\n" +
-  "- Worked directly with end-users\n" +
-  "- Used agile methodologies to structure projects\n" +
-  "- Worked for 2 years within the quality department based in the factory\n" +
-  "- Trained users\n" +
-  "- Wrote structural documentation",
-  stack: ["C#", "WPF", "SQL", "MS SQL Server"],
-})
-
-const fivesSylepsMission = {
-  title: "Database Developer",
-  company: "Fives Syleps",
-  companyLink: "https://www.fivesgroup.com/",
-  location: "Lorient, France",
-  type: "Indirect Contract",
-  startDate: "01-12-2020",
-  endDate: "31-07-2021",
-  description:
-  "REMOTE 💻\n" +
-  "- Software development (C#, PL/SQL)\n" +
-  "- Integration of tools\n" +
-  "- Software configuration\n" +
-  "- Support and training\n" +
-  "- Activity reporting",
-  stack: ["C#", "PL/SQL", "Oracle"],
-}
-
-const navalGroupMission = {
-  title: "Database Administrator & Developer",
-  company: "NAVAL GROUP",
-  companyLink: "https://www.naval-group.com/en/",
-  location: "Brest, France",
-  type: "Indirect Contract",
-  startDate: "01-08-2021",
-  endDate: "31-08-2022",
-  description:
-  "- Ensured the operational maintenance and stability of the X3 software\n" +
-  "- Provided comprehensive support for the X3 software at Levels 1, 2, and 3\n" +
-  "- Conducted data extractions from X3 for migration to the eBusiness Suite R12\n" +
-  "- Archived X3 data using the MEMORY system\n" +
-  "- Finalized documentation related to the archiving of production management data (GPAO)\n" +
-  "- Coordinated and supervised the deletion of automatic scheduling plans\n" +
-  "- Decommissioned servers utilized by GPAO NA Cherbourg\n" +
-  "- Automated daily SQL data extractions using Visual Basic",
-  stack: ["X3", "eBusiness Suite R12", "MEMORY system", "GPAO", "Visual Basic"],
-}
-
-const atemeMission = {
-  title: "Full Stack Developer",
-  company: "Ateme",
-  companyLink: "https://www.ateme.com/",
-  location: "Rennes, France",
-  type: "Indirect Contract",
-  startDate: "01-09-2022",
-  endDate: "20-12-2024",
-  description:
-  "REMOTE 💻" +
-  "- Development across the stack: frontend (VueJs), backend (NodeJs, Express, GraphQL), integration (Docker, Kubernetes)\n" +
-  "- Participate in scrum ceremonies: sprint planning, daily standups, sprint reviews, retrospectives\n" +
-  "- Code quality and best practices: code reviews, testing (Jest, pytest), documentation writing\n" +
-  "- Problem solving and troubleshooting: debugging, performance optimization",
-  stack: [
-  "VueJs",
-  "NodeJs",
-  "Express",
-  "GraphQL",
-  "Docker",
-  "Kubernetes",
-  "Jest",
-  "pytest",
-  ],
-}
-
-const utbmSchool = {
-  title: "IT Engineer by apprenticeship",
-  school: "Université de Technologie de Belfort-Montbéliard",
-  schoolLink: "https://www.utbm.fr/english/",
-  location: "Belfort, France",
-  grade: "Master's Degree in Engineering",
-  startDate: "01-09-2017",
-  endDate: "31-08-2020",
-  description:
-  "- Complex computer systems: analysis, specification, design, modeling, development, administration, and industrialization\n" +
-  "- Project management and leadership - law - marketing - communication - finance"
-}
-
-const iutSchool = {
-  title: "DUT Mesures Physiques",
-  school: "IUT de Saint-Nazaire",
-  schoolLink: "https://iut-sn.univ-nantes.fr/",
-  location: "Saint-Nazaire, France",
-  grade: "Diplôme Universitaire de Technologie",
-  startDate: "01-09-2015",
-  endDate: "31-08-2017",
-  description:
-  "Physics - Chemistry - Mathematics - Computer Science - Electronics - Optics - Mechanics - Thermodynamics - Acoustics - Signal Processing - Metrology - Instrumentation - Industrial Data Processing - Quality - Safety - Environment"
-}
-
-const astekMissions = ref([
-  atemeMission,
-  navalGroupMission,
-  fivesSylepsMission,
-])
-
-function formatDate(date: string): string {
-  const [day, month, year] = date.split("-")
-
-  const monthText = new Date(Number(year), Number(month) - 1, Number(day)).toLocaleString("default", { month: "long" })
-  const monthTextUpper = monthText.charAt(0).toUpperCase() + monthText.slice(1)
-
-  return `${monthTextUpper} ${year}`
-}
-
-function splittedList(list: string): string[] {
-  return list.split("\n")
-}
 </script>
 
 <template>
   <div>
     <ul>
       <li class="mb-4 flex flex-row">
-        <div class="mr-4 flex w-1/4 flex-col justify-center rounded-lg border-2 border-green-500 bg-green-100 p-4 text-gray-800">
-          <h3 class="text-lg font-semibold">
-            {{ astekExp.title }}
-          </h3>
-          <a
-            class="text-sm"
-            :href="astekExp.companyLink"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ astekExp.company }}
-          </a>
-          <p class="text-sm">
-            {{ formatDate(astekExp.startDate) }} - {{ formatDate(astekExp.endDate) }}
-          </p>
-          <p
-            v-for="e in splittedList(astekExp.description)"
-            :key="e"
-            class="text-sm"
-          >
-            {{ e }}
-          </p>
-        </div>
+        <EnterpriseExperienceComponent
+          class="mr-4 flex w-1/4 flex-col justify-center rounded-lg border-2 border-green-500 bg-green-100 p-4 text-gray-800"
+          :entreprise-exp="astekExp"
+        />
         <div class="flex w-3/4 flex-col space-y-4">
-          <div
+          <EnterpriseExperienceComponent
             v-for="mission in astekMissions"
             :key="mission.title"
             class="flex flex-col rounded-lg border-2 border-green-500 bg-green-100 p-4 text-gray-800"
-          >
-            <h3 class="text-lg font-semibold">
-              {{ mission.title }}
-            </h3>
-            <a
-              class="text-sm"
-              :href="mission.companyLink"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {{ mission.company }}
-            </a>
-            <p class="text-sm">
-              {{ formatDate(mission.startDate) }} - {{ formatDate(mission.endDate) }}
-            </p>
-            <p
-              v-for="e in splittedList(mission.description)"
-              :key="e"
-              class="text-sm"
-            >
-              {{ e }}
-            </p>
-          </div>
+            :entreprise-exp="mission"
+          />
         </div>
       </li>
       <li class="mb-4 flex flex-row space-x-4">
-        <div class="flex w-1/2 flex-col justify-center rounded-lg border-2 border-blue-500 bg-blue-100 p-4 text-gray-800">
-          <h3 class="text-lg font-semibold">
-            {{ utbmSchool.title }}
-          </h3>
-          <a
-            class="text-sm"
-            :href="utbmSchool.schoolLink"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ utbmSchool.school }}
-          </a>
-          <p class="text-sm">
-            {{ formatDate(utbmSchool.startDate) }} - {{ formatDate(utbmSchool.endDate) }}
-          </p>
-          <p
-            v-for="e in splittedList(utbmSchool.description)"
-            :key="e"
-            class="text-sm"
-          >
-            {{ e }}
-          </p>
-        </div>
-        <div class="flex w-1/2 flex-col justify-center rounded-lg border-2 border-green-500 bg-green-100 p-4 text-gray-800">
-          <h3 class="text-lg font-semibold">
-            {{ geAprenticeship.title }}
-          </h3>
-          <a
-            class="text-sm"
-            :href="geAprenticeship.companyLink"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ geAprenticeship.company }}
-          </a>
-          <p class="text-sm">
-            {{ formatDate(geAprenticeship.startDate) }} - {{ formatDate(geAprenticeship.endDate) }}
-          </p>
-          <p
-            v-for="e in splittedList(geAprenticeship.description)"
-            :key="e"
-            class="text-sm"
-          >
-            {{ e }}
-          </p>
-        </div>
+        <SchoolExperienceComponent
+          class="flex w-1/2 flex-col justify-center rounded-lg border-2 border-blue-500 bg-blue-100 p-4 text-gray-800"
+          :school-exp="utbmSchool"
+        />
+        <EnterpriseExperienceComponent
+          class="flex w-1/2 flex-col justify-center rounded-lg border-2 border-green-500 bg-green-100 p-4 text-gray-800"
+          :entreprise-exp="geApprenticeship"
+        />
       </li>
-      <li class="rounded-lg border-2 border-blue-500 bg-blue-100 p-4 text-gray-800">
-        <h3 class="text-lg font-semibold">
-          {{ iutSchool.title }}
-        </h3>
-        <a
-          class="text-sm"
-          :href="iutSchool.schoolLink"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {{ iutSchool.school }}
-        </a>
-        <p class="text-sm">
-          {{ formatDate(iutSchool.startDate) }} - {{ formatDate(iutSchool.endDate) }}
-        </p>
-        <p
-          v-for="e in splittedList(iutSchool.description)"
-          :key="e"
-          class="text-sm"
-        >
-          {{ e }}
-        </p>
-      </li>
+      <SchoolExperienceComponent
+        class="rounded-lg border-2 border-blue-500 bg-blue-100 p-4 text-gray-800"
+        :school-exp="iutSchool"
+      />
     </ul>
   </div>
 </template>
