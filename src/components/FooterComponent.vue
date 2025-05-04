@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import linkedinLogo from '@/assets/linkedin.svg'
+import githubLogo from '@/assets/github.svg'
 </script>
 
 <template>
@@ -12,6 +13,17 @@ import linkedinLogo from '@/assets/linkedin.svg'
       <img
         :src="linkedinLogo"
         alt="LinkedIn logo"
+        class="size-12"
+      >
+    </a>
+    <a
+      href="https://github.com/adavid1"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        :src="githubLogo"
+        alt="Github logo"
         class="size-12"
       >
     </a>

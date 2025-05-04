@@ -4,6 +4,7 @@ import { ref } from "vue"
 const astekExp = ref({
   title: "IT Engineer",
   company: "Astek",
+  companyLink: "https://astekgroup.fr/?lang=en",
   location: "Rennes, France",
   type: "Full-time",
   startDate: "01-01-2021",
@@ -15,6 +16,7 @@ const astekExp = ref({
 const geAprenticeship = ref({
   title: "Apprentice IT Engineer",
   company: "GENERAL ELECTRIC",
+  companyLink: "https://www.ge.com/",
   location: "Belfort, France",
   type: "Apprenticeship",
   startDate: "01-09-2017",
@@ -34,6 +36,7 @@ const geAprenticeship = ref({
 const fivesSylepsMission = {
   title: "Database Developer",
   company: "Fives Syleps",
+  companyLink: "https://www.fivesgroup.com/",
   location: "Lorient, France",
   type: "Indirect Contract",
   startDate: "01-12-2020",
@@ -51,6 +54,7 @@ const fivesSylepsMission = {
 const navalGroupMission = {
   title: "Database Administrator & Developer",
   company: "NAVAL GROUP",
+  companyLink: "https://www.naval-group.com/en/",
   location: "Brest, France",
   type: "Indirect Contract",
   startDate: "01-08-2021",
@@ -70,6 +74,7 @@ const navalGroupMission = {
 const atemeMission = {
   title: "Full Stack Developer",
   company: "Ateme",
+  companyLink: "https://www.ateme.com/",
   location: "Rennes, France",
   type: "Indirect Contract",
   startDate: "01-09-2022",
@@ -95,6 +100,7 @@ const atemeMission = {
 const utbmSchool = {
   title: "IT Engineer by apprenticeship",
   school: "Université de Technologie de Belfort-Montbéliard",
+  schoolLink: "https://www.utbm.fr/english/",
   location: "Belfort, France",
   grade: "Master's Degree in Engineering",
   startDate: "01-09-2017",
@@ -107,6 +113,7 @@ const utbmSchool = {
 const iutSchool = {
   title: "DUT Mesures Physiques",
   school: "IUT de Saint-Nazaire",
+  schoolLink: "https://iut-sn.univ-nantes.fr/",
   location: "Saint-Nazaire, France",
   grade: "Diplôme Universitaire de Technologie",
   startDate: "01-09-2015",
@@ -143,9 +150,14 @@ function splittedList(list: string): string[] {
           <h3 class="text-lg font-semibold">
             {{ astekExp.title }}
           </h3>
-          <p class="text-sm">
+          <a
+            class="text-sm"
+            :href="astekExp.companyLink"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {{ astekExp.company }}
-          </p>
+          </a>
           <p class="text-sm">
             {{ formatDate(astekExp.startDate) }} - {{ formatDate(astekExp.endDate) }}
           </p>
@@ -166,9 +178,14 @@ function splittedList(list: string): string[] {
             <h3 class="text-lg font-semibold">
               {{ mission.title }}
             </h3>
-            <p class="text-sm">
+            <a
+              class="text-sm"
+              :href="mission.companyLink"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {{ mission.company }}
-            </p>
+            </a>
             <p class="text-sm">
               {{ formatDate(mission.startDate) }} - {{ formatDate(mission.endDate) }}
             </p>
@@ -187,9 +204,14 @@ function splittedList(list: string): string[] {
           <h3 class="text-lg font-semibold">
             {{ utbmSchool.title }}
           </h3>
-          <p class="text-sm">
+          <a
+            class="text-sm"
+            :href="utbmSchool.schoolLink"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {{ utbmSchool.school }}
-          </p>
+          </a>
           <p class="text-sm">
             {{ formatDate(utbmSchool.startDate) }} - {{ formatDate(utbmSchool.endDate) }}
           </p>
@@ -205,9 +227,14 @@ function splittedList(list: string): string[] {
           <h3 class="text-lg font-semibold">
             {{ geAprenticeship.title }}
           </h3>
-          <p class="text-sm">
+          <a
+            class="text-sm"
+            :href="geAprenticeship.companyLink"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {{ geAprenticeship.company }}
-          </p>
+          </a>
           <p class="text-sm">
             {{ formatDate(geAprenticeship.startDate) }} - {{ formatDate(geAprenticeship.endDate) }}
           </p>
@@ -224,9 +251,14 @@ function splittedList(list: string): string[] {
         <h3 class="text-lg font-semibold">
           {{ iutSchool.title }}
         </h3>
-        <p class="text-sm">
+        <a
+          class="text-sm"
+          :href="iutSchool.schoolLink"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {{ iutSchool.school }}
-        </p>
+        </a>
         <p class="text-sm">
           {{ formatDate(iutSchool.startDate) }} - {{ formatDate(iutSchool.endDate) }}
         </p>
