@@ -15,7 +15,7 @@ import constants from "@/constants.ts"
       {{ $t('title') }}
     </h2>
     <p
-      class="text-gray-600"
+      class="text-gray-300"
     >
       {{ $t('intro') }}
     </p>
