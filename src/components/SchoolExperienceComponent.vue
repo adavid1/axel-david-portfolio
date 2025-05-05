@@ -11,7 +11,7 @@ const props = defineProps({
 
 <template>
   <div>
-    <h3 class="text-lg font-semibold">
+    <h3 class="text-lg font-semibold text-white">
       {{ props.schoolExp.title }}
     </h3>
     <a

@@ -10,6 +10,8 @@
     "lint": "eslint --fix"
   },
   "dependencies": {
+    "@tsparticles/slim": "^3.8.1",
+    "@tsparticles/vue3": "^3.0.1",
     "@typescript-eslint/eslint-plugin": "^8.18.2",
     "@typescript-eslint/parser": "^8.18.2",
     "@vue/eslint-config-typescript": "^14.2.0",
