@@ -60,7 +60,7 @@ export const utbmSchool = {
   }
   
   const fivesSylepsMission = {
-    title: "Database Developer",
+    title: "DB Developer",
     company: "Fives Syleps",
     companyLink: "https://www.fivesgroup.com/",
     location: "Lorient, France",
@@ -78,7 +78,7 @@ export const utbmSchool = {
   }
   
   const navalGroupMission = {
-    title: "Database Administrator & Developer",
+    title: "DB Admin & Developer",
     company: "NAVAL GROUP",
     companyLink: "https://www.naval-group.com/en/",
     location: "Brest, France",
@@ -129,3 +129,15 @@ const atemeMission = {
     navalGroupMission,
     fivesSylepsMission,
   ]
+
+  export const breizhcardExp = {
+    title: "Full Stack Developer",
+    company: "Breizhcard",
+    companyLink: "https://www.breizhcard.com/",
+    location: "Lorient, France",
+    type: "Volunteer",
+    startDate: "01-07-2023",
+    endDate: null,
+    description: "TODO",
+    stack: ["TODO"],
+  }

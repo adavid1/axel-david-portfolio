@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { formatDate, splittedList } from "@/utils.ts"
+import ExperienceCard from "@/components/ExperienceCard.vue"
 
 const props = defineProps({
     entrepriseExp: {
@@ -10,27 +10,13 @@ const props = defineProps({
 </script>
 
 <template>
-  <div>
-    <h3 class="text-lg font-semibold text-white">
-      {{ props.entrepriseExp.title }}
-    </h3>
-    <a
-      class="text-sm"
-      :href="props.entrepriseExp.companyLink"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {{ props.entrepriseExp.company }}
-    </a>
-    <p class="text-sm">
-      {{ formatDate(props.entrepriseExp.startDate) }} - {{ formatDate(props.entrepriseExp.endDate) }}
-    </p>
-    <p
-      v-for="e in splittedList(props.entrepriseExp.description)"
-      :key="e"
-      class="text-sm"
-    >
-      {{ e }}
-    </p>
-  </div>
+  <ExperienceCard 
+    class="border-purple-950 bg-purple-900"
+    :title="props.entrepriseExp.title"
+    :institution="props.entrepriseExp.company"
+    :link="props.entrepriseExp.companyLink"
+    :start-date="props.entrepriseExp.startDate"
+    :end-date="props.entrepriseExp.endDate"
+    :description="props.entrepriseExp.description"
+  />
 </template>

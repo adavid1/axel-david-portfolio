@@ -2,7 +2,7 @@ const particlesConfig = {
     "autoPlay": true,
     "background": {
       "color": {
-        "value": "#232741"
+        "value": "#000000"
       }
     },
     "backgroundMask": {

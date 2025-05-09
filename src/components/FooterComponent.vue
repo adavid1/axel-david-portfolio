@@ -13,7 +13,7 @@ import githubLogo from '@/assets/github.svg'
       <img
         :src="linkedinLogo"
         alt="LinkedIn logo"
-        class="size-12 transition-all duration-300 hover:invert"
+        class="size-12 invert transition-all duration-300 hover:scale-110"
       >
     </a>
     <a
@@ -24,7 +24,7 @@ import githubLogo from '@/assets/github.svg'
       <img
         :src="githubLogo"
         alt="Github logo"
-        class="size-12 transition-all duration-300 hover:invert"
+        class="size-12 invert transition-all duration-300 hover:scale-110"
       >
     </a>
   </footer>
