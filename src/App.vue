@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import particlesConfig from './particlesConfig'
-import HeaderComponent from './components/HeaderComponent.vue'
-import ExperienceComponent from './components/ExperienceComponent.vue'
-import FooterComponent from './components/FooterComponent.vue'
+import particlesConfig from '@/particlesConfig.json'
+import HeaderComponent from '@/components/HeaderComponent.vue'
+import ExperienceComponent from '@/components/ExperienceComponent.vue'
+import FooterComponent from '@//components/FooterComponent.vue'
 </script>
 
 <template>
