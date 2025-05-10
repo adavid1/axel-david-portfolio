@@ -11,12 +11,12 @@ const props = defineProps({
 
 <template>
   <ExperienceCard 
-    class="border-blue-950 bg-blue-900"
     :title="props.schoolExp.title"
     :institution="props.schoolExp.school"
     :link="props.schoolExp.schoolLink"
     :start-date="props.schoolExp.startDate"
     :end-date="props.schoolExp.endDate"
     :description="props.schoolExp.description"
+    color="blue"
   />
 </template>
