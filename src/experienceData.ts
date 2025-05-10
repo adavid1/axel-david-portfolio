@@ -53,8 +53,8 @@ export const utbmSchool = {
     companyLink: "https://astekgroup.fr/?lang=en",
     location: "Rennes, France",
     type: "Full-time",
-    startDate: "01-01-2021",
-    endDate: "20-12-2024",
+    startDate: "01-12-2020",
+    endDate: "31-12-2024",
     description: "",
     stack: [],
   }
@@ -104,7 +104,7 @@ const atemeMission = {
     location: "Rennes, France",
     type: "Indirect Contract",
     startDate: "01-09-2022",
-    endDate: "20-12-2024",
+    endDate: "31-12-2024",
     description:
     "REMOTE 💻" +
     "- Development across the stack: frontend (VueJs), backend (NodeJs, Express, GraphQL), integration (Docker, Kubernetes)\n" +
