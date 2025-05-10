@@ -1,12 +1,12 @@
 <script setup lang="ts">
+import { computed } from "vue"
 import EnterpriseExperienceComponent from "@/components/EnterpriseExperienceComponent.vue"
 import SchoolExperienceComponent from "@/components/SchoolExperienceComponent.vue"
 
 import { breizhcardExp, astekExp, astekMissions, geApprenticeship, iutSchool, utbmSchool } from "@/experienceData.ts"
-import { computed } from "vue"
 
 const now = computed(() => {
-  const today = new Date();
+    const today = new Date();
     const yyyy = today.getFullYear();
     let mm = today.getMonth() + 1; // Months start at 0!
     let dd = today.getDate();
@@ -17,14 +17,16 @@ const now = computed(() => {
     return dd + '-' + mm + '-' + yyyy;
 })
 
+const [day, month, year] = iutSchool.startDate.split("-")
+const firstExpDate = new Date(Number(year), Number(month) - 1, Number(day))
+
 const monthsSinceFirstExp = computed(() => {
-  const [day, month, year] = iutSchool.startDate.split("-")
-  const firstExpDate = new Date(Number(year), Number(month) - 1, Number(day))
-  const currentDate = new Date()
-  const diffTime = Math.abs(currentDate.getTime() - firstExpDate.getTime())
-  const diffMonths = Math.ceil(diffTime / (1000 * 60 * 60 * 24 * 30.44)) // Average month length
-  return diffMonths
+  const now = new Date()
+  return (now.getFullYear() - firstExpDate.getFullYear()) * 12 + (now.getMonth() - firstExpDate.getMonth())
 })
+
+const yearCount = computed(() => Math.ceil(monthsSinceFirstExp.value / 12)) // Number of years since the first experience
+const monthsOffset = computed(() => new Date().getMonth() + 1) // months since the start of the current year
 
 function monthsBetween(startDate: string, endDate: string | null): number {
   if (!endDate) endDate = now.value
@@ -35,7 +37,6 @@ function monthsBetween(startDate: string, endDate: string | null): number {
   const diffTime = Math.abs(end.getTime() - start.getTime())
   return Math.ceil(diffTime / (1000 * 60 * 60 * 24 * 30.44)) // Average month length
 }
-
 </script>
 
 <template>
@@ -43,6 +44,19 @@ function monthsBetween(startDate: string, endDate: string | null): number {
     class="grid grid-cols-6"
     :style="{ gridTemplateRows: `repeat(${monthsSinceFirstExp}, 15px)` }"
   >
+    <!-- YEAR LINES -->
+    <div
+      v-for="yearIndex in yearCount"
+      :key="yearIndex"
+      class="col-span-6 flex items-center border-t border-gray-400 text-xs text-gray-500"
+      :style="{ gridRow: `${(yearIndex - 1) * 12 + monthsOffset}` }"
+    >
+      <span class="ml-2">
+        {{ new Date().getFullYear() - yearIndex + 1 }}
+      </span>
+    </div>
+
+    <!-- EXPERIENCE COMPONENTS -->
     <EnterpriseExperienceComponent
       class="col-span-2"
       :style="{
