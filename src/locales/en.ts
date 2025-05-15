@@ -1,5 +1,19 @@
 export default Object.freeze({
     title: 'Full Stack Developer',
     intro: 'Full Stack Developer with 3 years of experience in web development, passionate about building scalable and maintainable web applications.',
-    now: 'Today'
+    now: 'Today',
+    iutSchoolName: 'IUT of Saint-Nazaire',
+    utbmSchoolName: 'University of Technology of Belfort-Montbéliard',
+    utbmSchoolTitle: 'IT Engineer by apprenticeship',
+    geApprenticeshipTitle: 'Apprentice IT Engineer',
+    astekExpTitle: 'IT Engineer',
+    fivesSylepsMissionTitle: 'DB Developer',
+    masterDegreeInEngineering: 'Master\'s Degree in Engineering',
+    apprenticeship: 'Apprenticeship',
+    twoYearsTechnicalDegree: 'Two Years Technical Degree',
+    fullTime: 'Full Time',
+    indirectContract: 'Indirect Contract',
+    fullStackDeveloper: 'Full Stack Developer',
+    dbAdminAndDev: 'DB Admin and Dev',
+    volunteer: 'Volunteer',
 })

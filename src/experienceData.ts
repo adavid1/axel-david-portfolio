@@ -1,11 +1,13 @@
+import { t } from './i18nHelper'
+
 // Student's experience data
 
 export const iutSchool = {
     title: "DUT Mesures Physiques",
-    school: "IUT de Saint-Nazaire",
+    school: t("iutSchoolName"),
     schoolLink: "https://iut-sn.univ-nantes.fr/",
     location: "Saint-Nazaire, France",
-    grade: "Diplôme Universitaire de Technologie",
+    grade: t("twoYearsTechnicalDegree"),
     startDate: "01-09-2015",
     endDate: "31-08-2017",
     description:
@@ -13,11 +15,11 @@ export const iutSchool = {
   }
 
 export const utbmSchool = {
-    title: "IT Engineer by apprenticeship",
-    school: "Université de Technologie de Belfort-Montbéliard",
+    title: t("utbmSchoolTitle"),
+    school: t("utbmSchoolName"),
     schoolLink: "https://www.utbm.fr/english/",
     location: "Belfort, France",
-    grade: "Master's Degree in Engineering",
+    grade: t("masterDegreeInEngineering"),
     startDate: "01-09-2017",
     endDate: "31-08-2020",
     description:
@@ -28,11 +30,11 @@ export const utbmSchool = {
   // Professional experience
 
   export const geApprenticeship = {
-    title: "Apprentice IT Engineer",
+    title: t("geApprenticeshipTitle"),
     company: "GENERAL ELECTRIC",
     companyLink: "https://www.ge.com/",
     location: "Belfort, France",
-    type: "Apprenticeship",
+    type: t("apprenticeship"),
     startDate: "01-09-2017",
     endDate: "31-08-2020",
     description:
@@ -48,11 +50,11 @@ export const utbmSchool = {
   }
 
   export const astekExp = {
-    title: "IT Engineer",
+    title: t("astekExpTitle"),
     company: "Astek",
     companyLink: "https://astekgroup.fr/?lang=en",
     location: "Rennes, France",
-    type: "Full-time",
+    type: t("fullTime"),
     startDate: "01-12-2020",
     endDate: "31-12-2024",
     description: "",
@@ -60,11 +62,11 @@ export const utbmSchool = {
   }
   
   const fivesSylepsMission = {
-    title: "DB Developer",
+    title: t("fivesSylepsMissionTitle"),
     company: "Fives Syleps",
     companyLink: "https://www.fivesgroup.com/",
     location: "Lorient, France",
-    type: "Indirect Contract",
+    type: t("indirectContract"),
     startDate: "01-12-2020",
     endDate: "31-07-2021",
     description:
@@ -78,11 +80,11 @@ export const utbmSchool = {
   }
   
   const navalGroupMission = {
-    title: "DB Admin & Developer",
+    title: t("dbAdminAndDev"),
     company: "NAVAL GROUP",
     companyLink: "https://www.naval-group.com/en/",
     location: "Brest, France",
-    type: "Indirect Contract",
+    type: t("indirectContract"),
     startDate: "01-08-2021",
     endDate: "31-08-2022",
     description:
@@ -98,11 +100,11 @@ export const utbmSchool = {
   }
   
 const atemeMission = {
-    title: "Full Stack Developer",
+    title: t("fullStackDeveloper"),
     company: "Ateme",
     companyLink: "https://www.ateme.com/",
     location: "Rennes, France",
-    type: "Indirect Contract",
+    type: t("indirectContract"),
     startDate: "01-09-2022",
     endDate: "31-12-2024",
     description:
@@ -131,11 +133,11 @@ const atemeMission = {
   ]
 
   export const breizhcardExp = {
-    title: "Full Stack Developer",
+    title: t("fullStackDeveloper"),
     company: "Breizhcard",
     companyLink: "https://www.breizhcard.com/",
     location: "Lorient, France",
-    type: "Volunteer",
+    type: t("volunteer"),
     startDate: "01-07-2023",
     endDate: null,
     description: "TODO",
