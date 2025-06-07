@@ -114,8 +114,8 @@ const atemeMission = {
     "- Code quality and best practices: code reviews, testing (Jest, pytest), documentation writing\n" +
     "- Problem solving and troubleshooting: debugging, performance optimization",
     stack: [
-    "VueJs",
-    "NodeJs",
+    "Vue",
+    "Node",
     "Express",
     "GraphQL",
     "Docker",
@@ -141,5 +141,14 @@ const atemeMission = {
     startDate: "01-07-2023",
     endDate: null,
     description: "TODO",
-    stack: ["TODO"],
+    stack: [
+      "Vue",
+      "Node",
+      "Express",
+      "Nuxt",
+      "Docker",
+      "Tailwind",
+      "Jest",
+      "MongoDB",
+      ],
   }
