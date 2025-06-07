@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue"
 import { formatDate, splittedList } from "@/utils.ts"
-import graduationCap from "@/assets/graduation-cap.svg"
+import GraduationCapIcon from "@/components/GraduationCapIcon.vue"
 
 const props = defineProps({
     title: {
@@ -43,12 +43,6 @@ const props = defineProps({
 
 
 const hasGraduationCap = computed(() => props.isSchool)
-
-const svgFilter = computed(() => {
-  return {
-    filter: 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)'
-  }
-})
 </script>
 
 <template>
@@ -56,20 +50,17 @@ const svgFilter = computed(() => {
     <div class="relative size-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
       <!-- Front Face -->
       <div
-        class="absolute flex size-full flex-col items-center justify-center space-y-2 rounded-xl border-2 border-violet-400 bg-violet-300 text-black shadow-lg [backface-visibility:hidden]"
+        class="absolute flex size-full flex-col items-center justify-center space-y-2 overflow-hidden rounded-xl border-2 border-violet-400 bg-violet-300 text-black shadow-lg [backface-visibility:hidden]"
       >
-        <img
+        <GraduationCapIcon
           v-if="hasGraduationCap"
-          :src="graduationCap"
-          class="absolute right-1 top-0 size-20 opacity-80 md:size-24"
-          :style="svgFilter"
-          alt="Graduation cap"
-        >
-        <h3 class="text-base font-semibold text-black md:text-3xl xl:text-5xl">
+          class="absolute inset-0 z-0 size-full fill-transparent stroke-violet-400 stroke-[100] opacity-50"
+        />
+        <h3 class="z-10 text-base font-semibold text-black md:text-3xl xl:text-5xl">
           {{ props.title }}
         </h3>
         <a
-          class="text-sm"
+          class="z-10 text-sm"
           :href="props.link"
           target="_blank"
           rel="noopener noreferrer"
@@ -78,13 +69,13 @@ const svgFilter = computed(() => {
         </a>
         <p
           v-if="props.endDate"
-          class="text-sm"
+          class="z-10 text-sm"
         >
           {{ formatDate(props.startDate) }} - {{ formatDate(props.endDate) }}
         </p>
         <p
           v-else
-          class="text-sm"
+          class="z-10 text-sm"
         >
           {{ formatDate(props.startDate) }} - {{ $t("now") }}
         </p>
@@ -93,13 +84,10 @@ const svgFilter = computed(() => {
       <div
         class="absolute flex size-full flex-col items-center justify-center overflow-hidden rounded-xl border-2 border-violet-400 bg-violet-400 text-black shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]"
       >
-        <img
+        <GraduationCapIcon
           v-if="hasGraduationCap"
-          :src="graduationCap"
-          class="absolute right-1 top-0 size-20 opacity-80 md:size-24"
-          :style="svgFilter"
-          alt="Graduation cap"
-        >
+          class="absolute right-1 top-0 size-20 fill-transparent stroke-black stroke-[20] opacity-80 md:size-24"
+        />
         <h3 class="text-base font-semibold">
           {{ props.title }}
         </h3>
