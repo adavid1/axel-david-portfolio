@@ -2,6 +2,7 @@
 import { computed } from "vue"
 import { formatDate, splittedList } from "@/utils.ts"
 import GraduationCapIcon from "@/components/GraduationCapIcon.vue"
+import GEIcon from "@/components/GEIcon.vue"
 
 const props = defineProps({
     title: {
@@ -34,15 +35,22 @@ const props = defineProps({
         required: false,
         default: () => [],
     },
-    isSchool: {
-        type: Boolean,
+    logo: {
+        type: String,
         required: false,
-        default: false,
+        default: null,
     },
 })
 
+const logo = computed(() => {
+    if (props.logo === "graduation-cap") {
+        return GraduationCapIcon
+    } else if (props.logo === "general-electric") {
+        return GEIcon
+    }
+    return null
+})
 
-const hasGraduationCap = computed(() => props.isSchool)
 </script>
 
 <template>
@@ -52,8 +60,9 @@ const hasGraduationCap = computed(() => props.isSchool)
       <div
         class="absolute flex size-full flex-col items-center justify-center space-y-2 overflow-hidden rounded-xl border-2 border-violet-400 bg-violet-300 text-black shadow-lg [backface-visibility:hidden]"
       >
-        <GraduationCapIcon
-          v-if="hasGraduationCap"
+        <component
+          :is="logo"
+          v-if="logo"
           class="absolute inset-0 z-0 size-full fill-transparent stroke-violet-400 stroke-[100] opacity-50"
         />
         <h3 class="z-10 text-base font-semibold text-black md:text-3xl xl:text-5xl">
@@ -84,8 +93,9 @@ const hasGraduationCap = computed(() => props.isSchool)
       <div
         class="absolute flex size-full flex-col items-center justify-center overflow-hidden rounded-xl border-2 border-violet-400 bg-violet-400 text-black shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]"
       >
-        <GraduationCapIcon
-          v-if="hasGraduationCap"
+        <component
+          :is="logo"
+          v-if="logo"
           class="absolute right-1 top-0 size-20 fill-transparent stroke-black stroke-[20] opacity-80 md:size-24"
         />
         <h3 class="text-base font-semibold">

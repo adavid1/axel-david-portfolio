@@ -11,7 +11,8 @@ export const iutSchool = {
     startDate: "01-09-2015",
     endDate: "31-08-2017",
     description:
-    "Physics - Chemistry - Mathematics - Computer Science - Electronics - Optics - Mechanics - Thermodynamics - Acoustics - Signal Processing - Metrology - Instrumentation - Industrial Data Processing - Quality - Safety - Environment"
+    "Physics - Chemistry - Mathematics - Computer Science - Electronics - Optics - Mechanics - Thermodynamics - Acoustics - Signal Processing - Metrology - Instrumentation - Industrial Data Processing - Quality - Safety - Environment",
+    logo: "graduation-cap",
   }
 
 export const utbmSchool = {
@@ -24,7 +25,8 @@ export const utbmSchool = {
     endDate: "31-08-2020",
     description:
     "- Complex computer systems: analysis, specification, design, modeling, development, administration, and industrialization\n" +
-    "- Project management and leadership - law - marketing - communication - finance"
+    "- Project management and leadership - law - marketing - communication - finance",
+    logo: "graduation-cap",
   }
 
   // Professional experience
@@ -47,6 +49,7 @@ export const utbmSchool = {
     "- Trained users\n" +
     "- Wrote structural documentation",
     stack: ["C#", "WPF", "SQL", "MS SQL Server"],
+    logo: "general-electric",
   }
 
   export const astekExp = {
@@ -59,6 +62,7 @@ export const utbmSchool = {
     endDate: "31-12-2024",
     description: "",
     stack: [],
+    logo: "astek",
   }
   
   const fivesSylepsMission = {
@@ -77,6 +81,7 @@ export const utbmSchool = {
     "- Support and training\n" +
     "- Activity reporting",
     stack: ["C#", "PL/SQL", "Oracle"],
+    logo: "fives-syleps",
   }
   
   const navalGroupMission = {
@@ -97,6 +102,7 @@ export const utbmSchool = {
     "- Decommissioned servers utilized by GPAO NA Cherbourg\n" +
     "- Automated daily SQL data extractions using Visual Basic",
     stack: ["X3", "eBusiness Suite R12", "MEMORY system", "GPAO", "Visual Basic"],
+    logo: "naval-group",
   }
   
 const atemeMission = {
@@ -123,6 +129,7 @@ const atemeMission = {
     "Jest",
     "pytest",
     ],
+    logo: "ateme",
   }
   
   
@@ -151,4 +158,5 @@ const atemeMission = {
       "Jest",
       "MongoDB",
       ],
+    logo: "breizhcard",
   }

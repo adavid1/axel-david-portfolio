@@ -18,6 +18,6 @@ const props = defineProps({
     :end-date="props.entrepriseExp.endDate"
     :description="props.entrepriseExp.description"
     :stack="props.entrepriseExp.stack"
-    color="violet"
+    :logo="props.entrepriseExp.logo"
   />
 </template>
