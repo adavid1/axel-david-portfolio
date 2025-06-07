@@ -35,6 +35,9 @@ importers:
       vue-i18n:
         specifier: '10'
         version: 10.0.5(vue@3.5.13(typescript@5.6.3))
+      vue-router:
+        specifier: ^4.5.1
+        version: 4.5.1(vue@3.5.13(typescript@5.6.3))
     devDependencies:
       '@eslint/js':
         specifier: ^9.16.0
@@ -1455,6 +1458,11 @@ packages:
     engines: {node: '>= 16'}
     peerDependencies:
       vue: ^3.0.0
+
+  vue-router@4.5.1:
+    resolution: {integrity: sha512-ogAF3P97NPm8fJsE4by9dwSYtDwXIY1nFY9T6DyQnGHd1E2Da94w9JIolpe42LJGIl0DwOHBi8TcRPlPGwbTtw==}
+    peerDependencies:
+      vue: ^3.2.0
 
   vue-tsc@2.2.0:
     resolution: {integrity: sha512-gtmM1sUuJ8aSb0KoAFmK9yMxb8TxjewmxqTJ1aKphD5Cbu0rULFY6+UQT51zW7SpUcenfPUuflKyVwyx9Qdnxg==}
@@ -2889,6 +2897,11 @@ snapshots:
     dependencies:
       '@intlify/core-base': 10.0.5
       '@intlify/shared': 10.0.5
+      '@vue/devtools-api': 6.6.4
+      vue: 3.5.13(typescript@5.6.3)
+
+  vue-router@4.5.1(vue@3.5.13(typescript@5.6.3)):
+    dependencies:
       '@vue/devtools-api': 6.6.4
       vue: 3.5.13(typescript@5.6.3)
 

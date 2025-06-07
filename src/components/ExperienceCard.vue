@@ -41,23 +41,23 @@ const props = defineProps({
 })
 
 const frontBgClass = computed(() => {
-  if (props.color === "purple") {
-    return "border-purple-950 bg-purple-900"
+  if (props.color === "violet") {
+    return "border-violet-400 bg-violet-300"
   }
   if (props.color === "blue") {
-    return "border-blue-950 bg-blue-900"
+    return "border-blue-400 bg-blue-300"
   }
-  return "border-gray-950 bg-gray-900"
+  return "border-gray-400 bg-gray-300"
 })
 
 const backBgClass = computed(() => {
-  if (props.color === "purple") {
-    return "border-purple-950 bg-purple-950"
+  if (props.color === "violet") {
+    return "border-violet-400 bg-violet-400"
   }
   if (props.color === "blue") {
-    return "border-blue-950 bg-blue-950"
+    return "border-blue-400 bg-blue-400"
   }
-  return "border-gray-950 bg-gray-950"
+  return "border-gray-400 bg-gray-400"
 })
 </script>
 
@@ -66,10 +66,10 @@ const backBgClass = computed(() => {
     <div class="relative size-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
       <!-- Front Face -->
       <div
-        class="absolute flex size-full flex-col items-center justify-center space-y-2 rounded-xl border-8 text-black shadow-lg [backface-visibility:hidden]"
+        class="absolute flex size-full flex-col items-center justify-center space-y-2 rounded-xl border-2 text-black shadow-lg [backface-visibility:hidden]"
         :class="frontBgClass"
       >
-        <h3 class="text-base font-semibold text-white md:text-3xl xl:text-5xl">
+        <h3 class="text-base font-semibold text-black md:text-3xl xl:text-5xl">
           {{ props.title }}
         </h3>
         <a
@@ -95,10 +95,10 @@ const backBgClass = computed(() => {
       </div>
       <!-- Back Face -->
       <div
-        class="absolute flex size-full flex-col items-center justify-center overflow-hidden rounded-xl border-8 shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]"
+        class="absolute flex size-full flex-col items-center justify-center overflow-hidden rounded-xl border-2 text-black shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]"
         :class="backBgClass"
       >
-        <h3 class="text-base font-semibold text-white">
+        <h3 class="text-base font-semibold">
           {{ props.title }}
         </h3>
         <a
