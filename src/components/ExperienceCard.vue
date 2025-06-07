@@ -35,7 +35,8 @@ const props = defineProps({
     },
     stack: {
         type: Array,
-        required: true,
+        required: false,
+        default: () => [],
     },
 })
 
@@ -123,7 +124,7 @@ const backBgClass = computed(() => {
         <div
           class="size-6"
         />
-        <div v-if="props.stack && props.stack.length > 0">
+        <div v-if="props.stack.length > 0">
           <p
             v-for="e in splittedList(props.stack.join(', '))"
             :key="e"
