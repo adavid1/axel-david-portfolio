@@ -29,11 +29,6 @@ const props = defineProps({
         type: String,
         required: true,
     },
-    color: {
-        type: String,
-        required: false,
-        default: "gray",
-    },
     stack: {
         type: Array,
         required: false,
@@ -46,25 +41,6 @@ const props = defineProps({
     },
 })
 
-const frontBgClass = computed(() => {
-  if (props.color === "violet") {
-    return "border-violet-400 bg-violet-300"
-  }
-  if (props.color === "blue") {
-    return "border-blue-400 bg-blue-300"
-  }
-  return "border-gray-400 bg-gray-300"
-})
-
-const backBgClass = computed(() => {
-  if (props.color === "violet") {
-    return "border-violet-400 bg-violet-400"
-  }
-  if (props.color === "blue") {
-    return "border-blue-400 bg-blue-400"
-  }
-  return "border-gray-400 bg-gray-400"
-})
 
 const hasGraduationCap = computed(() => props.isSchool)
 
@@ -80,8 +56,7 @@ const svgFilter = computed(() => {
     <div class="relative size-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
       <!-- Front Face -->
       <div
-        class="absolute flex size-full flex-col items-center justify-center space-y-2 rounded-xl border-2 text-black shadow-lg [backface-visibility:hidden]"
-        :class="frontBgClass"
+        class="absolute flex size-full flex-col items-center justify-center space-y-2 rounded-xl border-2 border-violet-400 bg-violet-300 text-black shadow-lg [backface-visibility:hidden]"
       >
         <img
           v-if="hasGraduationCap"
@@ -116,8 +91,7 @@ const svgFilter = computed(() => {
       </div>
       <!-- Back Face -->
       <div
-        class="absolute flex size-full flex-col items-center justify-center overflow-hidden rounded-xl border-2 text-black shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]"
-        :class="backBgClass"
+        class="absolute flex size-full flex-col items-center justify-center overflow-hidden rounded-xl border-2 border-violet-400 bg-violet-400 text-black shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]"
       >
         <img
           v-if="hasGraduationCap"

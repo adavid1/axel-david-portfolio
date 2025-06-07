@@ -17,7 +17,6 @@ const props = defineProps({
     :start-date="props.schoolExp.startDate"
     :end-date="props.schoolExp.endDate"
     :description="props.schoolExp.description"
-    color="violet"
     :is-school="true"
   />
 </template>
