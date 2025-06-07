@@ -33,6 +33,10 @@ const props = defineProps({
         required: false,
         default: "gray",
     },
+    stack: {
+        type: Array,
+        required: true,
+    },
 })
 
 const frontBgClass = computed(() => {
@@ -119,13 +123,15 @@ const backBgClass = computed(() => {
         <div
           class="size-6"
         />
-        <p
-          v-for="e in splittedList(props.description)"
-          :key="e"
-          class="text-xs"
-        >
-          {{ e }}
-        </p>
+        <div v-if="props.stack && props.stack.length > 0">
+          <p
+            v-for="e in splittedList(props.stack.join(', '))"
+            :key="e"
+            class="text-xs"
+          >
+            {{ e }}
+          </p>
+        </div>
       </div>
     </div>
   </div>

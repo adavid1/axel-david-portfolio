@@ -17,6 +17,7 @@ const props = defineProps({
     :start-date="props.entrepriseExp.startDate"
     :end-date="props.entrepriseExp.endDate"
     :description="props.entrepriseExp.description"
+    :stack="props.entrepriseExp.stack"
     color="purple"
   />
 </template>
