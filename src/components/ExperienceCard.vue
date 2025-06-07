@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue"
 import { formatDate, splittedList } from "@/utils.ts"
+import graduationCap from "@/assets/graduation-cap.svg"
 
 const props = defineProps({
     title: {
@@ -38,6 +39,11 @@ const props = defineProps({
         required: false,
         default: () => [],
     },
+    isSchool: {
+        type: Boolean,
+        required: false,
+        default: false,
+    },
 })
 
 const frontBgClass = computed(() => {
@@ -59,6 +65,14 @@ const backBgClass = computed(() => {
   }
   return "border-gray-400 bg-gray-400"
 })
+
+const hasGraduationCap = computed(() => props.isSchool)
+
+const svgFilter = computed(() => {
+  return {
+    filter: 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)'
+  }
+})
 </script>
 
 <template>
@@ -69,6 +83,13 @@ const backBgClass = computed(() => {
         class="absolute flex size-full flex-col items-center justify-center space-y-2 rounded-xl border-2 text-black shadow-lg [backface-visibility:hidden]"
         :class="frontBgClass"
       >
+        <img
+          v-if="hasGraduationCap"
+          :src="graduationCap"
+          class="absolute right-1 top-0 size-20 opacity-80 md:size-24"
+          :style="svgFilter"
+          alt="Graduation cap"
+        >
         <h3 class="text-base font-semibold text-black md:text-3xl xl:text-5xl">
           {{ props.title }}
         </h3>
@@ -98,6 +119,13 @@ const backBgClass = computed(() => {
         class="absolute flex size-full flex-col items-center justify-center overflow-hidden rounded-xl border-2 text-black shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]"
         :class="backBgClass"
       >
+        <img
+          v-if="hasGraduationCap"
+          :src="graduationCap"
+          class="absolute right-1 top-0 size-20 opacity-80 md:size-24"
+          :style="svgFilter"
+          alt="Graduation cap"
+        >
         <h3 class="text-base font-semibold">
           {{ props.title }}
         </h3>
