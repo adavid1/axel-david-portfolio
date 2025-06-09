@@ -54,7 +54,7 @@ const logo = computed(() => {
 </script>
 
 <template>
-  <div class="group m-1 h-full w-28 rounded-3xl [perspective:1000px] md:w-64 xl:p-4">
+  <div class="group m-1 h-full w-28 rounded-3xl [perspective:1000px] md:w-64">
     <div class="relative size-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
       <!-- Front Face -->
       <div
@@ -66,7 +66,7 @@ const logo = computed(() => {
           v-if="logo"
           class="absolute inset-0 z-0 size-full fill-transparent stroke-violet-400 stroke-[100] opacity-50"
         />
-        <h3 class="z-10 text-base font-semibold text-black md:text-3xl xl:text-5xl">
+        <h3 class="z-10 text-base font-semibold text-black md:text-3xl">
           {{ props.title }}
         </h3>
         <a
