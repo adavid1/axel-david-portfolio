@@ -58,7 +58,8 @@ const logo = computed(() => {
     <div class="relative size-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
       <!-- Front Face -->
       <div
-        class="absolute flex size-full flex-col items-center justify-center space-y-2 overflow-hidden rounded-xl border-2 border-violet-400 bg-violet-300 text-black shadow-lg [backface-visibility:hidden]"
+        class="absolute flex size-full flex-col items-center justify-center space-y-2 overflow-hidden rounded-xl border-2 border-violet-400 bg-violet-300 text-black shadow-lg"
+        style="backface-visibility: hidden; transform: rotateY(0deg);"
       >
         <component
           :is="logo"
@@ -91,7 +92,8 @@ const logo = computed(() => {
       </div>
       <!-- Back Face -->
       <div
-        class="absolute flex size-full flex-col items-center justify-center overflow-hidden rounded-xl border-2 border-violet-400 bg-violet-400 text-black shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]"
+        class="absolute flex size-full flex-col items-center justify-center overflow-hidden rounded-xl border-2 border-violet-400 bg-violet-400 text-black shadow-lg"
+        style="backface-visibility: hidden; transform: rotateY(180deg);"
       >
         <component
           :is="logo"
