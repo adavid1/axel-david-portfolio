@@ -4,7 +4,7 @@ A modern, professional portfolio website built with Vue.js 3 and TypeScript, sho
 
 ## 🌐 Live Demo
 
-Visit the portfolio at [https://axel-david.fr/](https://axel-david.fr/)
+Visit the portfolio at [axel-david.fr](https://axel-david.fr/)
 
 ## 🚀 Tech Stack
 
