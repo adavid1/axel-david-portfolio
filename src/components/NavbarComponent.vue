@@ -10,47 +10,47 @@ const toggleMobileMenu = () => {
 </script>
 
 <template>
-  <nav class="fixed inset-x-0 top-0 z-50 bg-black/80 backdrop-blur-lg border-b border-gray-800/50">
+  <nav class="fixed inset-x-0 top-0 z-50 border-b border-gray-800/50 bg-black/80 backdrop-blur-lg">
     <div class="container mx-auto px-4">
       <div class="flex h-16 items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center">
           <RouterLink
             to="/"
-            class="text-xl font-bold bg-gradient-to-r from-violet-400 to-purple-500 bg-clip-text text-transparent hover:from-violet-300 hover:to-purple-400 transition-all duration-300"
+            class="bg-gradient-to-r from-violet-400 to-purple-500 bg-clip-text text-xl font-bold text-transparent transition-all duration-300 hover:from-violet-300 hover:to-purple-400"
           >
             Axel David
           </RouterLink>
         </div>
 
         <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-1">
+        <div class="hidden space-x-1 md:flex">
           <RouterLink
             to="/timeline"
-            class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300"
+            class="rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300"
             :class="{ 
               'bg-violet-600 text-white shadow-lg shadow-violet-600/25': $route.path === '/timeline',
-              'text-gray-300 hover:text-white hover:bg-gray-800/50': $route.path !== '/timeline' 
+              'text-gray-300 hover:bg-gray-800/50 hover:text-white': $route.path !== '/timeline' 
             }"
           >
             Timeline
           </RouterLink>
           <RouterLink
             to="/projects"
-            class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300"
+            class="rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300"
             :class="{ 
               'bg-violet-600 text-white shadow-lg shadow-violet-600/25': $route.path === '/projects',
-              'text-gray-300 hover:text-white hover:bg-gray-800/50': $route.path !== '/projects' 
+              'text-gray-300 hover:bg-gray-800/50 hover:text-white': $route.path !== '/projects' 
             }"
           >
             Projects
           </RouterLink>
           <RouterLink
             to="/about"
-            class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300"
+            class="rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300"
             :class="{ 
               'bg-violet-600 text-white shadow-lg shadow-violet-600/25': $route.path === '/about',
-              'text-gray-300 hover:text-white hover:bg-gray-800/50': $route.path !== '/about' 
+              'text-gray-300 hover:bg-gray-800/50 hover:text-white': $route.path !== '/about' 
             }"
           >
             About
@@ -61,9 +61,9 @@ const toggleMobileMenu = () => {
         <div class="md:hidden">
           <button
             @click="toggleMobileMenu"
-            class="p-2 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-300"
+            class="rounded-lg p-2 text-gray-300 transition-all duration-300 hover:bg-gray-800/50 hover:text-white"
           >
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path 
                 v-if="!isMobileMenuOpen"
                 stroke-linecap="round" 
@@ -86,16 +86,16 @@ const toggleMobileMenu = () => {
       <!-- Mobile Menu -->
       <div 
         v-if="isMobileMenuOpen"
-        class="md:hidden border-t border-gray-800/50 bg-black/90 backdrop-blur-lg"
+        class="border-t border-gray-800/50 bg-black/90 backdrop-blur-lg md:hidden"
       >
-        <div class="px-2 pt-2 pb-3 space-y-1">
+        <div class="space-y-1 px-2 pb-3 pt-2">
           <RouterLink
             to="/timeline"
             @click="isMobileMenuOpen = false"
-            class="block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300"
+            class="block rounded-lg px-3 py-2 text-base font-medium transition-all duration-300"
             :class="{ 
               'bg-violet-600 text-white': $route.path === '/timeline',
-              'text-gray-300 hover:text-white hover:bg-gray-800/50': $route.path !== '/timeline' 
+              'text-gray-300 hover:bg-gray-800/50 hover:text-white': $route.path !== '/timeline' 
             }"
           >
             Timeline
@@ -103,10 +103,10 @@ const toggleMobileMenu = () => {
           <RouterLink
             to="/projects"
             @click="isMobileMenuOpen = false"
-            class="block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300"
+            class="block rounded-lg px-3 py-2 text-base font-medium transition-all duration-300"
             :class="{ 
               'bg-violet-600 text-white': $route.path === '/projects',
-              'text-gray-300 hover:text-white hover:bg-gray-800/50': $route.path !== '/projects' 
+              'text-gray-300 hover:bg-gray-800/50 hover:text-white': $route.path !== '/projects' 
             }"
           >
             Projects
@@ -114,10 +114,10 @@ const toggleMobileMenu = () => {
           <RouterLink
             to="/about"
             @click="isMobileMenuOpen = false"
-            class="block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300"
+            class="block rounded-lg px-3 py-2 text-base font-medium transition-all duration-300"
             :class="{ 
               'bg-violet-600 text-white': $route.path === '/about',
-              'text-gray-300 hover:text-white hover:bg-gray-800/50': $route.path !== '/about' 
+              'text-gray-300 hover:bg-gray-800/50 hover:text-white': $route.path !== '/about' 
             }"
           >
             About
