@@ -20,6 +20,7 @@ export const streamingMultichat = {
         "React",
         "Node",
         "Express",
+        "WebSocket",
         "Docker",
         ],
     year: "2025"
