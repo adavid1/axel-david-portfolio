@@ -24,6 +24,14 @@ import { RouterLink } from 'vue-router'
             Timeline
           </RouterLink>
           <RouterLink
+            to="/projects"
+            class="transition-colors"
+            :class="{ 'text-violet-600 hover:text-violet-600': $route.path === '/projects',
+                      'text-gray-600 hover:text-violet-700': $route.path !== '/projects' }"
+          >
+            Projects
+          </RouterLink>
+          <RouterLink
             to="/about"
             class="transition-colors"
             :class="{ 'text-violet-600 hover:text-violet-600': $route.path === '/about',
