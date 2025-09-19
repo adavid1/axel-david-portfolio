@@ -1,14 +1,13 @@
-import js from '@eslint/js'
-import vueTsEslintConfig from '@vue/eslint-config-typescript'
-import eslintPluginVue from 'eslint-plugin-vue'
-import ts from 'typescript-eslint'
+import pluginVue from 'eslint-plugin-vue'
+import {
+  defineConfigWithVueTs,
+  vueTsConfigs,
+} from '@vue/eslint-config-typescript'
 import tailwind from "eslint-plugin-tailwindcss"
 
-export default ts.config(
-  js.configs.recommended,
-  ...ts.configs.recommended,
-  ...eslintPluginVue.configs['flat/recommended'],
-  ...vueTsEslintConfig(),
+export default defineConfigWithVueTs(
+  pluginVue.configs['flat/essential'],
+  vueTsConfigs.recommended,
   ...tailwind.configs["flat/recommended"],
   {
     files: ['*.vue', '*.js', '*.ts'],
