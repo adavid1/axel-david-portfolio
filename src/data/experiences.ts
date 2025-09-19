@@ -1,4 +1,4 @@
-import { t } from './i18nHelper'
+import { t } from '../i18nHelper'
 
 // Student's experience data
 

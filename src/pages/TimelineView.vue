@@ -3,7 +3,7 @@ import { computed } from "vue"
 import EnterpriseExperienceComponent from "@/components/EnterpriseExperienceComponent.vue"
 import SchoolExperienceComponent from "@/components/SchoolExperienceComponent.vue"
 
-import { breizhcardExp, astekExp, astekMissions, geApprenticeship, iutSchool, utbmSchool } from "@/experienceData.ts"
+import { breizhcardExp, astekExp, astekMissions, geApprenticeship, iutSchool, utbmSchool } from "@/data/experiences"
 
 const now = computed(() => {
     const today = new Date();
