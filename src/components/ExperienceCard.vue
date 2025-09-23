@@ -1,62 +1,38 @@
 <script setup lang="ts">
 import { computed } from "vue"
-import { formatDate, splittedList } from "@/utils.ts"
+import { formatDate } from "@/utils.ts"
 import GraduationCapIcon from "@/components/GraduationCapIcon.vue"
 import GEIcon from "@/components/GEIcon.vue"
 
-const props = defineProps({
-    title: {
-        type: String,
-        required: true,
-    },
-    institution: {
-        type: String,
-        required: true,
-    },
-    link: {
-        type: String,
-        required: true,
-    },
-    startDate: {
-        type: String,
-        required: true,
-    },
-    endDate: {
-        type: String,
-        required: false,
-        default: null,
-    },
-    description: {
-        type: String,
-        required: true,
-    },
-    stack: {
-        type: Array,
-        required: false,
-        default: () => [],
-    },
-    logo: {
-        type: String,
-        required: false,
-        default: null,
-    },
+type LogoType = "graduation-cap" | "general-electric" | null
+
+interface Props {
+  title: string
+  institution: string
+  link: string
+  startDate: string
+  endDate?: string | null
+  description: string
+  stack?: string[]
+  logo?: LogoType
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  endDate: null,
+  stack: () => [],
+  logo: null,
 })
 
 const logo = computed(() => {
-    if (props.logo === "graduation-cap") {
-        return GraduationCapIcon
-    } else if (props.logo === "general-electric") {
-        return GEIcon
-    }
-    return null
+  if (props.logo === "graduation-cap") {
+    return GraduationCapIcon
+  } else if (props.logo === "general-electric") {
+    return GEIcon
+  }
+  return null
 })
 
 const isEducation = computed(() => props.logo === "graduation-cap")
-const cardGradient = computed(() => {
-  return isEducation.value 
-    ? 'from-amber-400 to-orange-500' 
-    : 'from-violet-400 to-purple-500'
-})
 
 const cardBgGradient = computed(() => {
   return isEducation.value 
@@ -102,7 +78,7 @@ const hoverBorderColor = computed(() => {
         <!-- Animated background orb -->
         <div class="absolute inset-0 opacity-30">
           <div 
-            class="absolute top-1/2 left-1/2 w-32 h-32 -translate-x-1/2 -translate-y-1/2 rounded-full blur-xl transition-all duration-700 group-hover:scale-125"
+            class="absolute left-1/2 top-1/2 size-32 -translate-x-1/2 -translate-y-1/2 rounded-full blur-xl transition-all duration-700 group-hover:scale-125"
             :class="`bg-gradient-to-r ${cardBgGradient}`"
           ></div>
         </div>

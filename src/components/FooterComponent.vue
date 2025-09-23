@@ -5,15 +5,15 @@ import constants from '@/constants'
 </script>
 
 <template>
-  <footer class="relative border-t border-gray-800/50 bg-black/80 backdrop-blur-lg mt-20">
-    <div class="max-w-6xl mx-auto px-4 py-12">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <footer class="relative mt-20 border-t border-gray-800/50 bg-black/80 backdrop-blur-lg">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
         <!-- Brand Section -->
         <div class="space-y-4">
-          <h3 class="text-xl font-bold bg-gradient-to-r from-violet-400 to-purple-500 bg-clip-text text-transparent">
+          <h3 class="bg-gradient-to-r from-violet-400 to-purple-500 bg-clip-text text-xl font-bold text-transparent">
             {{ constants.fullname }}
           </h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
+          <p class="text-sm leading-relaxed text-gray-400">
             Full Stack Developer passionate about building scalable and maintainable web applications. 
             Always eager to learn new technologies and solve complex problems.
           </p>
@@ -23,16 +23,16 @@ import constants from '@/constants'
         <div class="space-y-4">
           <h4 class="text-lg font-semibold text-white">Quick Links</h4>
           <nav class="flex flex-col space-y-2">
-            <RouterLink to="/" class="text-gray-400 hover:text-violet-400 transition-colors duration-300 text-sm">
+            <RouterLink to="/" class="text-sm text-gray-400 transition-colors duration-300 hover:text-violet-400">
               Home
             </RouterLink>
-            <RouterLink to="/timeline" class="text-gray-400 hover:text-violet-400 transition-colors duration-300 text-sm">
+            <RouterLink to="/timeline" class="text-sm text-gray-400 transition-colors duration-300 hover:text-violet-400">
               Professional Timeline
             </RouterLink>
-            <RouterLink to="/projects" class="text-gray-400 hover:text-violet-400 transition-colors duration-300 text-sm">
+            <RouterLink to="/projects" class="text-sm text-gray-400 transition-colors duration-300 hover:text-violet-400">
               My Projects
             </RouterLink>
-            <RouterLink to="/projects/breizhcard" class="text-gray-400 hover:text-violet-400 transition-colors duration-300 text-sm">
+            <RouterLink to="/projects/breizhcard" class="text-sm text-gray-400 transition-colors duration-300 hover:text-violet-400">
               Featured: Breizhcard
             </RouterLink>
           </nav>
@@ -46,13 +46,13 @@ import constants from '@/constants'
               href="https://www.linkedin.com/in/axel-david-297346143/"
               target="_blank"
               rel="noopener noreferrer"
-              class="group p-3 bg-gray-800/50 hover:bg-violet-600/20 border border-gray-700/50 hover:border-violet-500/50 rounded-xl transition-all duration-300"
+              class="group rounded-xl border border-gray-700/50 bg-gray-800/50 p-3 transition-all duration-300 hover:border-violet-500/50 hover:bg-violet-600/20"
               aria-label="LinkedIn Profile"
             >
               <img
                 :src="linkedinLogo"
                 alt="LinkedIn"
-                class="w-5 h-5 invert group-hover:invert-0 group-hover:brightness-0 group-hover:saturate-100 group-hover:filter-none transition-all duration-300"
+                class="size-5 invert transition-all duration-300 group-hover:brightness-0 group-hover:invert-0 group-hover:saturate-100 group-hover:filter-none"
                 style="filter: invert(1) sepia(1) saturate(5) hue-rotate(200deg) brightness(1.2);"
               >
             </a>
@@ -60,21 +60,21 @@ import constants from '@/constants'
               href="https://github.com/adavid1"
               target="_blank"
               rel="noopener noreferrer"
-              class="group p-3 bg-gray-800/50 hover:bg-violet-600/20 border border-gray-700/50 hover:border-violet-500/50 rounded-xl transition-all duration-300"
+              class="group rounded-xl border border-gray-700/50 bg-gray-800/50 p-3 transition-all duration-300 hover:border-violet-500/50 hover:bg-violet-600/20"
               aria-label="GitHub Profile"
             >
               <img
                 :src="githubLogo"
                 alt="GitHub"
-                class="w-5 h-5 invert group-hover:invert-0 group-hover:brightness-0 group-hover:saturate-100 transition-all duration-300"
+                class="size-5 invert transition-all duration-300 group-hover:brightness-0 group-hover:invert-0 group-hover:saturate-100"
                 style="filter: invert(1);"
               >
             </a>
           </div>
           
           <!-- Location -->
-          <div class="flex items-center text-gray-400 text-sm">
-            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="flex items-center text-sm text-gray-400">
+            <svg class="mr-2 size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
@@ -84,8 +84,8 @@ import constants from '@/constants'
       </div>
 
       <!-- Bottom Bar -->
-      <div class="mt-12 pt-6 border-t border-gray-800/50 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-        <div class="text-gray-500 text-sm">
+      <div class="mt-12 flex flex-col items-center justify-between space-y-4 border-t border-gray-800/50 pt-6 md:flex-row md:space-y-0">
+        <div class="text-sm text-gray-500">
           © {{ new Date().getFullYear() }} {{ constants.fullname }}. Built with Vue.js & Tailwind CSS.
         </div>
         
@@ -94,7 +94,7 @@ import constants from '@/constants'
           <span 
             v-for="tech in ['Vue.js', 'TypeScript', 'Tailwind CSS']" 
             :key="tech"
-            class="px-2 py-1 bg-gray-800/30 border border-gray-700/50 rounded text-xs text-gray-400"
+            class="rounded border border-gray-700/50 bg-gray-800/30 px-2 py-1 text-xs text-gray-400"
           >
             {{ tech }}
           </span>
@@ -103,6 +103,6 @@ import constants from '@/constants'
     </div>
 
     <!-- Gradient Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-t from-violet-900/5 to-transparent pointer-events-none"></div>
+    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-violet-900/5 to-transparent"></div>
   </footer>
 </template>

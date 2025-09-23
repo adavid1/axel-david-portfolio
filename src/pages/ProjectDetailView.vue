@@ -346,6 +346,6 @@ This project demonstrates advanced automation capabilities, including web scrapi
 }
 
 const project = computed(() => {
-  return projects[slug] || null
+  return projects[slug as keyof typeof projects] || null
 })
 </script>
