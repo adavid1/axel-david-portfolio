@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import TimelineView from '@/pages/TimelineView.vue'
-import AboutView from '@/pages/AboutView.vue'
+import HomeView from '@/pages/HomeView.vue'
 import ProjectsView from '@/pages/ProjectsView.vue'
 import BreizhcardDetailView from '@/pages/BreizhcardDetailView.vue'
 import ProjectDetailView from '@/pages/ProjectDetailView.vue'
@@ -10,12 +10,12 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/about'
+      name: 'home',
+      component: HomeView
     },
     {
       path: '/about',
-      name: 'about',
-      component: AboutView
+      redirect: '/'
     },
     {
       path: '/timeline',
