@@ -1,173 +1,211 @@
-<script setup lang="ts">
-import { computed } from "vue"
-import { formatDate } from "@/utils.ts"
-import GraduationCapIcon from "@/components/GraduationCapIcon.vue"
-import GEIcon from "@/components/GEIcon.vue"
-
-type LogoType = "graduation-cap" | "general-electric" | null
-
-interface Props {
-  title: string
-  institution: string
-  link: string
-  startDate: string
-  endDate?: string | null
-  description: string
-  stack?: string[]
-  logo?: LogoType
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  endDate: null,
-  stack: () => [],
-  logo: null,
-})
-
-const logo = computed(() => {
-  if (props.logo === "graduation-cap") {
-    return GraduationCapIcon
-  } else if (props.logo === "general-electric") {
-    return GEIcon
-  }
-  return null
-})
-
-const isEducation = computed(() => props.logo === "graduation-cap")
-
-const cardBgGradient = computed(() => {
-  return isEducation.value 
-    ? 'from-amber-400 to-orange-500' 
-    : 'from-violet-400 to-purple-500'
-})
-
-const borderColor = computed(() => {
-  return isEducation.value 
-    ? 'border-amber-400/50' 
-    : 'border-violet-400/50'
-})
-
-const hoverBorderColor = computed(() => {
-  return isEducation.value 
-    ? 'hover:border-amber-400' 
-    : 'hover:border-violet-400'
-})
-</script>
-
 <template>
-  <div class="group m-1 h-full w-28 rounded-3xl [perspective:1000px] md:w-64">
-    <div class="relative size-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-      <!-- Front Face -->
-      <div
-        class="absolute flex size-full flex-col items-center justify-center space-y-2 overflow-hidden rounded-2xl border-2 shadow-2xl backdrop-blur-sm transition-all duration-500 group-hover:shadow-xl"
-        :class="[borderColor, hoverBorderColor]"
-        :style="`
-          background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 100%), 
-                      linear-gradient(135deg, ${isEducation ? 'rgba(251,191,36,0.1)' : 'rgba(139,92,246,0.1)'} 0%, 
-                                                ${isEducation ? 'rgba(249,115,22,0.05)' : 'rgba(147,51,234,0.05)'} 100%);
-          backface-visibility: hidden; 
-          transform: rotateY(0deg);
-        `"
-      >
-        <component
-          :is="logo"
-          v-if="logo"
-          class="absolute inset-0 z-0 size-full fill-transparent opacity-20 transition-opacity duration-500 group-hover:opacity-30"
-          :class="isEducation ? 'stroke-amber-400 stroke-[100]' : 'stroke-violet-400 stroke-[100]'"
-        />
-        
-        <!-- Animated background orb -->
-        <div class="absolute inset-0 opacity-30">
-          <div 
-            class="absolute left-1/2 top-1/2 size-32 -translate-x-1/2 -translate-y-1/2 rounded-full blur-xl transition-all duration-700 group-hover:scale-125"
-            :class="`bg-gradient-to-r ${cardBgGradient}`"
-          ></div>
-        </div>
-        
-        <h3 class="z-10 text-center text-base font-bold text-white drop-shadow-lg md:text-2xl">
-          {{ props.title }}
-        </h3>
-        <a
-          class="z-10 text-center text-sm font-medium text-white/90 transition-colors hover:text-white"
-          :href="props.link"
-          target="_blank"
-          rel="noopener noreferrer"
+  <div 
+    class="group relative h-full cursor-pointer rounded-2xl border border-gray-800/50 bg-gray-900/50 p-6 transition-all duration-300 hover:scale-105 hover:border-violet-500/30 hover:shadow-xl"
+    @click="$emit('click')"
+  >
+    <!-- Type indicator -->
+    <div class="mb-4 flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <div 
+          class="flex size-8 items-center justify-center rounded-full"
+          :class="typeConfig.bgColor"
         >
-          {{ props.institution }}
-        </a>
-        <div class="z-10 text-center">
-          <p v-if="props.endDate" class="text-sm text-white/80">
-            {{ formatDate(props.startDate) }} - {{ formatDate(props.endDate) }}
-          </p>
-          <p v-else class="text-sm text-white/80">
-            {{ formatDate(props.startDate) }} - {{ $t("now") }}
-          </p>
+          <component :is="typeConfig.icon" class="size-4 text-white" />
         </div>
+        <span 
+          class="text-xs font-medium uppercase tracking-wider"
+          :class="typeConfig.textColor"
+        >
+          {{ typeConfig.label }}
+        </span>
       </div>
       
-      <!-- Back Face -->
-      <div
-        class="absolute flex size-full flex-col items-start justify-start overflow-hidden rounded-2xl border-2 p-4 shadow-2xl backdrop-blur-sm"
-        :class="[borderColor]"
-        :style="`
-          background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%), 
-                      linear-gradient(135deg, ${isEducation ? 'rgba(251,191,36,0.2)' : 'rgba(139,92,246,0.2)'} 0%, 
-                                                ${isEducation ? 'rgba(249,115,22,0.1)' : 'rgba(147,51,234,0.1)'} 100%);
-          backface-visibility: hidden; 
-          transform: rotateY(180deg);
-        `"
+      <!-- External link if available -->
+      <a 
+        v-if="experience.companyLink || experience.schoolLink"
+        :href="experience.companyLink || experience.schoolLink"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex size-6 items-center justify-center rounded-full bg-gray-800/50 text-gray-400 transition-colors hover:bg-violet-600/20 hover:text-violet-400"
+        @click.stop
       >
-        <component
-          :is="logo"
-          v-if="logo"
-          class="absolute right-2 top-2 size-16 fill-transparent opacity-60 md:size-20"
-          :class="isEducation ? 'stroke-amber-400 stroke-[20]' : 'stroke-violet-400 stroke-[20]'"
-        />
+        <svg class="size-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Content -->
+    <div class="space-y-3">
+      <!-- Title -->
+      <h3 class="text-lg font-bold leading-tight text-white">
+        {{ experience.title }}
+      </h3>
+      
+      <!-- Institution/Company -->
+      <div class="space-y-1">
+        <p 
+          class="font-medium transition-colors"
+          :class="typeConfig.textColor"
+        >
+          {{ experience.company || experience.school }}
+        </p>
         
-        <div class="flex h-full flex-col justify-between">
-          <div>
-            <h3 class="mb-2 text-sm font-bold text-white md:text-lg">
-              {{ props.title }}
-            </h3>
-            <a
-              class="mb-3 block text-xs font-medium transition-colors hover:text-white md:text-sm"
-              :class="isEducation ? 'text-amber-300 hover:text-amber-200' : 'text-violet-300 hover:text-violet-200'"
-              :href="props.link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {{ props.institution }}
-            </a>
-            <p class="mb-4 text-xs text-white/80">
-              {{ props.endDate ? `${formatDate(props.startDate)} - ${formatDate(props.endDate)}` : `${formatDate(props.startDate)} - ${$t("now")}` }}
-            </p>
-          </div>
-          
-          <div v-if="props.stack.length > 0" class="mt-auto">
-            <div class="mb-2 text-xs font-semibold text-white/90">Tech Stack:</div>
-            <div class="flex flex-wrap gap-1">
-              <span
-                v-for="tech in props.stack.slice(0, 3)"
-                :key="tech"
-                class="rounded-full border px-2 py-1 text-xs transition-all"
-                :class="isEducation 
-                  ? 'border-amber-400/30 bg-amber-400/10 text-amber-200' 
-                  : 'border-violet-400/30 bg-violet-400/10 text-violet-200'"
-              >
-                {{ tech }}
-              </span>
-              <span
-                v-if="props.stack.length > 3"
-                class="rounded-full border px-2 py-1 text-xs text-white/60"
-                :class="isEducation 
-                  ? 'border-amber-400/20 bg-amber-400/5' 
-                  : 'border-violet-400/20 bg-violet-400/5'"
-              >
-                +{{ props.stack.length - 3 }}
-              </span>
-            </div>
-          </div>
+        <!-- Consulting company reference -->
+        <p v-if="experience.consultingCompany" class="text-xs text-gray-500">
+          via 
+          <a 
+            :href="experience.consultingCompanyLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-violet-400 transition-colors hover:text-violet-300"
+            @click.stop
+          >
+            {{ experience.consultingCompany }}
+          </a>
+        </p>
+      </div>
+      
+      <!-- Date range -->
+      <p class="text-sm text-gray-400">
+        {{ formatDateRange(experience.startDate, experience.endDate) }}
+        <span v-if="!experience.endDate" class="ml-1 inline-block size-2 rounded-full bg-green-500"></span>
+      </p>
+      
+      <!-- Location (if available) -->
+      <p v-if="experience.location" class="flex items-center text-sm text-gray-500" :class="{ 'flex-row-reverse': !isLeft }">
+        <svg class="mx-1 size-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        {{ experience.location }}
+      </p>
+      
+      <!-- Tech stack for work experiences -->
+      <div v-if="experience.stack && experience.stack.length > 0" class="mt-4">
+        <div class="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400" :class="{ 'text-right': !isLeft, 'text-left': isLeft }">
+          Tech Stack
+        </div>
+        <div class="flex flex-wrap gap-1" :class="{ 'flex-row-reverse': !isLeft }">
+          <span
+            v-for="tech in experience.stack.slice(0, 4)"
+            :key="tech"
+            class="rounded border px-2 py-1 text-xs transition-all"
+            :class="typeConfig.stackClasses"
+          >
+            {{ tech }}
+          </span>
+          <span
+            v-if="experience.stack.length > 4"
+            class="rounded border border-gray-600/30 bg-gray-600/10 px-2 py-1 text-xs text-gray-400"
+          >
+            +{{ experience.stack.length - 4 }}
+          </span>
         </div>
       </div>
     </div>
+
+    <!-- Hover effect overlay -->
+    <div 
+      class="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+      :class="typeConfig.hoverOverlay"
+    ></div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { computed } from 'vue'
+
+interface Props {
+  experience: {
+    title: string
+    company?: string
+    school?: string
+    companyLink?: string
+    schoolLink?: string
+    startDate: string
+    endDate?: string | null
+    location?: string
+    stack?: string[]
+    type: 'work' | 'education'
+    category?: string
+    consultingCompany?: string
+    consultingCompanyLink?: string
+  },
+  isLeft: boolean
+}
+
+interface Emits {
+  (e: 'click'): void
+}
+
+const props = defineProps<Props>()
+defineEmits<Emits>()
+
+const typeConfig = computed(() => {
+  if (props.experience.type === 'education') {
+    return {
+      icon: 'AcademicCapIcon',
+      label: 'Education',
+      bgColor: 'bg-gradient-to-br from-amber-500 to-orange-600',
+      textColor: 'text-amber-300',
+      stackClasses: 'border-amber-400/30 bg-amber-400/10 text-amber-200',
+      hoverOverlay: 'bg-gradient-to-r from-amber-600/10 to-orange-600/10'
+    }
+  }
+  
+  // Work experience
+  const category = props.experience.category
+  
+  if (category === 'volunteer') {
+    return {
+      icon: 'HeartIcon',
+      label: 'Volunteer',
+      bgColor: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-300',
+      stackClasses: 'border-green-400/30 bg-green-400/10 text-green-200',
+      hoverOverlay: 'bg-gradient-to-r from-green-600/10 to-emerald-600/10'
+    }
+  }
+  
+  if (category === 'apprenticeship') {
+    return {
+      icon: 'CogIcon',
+      label: 'Apprenticeship',
+      bgColor: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-300',
+      stackClasses: 'border-blue-400/30 bg-blue-400/10 text-blue-200',
+      hoverOverlay: 'bg-gradient-to-r from-blue-600/10 to-indigo-600/10'
+    }
+  }
+  
+  // Default work experience
+  return {
+    icon: 'BriefcaseIcon',
+    label: 'Professional',
+    bgColor: 'bg-gradient-to-br from-violet-500 to-purple-600',
+    textColor: 'text-violet-300',
+    stackClasses: 'border-violet-400/30 bg-violet-400/10 text-violet-200',
+    hoverOverlay: 'bg-gradient-to-r from-violet-600/10 to-purple-600/10'
+  }
+})
+
+function formatDateRange(startDate: string, endDate: string | null | undefined): string {
+  const parseDate = (dateStr: string) => {
+    const [day, month, year] = dateStr.split('-')
+    return new Date(Number(year), Number(month) - 1, Number(day))
+  }
+  
+  const formatDate = (date: Date) => {
+    return date.toLocaleDateString('en-US', { 
+      month: 'short', 
+      year: 'numeric' 
+    })
+  }
+  
+  const start = formatDate(parseDate(startDate))
+  const end = endDate ? formatDate(parseDate(endDate)) : 'Present'
+  
+  return start === end ? start : `${start} - ${end}`
+}
+</script>

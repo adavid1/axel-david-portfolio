@@ -1,105 +1,147 @@
 <template>
-  <div
-    class="grid grid-cols-6"
-    :style="{ gridTemplateRows: `repeat(${monthsSinceFirstExp}, 15px)` }"
-  >
-    <!-- YEAR LINES -->
-    <div
-      v-for="yearIndex in yearCount"
-      :key="yearIndex"
-      class="col-span-6 flex items-center border-t border-gray-400 text-xs text-gray-500"
-      :style="{ gridRow: `${(yearIndex - 1) * 12 + monthsOffset}` }"
-    >
-      <span class="ml-2">
-        {{ new Date().getFullYear() - yearIndex + 1 }}
-      </span>
+  <div class="min-h-screen px-4 py-12">
+    <div class="mx-auto max-w-6xl">
+      <!-- Header -->
+      <div class="mb-16 text-center">
+        <h1 class="mb-4 text-4xl font-bold text-white md:text-5xl">
+          Professional Timeline
+        </h1>
+        <p class="mx-auto max-w-3xl text-xl text-gray-300">
+          My journey from student to full-stack developer - experience, education, and continuous growth
+        </p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="relative">
+        <!-- Vertical line positioned between content areas, not over them -->
+        <div class="absolute left-4 top-0 z-0 h-full w-0.5 bg-gradient-to-b from-violet-600 via-purple-500 to-pink-500 md:left-1/2 md:-translate-x-0.5"></div>
+        
+        <!-- Content with proper spacing to avoid line overlap -->
+        <div class="relative z-10 space-y-12">
+          <TimelineGroup
+            v-for="(group, index) in timelineGroups"
+            :key="`group-${index}`"
+            :group="group"
+            :is-left="index % 2 === 0"
+            @experience-click="openExperienceModal"
+          />
+        </div>
+      </div>
     </div>
 
-    <!-- EXPERIENCE COMPONENTS -->
-    <EnterpriseExperienceComponent
-      class="col-span-2"
-      :style="{
-        gridRow: `${monthsBetween(now, breizhcardExp.endDate) | 1} / span ${monthsBetween(breizhcardExp.startDate, breizhcardExp.endDate)}`
-      }"
-      :entreprise-exp="breizhcardExp"
-    />
-    <EnterpriseExperienceComponent
-      class="col-span-2"
-      :style="{
-        gridRow: `${monthsBetween(now, astekExp.endDate)} / span ${monthsBetween(astekExp.startDate, astekExp.endDate)}`
-      }"
-      :entreprise-exp="astekExp"
-    />
-    <EnterpriseExperienceComponent
-      v-for="mission in astekMissions"
-      :key="mission.title"
-      class="col-span-2"
-      :style="{
-        gridRow: `${monthsBetween(now, mission.endDate)} / span ${monthsBetween(mission.startDate, mission.endDate)}`
-      }"
-      :entreprise-exp="mission"
-    />
-    <EnterpriseExperienceComponent
-      class="col-span-2"
-      :style="{
-        gridRow: `${monthsBetween(now, geApprenticeship.endDate)} / span ${monthsBetween(geApprenticeship.startDate, geApprenticeship.endDate)}`
-      }"
-      :entreprise-exp="geApprenticeship"
-    />
-    <SchoolExperienceComponent
-      class="col-span-2"
-      :style="{
-        gridRow: `${monthsBetween(now, utbmSchool.endDate)} / span ${monthsBetween(utbmSchool.startDate, utbmSchool.endDate)}`
-      }"
-      :school-exp="utbmSchool"
-    />
-    <SchoolExperienceComponent
-      class="col-span-2"
-      :style="{
-        gridRow: `${monthsBetween(now, iutSchool.endDate)} / span ${monthsBetween(iutSchool.startDate, iutSchool.endDate)}`,
-      }"
-      :school-exp="iutSchool"
+    <!-- Experience Modal -->
+    <ExperienceModal 
+      :is-open="!!selectedExperience"
+      :experience="selectedExperience"
+      @close="selectedExperience = null"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue"
-import EnterpriseExperienceComponent from "@/components/EnterpriseExperienceComponent.vue"
-import SchoolExperienceComponent from "@/components/SchoolExperienceComponent.vue"
+import { computed, ref } from 'vue'
+import TimelineGroup from '@/components/TimelineGroup.vue'
+import ExperienceModal from '@/components/ExperienceModal.vue'
+import { 
+  breizhcardExp, 
+  fivesSylepsMission,
+  navalGroupMission, 
+  atemeMission,
+  geApprenticeship, 
+  iutSchool, 
+  utbmSchool 
+} from '@/data/experiences'
 
-import { breizhcardExp, astekExp, astekMissions, geApprenticeship, iutSchool, utbmSchool } from "@/data/experiences"
-
-const now = computed(() => {
-    const today = new Date();
-    const yyyy = today.getFullYear();
-    let mm = today.getMonth() + 1; // Months start at 0!
-    let dd = today.getDate();
-
-    if (dd < 10) dd = Number('0' + dd);
-    if (mm < 10) mm = Number('0' + mm);
-
-    return dd + '-' + mm + '-' + yyyy;
-})
-
-const [day, month, year] = iutSchool.startDate.split("-")
-const firstExpDate = new Date(Number(year), Number(month) - 1, Number(day))
-
-const monthsSinceFirstExp = computed(() => {
-  const now = new Date()
-  return (now.getFullYear() - firstExpDate.getFullYear()) * 12 + (now.getMonth() - firstExpDate.getMonth())
-})
-
-const yearCount = computed(() => Math.ceil(monthsSinceFirstExp.value / 12)) // Number of years since the first experience
-const monthsOffset = computed(() => new Date().getMonth() + 1) // months since the start of the current year
-
-function monthsBetween(startDate: string, endDate: string | null): number {
-  if (!endDate) endDate = now.value
-  const [startDay, startMonth, startYear] = startDate.split("-")
-  const [endDay, endMonth, endYear] = endDate.split("-")
-  const start = new Date(Number(startYear), Number(startMonth) - 1, Number(startDay))
-  const end = new Date(Number(endYear), Number(endMonth) - 1, Number(endDay))
-  const diffTime = Math.abs(end.getTime() - start.getTime())
-  return Math.ceil(diffTime / (1000 * 60 * 60 * 24 * 30.44)) // Average month length
+interface Experience {
+  title: string
+  company?: string
+  school?: string
+  companyLink?: string
+  schoolLink?: string
+  startDate: string
+  endDate?: string | null
+  location?: string
+  stack?: string[]
+  type: 'work' | 'education'
+  category?: string
+  consultingCompany?: string
+  consultingCompanyLink?: string
 }
+
+const selectedExperience = ref<Experience | null>(null)
+
+function openExperienceModal(experience: Experience) {
+  selectedExperience.value = experience
+}
+
+// Helper function to parse dates
+function parseDate(dateStr: string): Date {
+  const [day, month, year] = dateStr.split('-')
+  return new Date(Number(year), Number(month) - 1, Number(day))
+}
+
+// Helper function to check if experiences overlap
+function doPeriodsOverlap(exp1: Experience, exp2: Experience): boolean {
+  const start1 = parseDate(exp1.startDate)
+  const end1 = exp1.endDate ? parseDate(exp1.endDate) : new Date()
+  const start2 = parseDate(exp2.startDate)
+  const end2 = exp2.endDate ? parseDate(exp2.endDate) : new Date()
+  
+  return start1 <= end2 && start2 <= end1
+}
+
+const timelineGroups = computed(() => {
+  // All experiences with their types (now using separate missions)
+  const allExperiences: Experience[] = [
+    { ...breizhcardExp, type: 'work', category: 'volunteer' },
+    { ...atemeMission, type: 'work', category: 'mission' },
+    { ...navalGroupMission, type: 'work', category: 'mission' },
+    { ...fivesSylepsMission, type: 'work', category: 'mission' },
+    { ...geApprenticeship, type: 'work', category: 'apprenticeship' },
+    { ...utbmSchool, type: 'education', category: 'university' },
+    { ...iutSchool, type: 'education', category: 'technical' }
+  ]
+
+  // Sort by start date (most recent first)
+  const sortedExperiences = [...allExperiences].sort((a, b) => 
+    parseDate(b.startDate).getTime() - parseDate(a.startDate).getTime()
+  )
+
+  const groups: any[] = []
+  const processedExperiences = new Set()
+
+  for (const experience of sortedExperiences) {
+    if (processedExperiences.has(experience.title + (experience.company || experience.school))) continue
+
+    // Find overlapping experiences (but don't group Breizhcard with finished experiences)
+    const overlappingExps = sortedExperiences.filter(exp => {
+      if (processedExperiences.has(exp.title + (exp.company || exp.school))) return false
+      if (exp === experience) return true
+      
+      // Special case: don't group ongoing experiences with finished ones
+      const expIsOngoing = !exp.endDate
+      const experienceIsOngoing = !experience.endDate
+      if (expIsOngoing !== experienceIsOngoing) return false
+      
+      return doPeriodsOverlap(experience, exp)
+    })
+
+    // Create group
+    const group = {
+      experiences: overlappingExps,
+      startDate: Math.min(...overlappingExps.map(exp => parseDate(exp.startDate).getTime())),
+      endDate: Math.max(...overlappingExps.map(exp => 
+        exp.endDate ? parseDate(exp.endDate).getTime() : Date.now()
+      )),
+      hasOngoingExperience: overlappingExps.some(exp => !exp.endDate)
+    }
+
+    groups.push(group)
+    
+    // Mark as processed
+    overlappingExps.forEach(exp => processedExperiences.add(exp.title + (exp.company || exp.school)))
+  }
+
+  return groups.sort((a, b) => b.startDate - a.startDate)
+})
 </script>

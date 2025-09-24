@@ -1,7 +1,6 @@
 import { t } from '../i18nHelper'
 
 // Student's experience data
-
 export const iutSchool = {
     title: "DUT Mesures Physiques",
     school: t("iutSchoolName"),
@@ -12,8 +11,9 @@ export const iutSchool = {
     endDate: "31-08-2017",
     description:
     "Physics - Chemistry - Mathematics - Computer Science - Electronics - Optics - Mechanics - Thermodynamics - Acoustics - Signal Processing - Metrology - Instrumentation - Industrial Data Processing - Quality - Safety - Environment",
-    logo: "graduation-cap",
-  }
+    type: "education" as const,
+    category: "technical",
+}
 
 export const utbmSchool = {
     title: t("utbmSchoolTitle"),
@@ -26,17 +26,17 @@ export const utbmSchool = {
     description:
     "- Complex computer systems: analysis, specification, design, modeling, development, administration, and industrialization\n" +
     "- Project management and leadership - law - marketing - communication - finance",
-    logo: "graduation-cap",
-  }
+    type: "education" as const,
+    category: "university",
+}
 
-  // Professional experience
-
-  export const geApprenticeship = {
+// Professional experience
+export const geApprenticeship = {
     title: t("geApprenticeshipTitle"),
     company: "GENERAL ELECTRIC",
     companyLink: "https://www.ge.com/",
     location: "Belfort, France",
-    type: t("apprenticeship"),
+    contractType: t("apprenticeship"),
     startDate: "01-09-2017",
     endDate: "31-08-2020",
     description:
@@ -49,50 +49,43 @@ export const utbmSchool = {
     "- Trained users\n" +
     "- Wrote structural documentation",
     stack: ["C#", "WPF", "SQL", "MS SQL Server"],
-    logo: "general-electric",
-  }
+    type: "work" as const,
+    category: "apprenticeship",
+}
 
-  export const astekExp = {
-    title: t("astekExpTitle"),
-    company: "Astek",
-    companyLink: "https://astekgroup.fr/?lang=en",
-    location: "Rennes, France",
-    type: t("fullTime"),
-    startDate: "01-12-2020",
-    endDate: "31-12-2024",
-    description: "",
-    stack: [],
-    logo: "astek",
-  }
-  
-  const fivesSylepsMission = {
+// Restructured: Individual missions that reference Astek
+export const fivesSylepsMission = {
     title: t("fivesSylepsMissionTitle"),
     company: "Fives Syleps",
     companyLink: "https://www.fivesgroup.com/",
     location: "Lorient, France",
-    type: t("indirectContract"),
+    contractType: t("indirectContract"),
     startDate: "01-12-2020",
     endDate: "31-07-2021",
     description:
-    "REMOTE 💻\n" +
+    "REMOTE 💻 | Via Astek\n" +
     "- Software development (C#, PL/SQL)\n" +
     "- Integration of tools\n" +
     "- Software configuration\n" +
     "- Support and training\n" +
     "- Activity reporting",
     stack: ["C#", "PL/SQL", "Oracle"],
-    logo: "fives-syleps",
-  }
-  
-  const navalGroupMission = {
+    type: "work" as const,
+    category: "mission",
+    consultingCompany: "Astek",
+    consultingCompanyLink: "https://astekgroup.fr/?lang=en",
+}
+
+export const navalGroupMission = {
     title: t("dbAdminAndDev"),
     company: "NAVAL GROUP",
     companyLink: "https://www.naval-group.com/en/",
     location: "Brest, France",
-    type: t("indirectContract"),
+    contractType: t("indirectContract"),
     startDate: "01-08-2021",
     endDate: "31-08-2022",
     description:
+    "Via Astek\n" +
     "- Ensured the operational maintenance and stability of the X3 software\n" +
     "- Provided comprehensive support for the X3 software at Levels 1, 2, and 3\n" +
     "- Conducted data extractions from X3 for migration to the eBusiness Suite R12\n" +
@@ -102,19 +95,22 @@ export const utbmSchool = {
     "- Decommissioned servers utilized by GPAO NA Cherbourg\n" +
     "- Automated daily SQL data extractions using Visual Basic",
     stack: ["X3", "eBusiness Suite R12", "MEMORY system", "GPAO", "Visual Basic"],
-    logo: "naval-group",
-  }
-  
-const atemeMission = {
+    type: "work" as const,
+    category: "mission",
+    consultingCompany: "Astek",
+    consultingCompanyLink: "https://astekgroup.fr/?lang=en",
+}
+
+export const atemeMission = {
     title: t("fullStackDeveloper"),
     company: "Ateme",
     companyLink: "https://www.ateme.com/",
     location: "Rennes, France",
-    type: t("indirectContract"),
+    contractType: t("indirectContract"),
     startDate: "01-09-2022",
     endDate: "31-12-2024",
     description:
-    "REMOTE 💻" +
+    "REMOTE 💻 | Via Astek\n" +
     "- Development across the stack: frontend (VueJs), backend (NodeJs, Express, GraphQL), integration (Docker, Kubernetes)\n" +
     "- Participate in scrum ceremonies: sprint planning, daily standups, sprint reviews, retrospectives\n" +
     "- Code quality and best practices: code reviews, testing (Jest, pytest), documentation writing\n" +
@@ -129,25 +125,21 @@ const atemeMission = {
     "Jest",
     "pytest",
     ],
-    logo: "ateme",
-  }
-  
-  
-  export const astekMissions = [
-    atemeMission,
-    navalGroupMission,
-    fivesSylepsMission,
-  ]
+    type: "work" as const,
+    category: "mission",
+    consultingCompany: "Astek",
+    consultingCompanyLink: "https://astekgroup.fr/?lang=en",
+}
 
-  export const breizhcardExp = {
+export const breizhcardExp = {
     title: t("fullStackDeveloper"),
     company: "Breizhcard",
     companyLink: "https://www.breizhcard.com/",
     location: "Lorient, France",
-    type: t("volunteer"),
+    contractType: t("volunteer"),
     startDate: "01-07-2023",
     endDate: null,
-    description: "TODO",
+    description: "Digital loyalty card platform for Brittany businesses - Full ownership of product design, development, and deployment",
     stack: [
       "Vue",
       "Node",
@@ -158,5 +150,6 @@ const atemeMission = {
       "Jest",
       "MongoDB",
       ],
-    logo: "breizhcard",
-  }
+    type: "work" as const,
+    category: "volunteer",
+}
