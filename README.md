@@ -24,7 +24,8 @@ src/
 ├── data/               # Experience and project data
 ├── locales/            # Internationalization files
 ├── pages/              # Route components
-└── router/             # Vue Router configuration
+├── router/             # Vue Router configuration
+└── types/              # TypeScript types
 ```
 
 ## 🎯 Features
