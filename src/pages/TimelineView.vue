@@ -32,7 +32,7 @@
     <!-- Experience Modal -->
     <ExperienceModal 
       :is-open="!!selectedExperience"
-      :experience="selectedExperience"
+      :experience="selectedExperience as Experience"
       @close="selectedExperience = null"
     />
   </div>

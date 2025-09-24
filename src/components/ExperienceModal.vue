@@ -57,38 +57,6 @@
             </div>
           </div>
           
-          <!-- Missions (for Astek) -->
-          <div v-if="experience.missions && experience.missions.length > 0" class="mb-6">
-            <h3 class="mb-3 text-lg font-semibold text-white">Client Missions</h3>
-            <div class="space-y-4">
-              <div
-                v-for="mission in experience.missions"
-                :key="mission.title"
-                class="rounded-lg border border-gray-700/50 bg-gray-800/30 p-4"
-              >
-                <h4 class="mb-2 font-semibold text-white">{{ mission.company }}</h4>
-                <p class="mb-2 text-sm text-violet-300">{{ mission.title }}</p>
-                <p class="mb-3 text-xs text-gray-400">
-                  {{ formatDateRange(mission.startDate, mission.endDate) }}
-                </p>
-                <p class="text-sm text-gray-300">{{ mission.description }}</p>
-                
-                <!-- Mission tech stack -->
-                <div v-if="mission.stack && mission.stack.length > 0" class="mt-3">
-                  <div class="flex flex-wrap gap-1">
-                    <span
-                      v-for="tech in mission.stack"
-                      :key="tech"
-                      class="rounded border border-gray-600/30 bg-gray-600/10 px-2 py-1 text-xs text-gray-300"
-                    >
-                      {{ tech }}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
           <!-- Location -->
           <div v-if="experience.location" class="flex items-center text-sm text-gray-400">
             <svg class="mr-2 size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
