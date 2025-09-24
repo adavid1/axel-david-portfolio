@@ -1,6 +1,6 @@
 export default Object.freeze({
     title: 'Développeur Full Stack',
-    intro: 'Développeur Full Stack avec 3 ans d\'expérience en développement web, passionné par la construction d\'applications web évolutives et maintenables.',
+    intro: 'Développeur Full Stack avec 8 ans d\'expérience, passionné par la construction d\'applications web évolutives et maintenables.',
     now: 'Aujourd\'hui',
     iutSchoolName: 'IUT de Saint-Nazaire',
     utbmSchoolTitle: 'Ingénieur Informatique par apprentissage',
