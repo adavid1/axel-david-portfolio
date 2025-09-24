@@ -42,6 +42,7 @@
 import { computed, ref } from 'vue'
 import TimelineGroup from '@/components/TimelineGroup.vue'
 import ExperienceModal from '@/components/ExperienceModal.vue'
+import { Experience } from '@/types'
 import { 
   breizhcardExp, 
   fivesSylepsMission,
@@ -51,22 +52,6 @@ import {
   iutSchool, 
   utbmSchool 
 } from '@/data/experiences'
-
-interface Experience {
-  title: string
-  company?: string
-  school?: string
-  companyLink?: string
-  schoolLink?: string
-  startDate: string
-  endDate?: string | null
-  location?: string
-  stack?: string[]
-  type: 'work' | 'education'
-  category?: string
-  consultingCompany?: string
-  consultingCompanyLink?: string
-}
 
 const selectedExperience = ref<Experience | null>(null)
 
@@ -107,7 +92,7 @@ const timelineGroups = computed(() => {
     parseDate(b.startDate).getTime() - parseDate(a.startDate).getTime()
   )
 
-  const groups: any[] = []
+  const groups = []
   const processedExperiences = new Set()
 
   for (const experience of sortedExperiences) {

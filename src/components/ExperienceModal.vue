@@ -103,9 +103,11 @@
   </template>
   
   <script setup lang="ts">
+import { Experience } from '@/types';
+
   interface Props {
     isOpen: boolean
-    experience: any
+    experience: Experience
   }
   
   interface Emits {

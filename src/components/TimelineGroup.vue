@@ -105,10 +105,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import ExperienceCard from '@/components/ExperienceCard.vue'
+import { Experience } from '@/types'
 
 interface Props {
   group: {
-    experiences: any[]
+    experiences: Experience[]
     startDate: number
     endDate: number
     hasOngoingExperience?: boolean
@@ -117,13 +118,13 @@ interface Props {
 }
 
 interface Emits {
-  (e: 'experience-click', experience: any): void
+  (e: 'experience-click', experience: Experience): void
 }
 
 const props = defineProps<Props>()
 const emit = defineEmits<Emits>()
 
-function handleExperienceClick(experience: any) {
+function handleExperienceClick(experience: Experience) {
   emit('experience-click', experience)
 }
 
