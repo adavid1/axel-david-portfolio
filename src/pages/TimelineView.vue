@@ -31,8 +31,9 @@
 
     <!-- Experience Modal -->
     <ExperienceModal 
+      v-if="selectedExperience"
       :is-open="!!selectedExperience"
-      :experience="selectedExperience as Experience"
+      :experience="selectedExperience"
       @close="selectedExperience = null"
     />
   </div>
@@ -120,7 +121,7 @@ const timelineGroups = computed(() => {
       )),
       hasOngoingExperience: overlappingExps.some(exp => !exp.endDate)
     }
-
+  
     groups.push(group)
     
     // Mark as processed

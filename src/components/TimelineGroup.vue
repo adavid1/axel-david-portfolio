@@ -21,7 +21,6 @@
           v-for="experience in group.experiences"
           :key="experience.title + (experience.company || experience.school)"
           :experience="experience"
-          :isLeft="isLeft"
           @click="handleExperienceClick(experience)"
         />
       </div>
@@ -35,7 +34,7 @@
           class="w-1/2 pr-12"
           :class="{ 'invisible': !isLeft }"
         >
-          <div v-if="isLeft" class="text-right">
+          <div v-if="isLeft">
             <!-- Date range indicator -->
             <div class="mb-4">
               <span class="inline-block rounded-full bg-gradient-to-r from-violet-600/20 to-purple-600/20 px-4 py-2 text-sm font-medium text-violet-300 backdrop-blur-sm">
@@ -69,7 +68,7 @@
           class="w-1/2 pl-12"
           :class="{ 'invisible': isLeft }"
         >
-          <div v-if="!isLeft" class="text-left">
+          <div v-if="!isLeft">
             <!-- Date range indicator -->
             <div class="mb-4">
               <span class="inline-block rounded-full bg-gradient-to-r from-violet-600/20 to-purple-600/20 px-4 py-2 text-sm font-medium text-violet-300 backdrop-blur-sm">

@@ -132,7 +132,7 @@ interface Props {
     consultingCompany?: string
     consultingCompanyLink?: string
   },
-  isLeft: boolean
+  isLeft?: boolean
 }
 
 interface Emits {
@@ -145,7 +145,7 @@ defineEmits<Emits>()
 const typeConfig = computed(() => {
   if (props.experience.type === 'education') {
     return {
-      icon: 'AcademicCapIcon',
+      icon: 'AcademicCapIcon', // TODO: Add icon
       label: 'Education',
       bgColor: 'bg-gradient-to-br from-amber-500 to-orange-600',
       textColor: 'text-amber-300',
@@ -159,7 +159,7 @@ const typeConfig = computed(() => {
   
   if (category === 'volunteer') {
     return {
-      icon: 'HeartIcon',
+      icon: 'HeartIcon', // TODO: Add icon
       label: 'Volunteer',
       bgColor: 'bg-gradient-to-br from-green-500 to-emerald-600',
       textColor: 'text-green-300',
@@ -170,7 +170,7 @@ const typeConfig = computed(() => {
   
   if (category === 'apprenticeship') {
     return {
-      icon: 'CogIcon',
+      icon: 'CogIcon', // TODO: Add icon
       label: 'Apprenticeship',
       bgColor: 'bg-gradient-to-br from-blue-500 to-indigo-600',
       textColor: 'text-blue-300',
@@ -181,7 +181,7 @@ const typeConfig = computed(() => {
   
   // Default work experience
   return {
-    icon: 'BriefcaseIcon',
+    icon: 'BriefcaseIcon', // TODO: Add icon
     label: 'Professional',
     bgColor: 'bg-gradient-to-br from-violet-500 to-purple-600',
     textColor: 'text-violet-300',
