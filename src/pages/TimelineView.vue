@@ -13,16 +13,15 @@
 
       <!-- Timeline -->
       <div class="relative">
-        <!-- Vertical line positioned between content areas, not over them -->
-        <div class="absolute left-4 top-0 z-0 h-full w-0.5 bg-gradient-to-b from-violet-600 via-purple-500 to-pink-500 md:left-1/2 md:-translate-x-0.5"></div>
-        
+        <!-- Vertical line anchored to the left rail -->
+        <div class="absolute left-4 top-0 z-0 h-full w-0.5 bg-gradient-to-b from-violet-600 via-purple-500 to-pink-500"></div>
+
         <!-- Content with proper spacing to avoid line overlap -->
-        <div class="relative z-10 space-y-12">
+        <div class="relative z-10 space-y-10">
           <TimelineGroup
             v-for="(group, index) in timelineGroups"
             :key="`group-${index}`"
             :group="group"
-            :is-left="index % 2 === 0"
             @experience-click="openExperienceModal"
           />
         </div>
