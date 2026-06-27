@@ -134,6 +134,7 @@ export default Object.freeze({
         downloadAppStore: 'Download on the App Store',
         visitWebsite: 'Visit Website',
         visitLiveSite: 'Visit Live Site',
+        viewSource: 'View Source Code',
         notFound: 'Project Not Found',
         notFoundDescription: "The project you're looking for doesn't exist.",
     },
