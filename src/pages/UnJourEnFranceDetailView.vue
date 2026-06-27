@@ -22,6 +22,9 @@
           </svg>
           {{ $t('detail.featuredProject') }}
         </div>
+        <div class="app-icon mx-auto mb-6 size-24 overflow-hidden rounded-2xl md:size-28">
+          <img src="/ujef-icon.png" :alt="`${title} logo`" class="size-full object-cover" />
+        </div>
         <h1 class="mb-6 bg-gradient-to-r from-violet-400 via-purple-400 to-pink-400 bg-clip-text text-5xl font-bold text-transparent md:text-6xl">
           {{ title }}
         </h1>

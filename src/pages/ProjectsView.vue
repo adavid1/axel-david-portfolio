@@ -30,6 +30,19 @@
                 <h3 class="text-2xl font-bold text-white">{{ project.title }}</h3>
                 <p class="text-sm font-medium text-violet-400">{{ project.year }}</p>
               </div>
+              <div
+                v-if="project.logo"
+                class="app-icon flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-xl"
+                :class="project.logoWrapClass"
+              >
+                <img
+                  :src="project.logo"
+                  :alt="`${project.title} logo`"
+                  loading="lazy"
+                  class="size-full"
+                  :class="project.logoImgClass"
+                />
+              </div>
             </div>
 
             <p class="mb-6 grow text-gray-300">{{ $t(project.description) }}</p>
@@ -182,6 +195,9 @@ const featuredProjects = [
     detailRoute: '/projects/un-jour-en-france',
     appStoreLink: unJourEnFrance.appStoreLink,
     websiteLink: unJourEnFrance.websiteLink,
+    logo: '/ujef-icon.png',
+    logoWrapClass: '',
+    logoImgClass: 'object-cover',
   },
   {
     title: 'Breizhcard',
@@ -192,6 +208,9 @@ const featuredProjects = [
     detailRoute: '/projects/breizhcard',
     appStoreLink: undefined as string | undefined,
     websiteLink: breizhcardExp.companyLink,
+    logo: '/breizhcard-logo.svg',
+    logoWrapClass: 'app-icon--light bg-[#b4d383]',
+    logoImgClass: 'object-contain p-2 brightness-0',
   },
 ]
 

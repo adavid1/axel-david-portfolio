@@ -22,6 +22,13 @@
             </svg>
             {{ $t('detail.featuredProject') }}
           </div>
+          <div class="app-icon app-icon--light mx-auto mb-6 flex size-24 items-center justify-center overflow-hidden rounded-2xl bg-[#b4d383] p-3 md:size-28">
+            <img
+              src="/breizhcard-logo.svg"
+              :alt="`${title} logo`"
+              class="size-full object-contain brightness-0"
+            />
+          </div>
           <h1 class="mb-6 bg-gradient-to-r from-violet-400 via-purple-400 to-pink-400 bg-clip-text text-5xl font-bold text-transparent md:text-6xl">
             {{ title }}
           </h1>
