@@ -16,12 +16,12 @@
           <!-- Header -->
           <div class="mb-6 flex items-start justify-between">
             <div>
-              <h2 class="text-2xl font-bold text-white">{{ experience.title }}</h2>
+              <h2 class="text-2xl font-bold text-white">{{ $t(experience.title) }}</h2>
               <p class="text-lg text-violet-300">
-                {{ experience.company || experience.school }}
+                {{ institution }}
               </p>
               <p class="text-sm text-gray-400">
-                {{ formatDateRange(experience.startDate, experience.endDate) }}
+                {{ dateRange }}
               </p>
             </div>
             
@@ -37,15 +37,15 @@
           
           <!-- Description -->
           <div class="mb-6">
-            <h3 class="mb-3 text-lg font-semibold text-white">Description</h3>
+            <h3 class="mb-3 text-lg font-semibold text-white">{{ $t('modal.description') }}</h3>
             <p class="whitespace-pre-line leading-relaxed text-gray-300">
-              {{ experience.description }}
+              {{ $t(experience.description) }}
             </p>
           </div>
-          
+
           <!-- Tech Stack -->
           <div v-if="experience.stack && experience.stack.length > 0" class="mb-6">
-            <h3 class="mb-3 text-lg font-semibold text-white">Technologies Used</h3>
+            <h3 class="mb-3 text-lg font-semibold text-white">{{ $t('modal.technologies') }}</h3>
             <div class="flex flex-wrap gap-2">
               <span
                 v-for="tech in experience.stack"
@@ -71,40 +71,31 @@
   </template>
   
   <script setup lang="ts">
-import { Experience } from '@/types';
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { Experience } from '@/types'
+import { formatDateRange } from '@/utils'
 
   interface Props {
     isOpen: boolean
     experience: Experience
   }
-  
+
   interface Emits {
     (e: 'close'): void
   }
-  
-  defineProps<Props>()
+
+  const props = defineProps<Props>()
   const emit = defineEmits<Emits>()
-  
+
+  const { t, locale } = useI18n({ useScope: 'global' })
+
+  const institution = computed(() => props.experience.company || t(props.experience.school || ''))
+  const dateRange = computed(() =>
+    formatDateRange(props.experience.startDate, props.experience.endDate, locale.value, t('common.present'), 'long')
+  )
+
   function closeModal() {
     emit('close')
-  }
-  
-  function formatDateRange(startDate: string, endDate: string | null | undefined): string {
-    const parseDate = (dateStr: string) => {
-      const [day, month, year] = dateStr.split('-')
-      return new Date(Number(year), Number(month) - 1, Number(day))
-    }
-    
-    const formatDate = (date: Date) => {
-      return date.toLocaleDateString('en-US', { 
-        month: 'long', 
-        year: 'numeric' 
-      })
-    }
-    
-    const start = formatDate(parseDate(startDate))
-    const end = endDate ? formatDate(parseDate(endDate)) : 'Present'
-    
-    return start === end ? start : `${start} - ${end}`
   }
   </script>

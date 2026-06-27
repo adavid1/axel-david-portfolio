@@ -1,19 +1,44 @@
-export const portfolio = {
+import type { Project } from '@/types'
+
+// `description` holds an i18n key, resolved with $t() in components.
+// `title` stays a literal string (it is also used to build the URL slug).
+
+export const unJourEnFrance: Project = {
+    title: "Un Jour en France",
+    description: "proj.unJourEnFrance",
+    websiteLink: "https://unjourenfrance.axel-david.fr/",
+    appStoreLink: "https://apps.apple.com/app/6759555494",
+    stack: [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "Supabase",
+        "PostgreSQL",
+        "RevenueCat",
+        "Zustand",
+        "MMKV",
+        "Jest",
+        "EAS",
+    ],
+    year: "2025"
+}
+
+export const portfolio: Project = {
     title: "Portfolio",
-    description: "Portfolio website built with Vue.js and Tailwind CSS",
+    description: "proj.portfolio",
     gitHubLink: "https://github.com/adavid1/axel-david-portfolio",
     stack: [
         "TypeScript",
         "Vite",
         "Vue",
         "Tailwind CSS",
-        ],
+    ],
     year: "2024"
-  }
+}
 
-export const streamingMultichat = {
+export const streamingMultichat: Project = {
     title: "Streaming Multichat",
-    description: "Real-time chat overlay application that unifies Twitch, YouTube Live, and TikTok Live chat into a single interface",
+    description: "proj.streamingMultichat",
     gitHubLink: "https://github.com/adavid1/streaming-multichat",
     stack: [
         "TypeScript",
@@ -22,13 +47,13 @@ export const streamingMultichat = {
         "Express",
         "WebSocket",
         "Docker",
-        ],
+    ],
     year: "2025"
-  }
+}
 
-export const bulk = {
+export const bulk: Project = {
     title: "Bulk",
-    description: "Party game where players interact with a common screen and use their phones to submit answers",
+    description: "proj.bulk",
     gitHubLink: "https://github.com/adavid1/bulk_backend",
     stack: [
         "TypeScript",
@@ -37,41 +62,41 @@ export const bulk = {
         "Node",
         "Nest",
         "Docker",
-        ],
+    ],
     year: "2019"
 }
 
-export const optymoRecordSplitter = {
+export const optymoRecordSplitter: Project = {
     title: "Optymo Record Splitter",
-    description: "Tool that splits daily radio recordings into sorted and timestamped conversations",
+    description: "proj.optymo",
     gitHubLink: "https://github.com/adavid1/optymo_record_splitter",
     stack: [
         "C#",
         ".NET",
-        ],
+    ],
     year: "2019"
 }
 
-export const bobRaoul = {
+export const bobRaoul: Project = {
     title: "Bob Raoul",
-    description: "A fun project providing visual and audio feedback whenever a cap is successfully thrown in Bob's head",
+    description: "proj.bobRaoul",
     gitHubLink: "https://github.com/adavid1/Bob_Raoul_v2",
     stack: [
         "Python",
         "Pygame",
         "Raspberry Pi",
         "GPIO",
-        ],
+    ],
     year: "2019"
 }
 
-export const ncg = {
+export const ncg: Project = {
     title: "No Copyright Gang",
-    description: "Automation project that streamlines the process of sourcing, editing, and publishing royalty-free music content to YouTube",
+    description: "proj.ncg",
     gitHubLink: "https://github.com/adavid1/NCG_Full",
     stack: [
         "C#",
         ".NET",
-        ],
+    ],
     year: "2018"
 }

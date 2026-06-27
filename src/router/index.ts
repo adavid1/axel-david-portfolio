@@ -3,6 +3,7 @@ import TimelineView from '@/pages/TimelineView.vue'
 import HomeView from '@/pages/HomeView.vue'
 import ProjectsView from '@/pages/ProjectsView.vue'
 import BreizhcardDetailView from '@/pages/BreizhcardDetailView.vue'
+import UnJourEnFranceDetailView from '@/pages/UnJourEnFranceDetailView.vue'
 import ProjectDetailView from '@/pages/ProjectDetailView.vue'
 
 const router = createRouter({
@@ -31,6 +32,11 @@ const router = createRouter({
       path: '/projects/breizhcard',
       name: 'breizhcard-detail',
       component: BreizhcardDetailView
+    },
+    {
+      path: '/projects/un-jour-en-france',
+      name: 'un-jour-en-france-detail',
+      component: UnJourEnFranceDetailView
     },
     {
       path: '/projects/:slug',

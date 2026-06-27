@@ -6,17 +6,19 @@
     <!-- Type indicator -->
     <div class="mb-4 flex items-center justify-between">
       <div class="flex items-center space-x-2">
-        <div 
+        <div
           class="flex size-8 items-center justify-center rounded-full"
           :class="typeConfig.bgColor"
         >
-          <component :is="typeConfig.icon" class="size-4 text-white" />
+          <svg class="size-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="typeConfig.iconPath" />
+          </svg>
         </div>
-        <span 
+        <span
           class="text-xs font-medium uppercase tracking-wider"
           :class="typeConfig.textColor"
         >
-          {{ typeConfig.label }}
+          {{ $t(typeConfig.label) }}
         </span>
       </div>
       
@@ -39,7 +41,7 @@
     <div class="space-y-3">
       <!-- Title -->
       <h3 class="text-lg font-bold leading-tight text-white">
-        {{ experience.title }}
+        {{ $t(experience.title) }}
       </h3>
       
       <!-- Institution/Company -->
@@ -48,7 +50,7 @@
           class="font-medium transition-colors"
           :class="typeConfig.textColor"
         >
-          {{ experience.company || experience.school }}
+          {{ institution }}
         </p>
         
         <!-- Consulting company reference -->
@@ -68,7 +70,7 @@
       
       <!-- Date range -->
       <p class="text-sm text-gray-400">
-        {{ formatDateRange(experience.startDate, experience.endDate) }}
+        {{ dateRange }}
         <span v-if="!experience.endDate" class="ml-1 inline-block size-2 rounded-full bg-green-500"></span>
       </p>
       
@@ -84,7 +86,7 @@
       <!-- Tech stack for work experiences -->
       <div v-if="experience.stack && experience.stack.length > 0" class="mt-4">
         <div class="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400" :class="{ 'text-right': !isLeft, 'text-left': isLeft }">
-          Tech Stack
+          {{ $t('timeline.techStack') }}
         </div>
         <div class="flex flex-wrap gap-1" :class="{ 'flex-row-reverse': !isLeft }">
           <span
@@ -115,6 +117,8 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { formatDateRange } from '@/utils'
 
 interface Props {
   experience: {
@@ -142,11 +146,18 @@ interface Emits {
 const props = defineProps<Props>()
 defineEmits<Emits>()
 
+const { t, locale } = useI18n({ useScope: 'global' })
+
+const institution = computed(() => props.experience.company || t(props.experience.school || ''))
+const dateRange = computed(() =>
+  formatDateRange(props.experience.startDate, props.experience.endDate, locale.value, t('common.present'))
+)
+
 const typeConfig = computed(() => {
   if (props.experience.type === 'education') {
     return {
-      icon: 'AcademicCapIcon', // TODO: Add icon
-      label: 'Education',
+      iconPath: 'M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 0 1 .665 6.479A11.952 11.952 0 0 0 12 20.055a11.952 11.952 0 0 0-6.824-2.998 12.078 12.078 0 0 1 .665-6.479L12 14zm-4 6v-7.5l4-2.222',
+      label: 'expTypes.education',
       bgColor: 'bg-gradient-to-br from-amber-500 to-orange-600',
       textColor: 'text-amber-300',
       stackClasses: 'border-amber-400/30 bg-amber-400/10 text-amber-200',
@@ -159,8 +170,8 @@ const typeConfig = computed(() => {
   
   if (category === 'volunteer') {
     return {
-      icon: 'HeartIcon', // TODO: Add icon
-      label: 'Volunteer',
+      iconPath: 'M4.318 6.318a4.5 4.5 0 0 0 0 6.364L12 20.364l7.682-7.682a4.5 4.5 0 0 0-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 0 0-6.364 0z',
+      label: 'expTypes.volunteer',
       bgColor: 'bg-gradient-to-br from-green-500 to-emerald-600',
       textColor: 'text-green-300',
       stackClasses: 'border-green-400/30 bg-green-400/10 text-green-200',
@@ -170,8 +181,8 @@ const typeConfig = computed(() => {
   
   if (category === 'apprenticeship') {
     return {
-      icon: 'CogIcon', // TODO: Add icon
-      label: 'Apprenticeship',
+      iconPath: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+      label: 'expTypes.apprenticeship',
       bgColor: 'bg-gradient-to-br from-blue-500 to-indigo-600',
       textColor: 'text-blue-300',
       stackClasses: 'border-blue-400/30 bg-blue-400/10 text-blue-200',
@@ -179,33 +190,25 @@ const typeConfig = computed(() => {
     }
   }
   
+  if (category === 'freelance') {
+    return {
+      iconPath: 'M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.63 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z',
+      label: 'expTypes.freelance',
+      bgColor: 'bg-gradient-to-br from-cyan-500 to-teal-600',
+      textColor: 'text-cyan-300',
+      stackClasses: 'border-cyan-400/30 bg-cyan-400/10 text-cyan-200',
+      hoverOverlay: 'bg-gradient-to-r from-cyan-600/10 to-teal-600/10'
+    }
+  }
+
   // Default work experience
   return {
-    icon: 'BriefcaseIcon', // TODO: Add icon
-    label: 'Professional',
+    iconPath: 'M21 13.255A23.931 23.931 0 0 1 12 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2m4 6h.01M5 20h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z',
+    label: 'expTypes.professional',
     bgColor: 'bg-gradient-to-br from-violet-500 to-purple-600',
     textColor: 'text-violet-300',
     stackClasses: 'border-violet-400/30 bg-violet-400/10 text-violet-200',
     hoverOverlay: 'bg-gradient-to-r from-violet-600/10 to-purple-600/10'
   }
 })
-
-function formatDateRange(startDate: string, endDate: string | null | undefined): string {
-  const parseDate = (dateStr: string) => {
-    const [day, month, year] = dateStr.split('-')
-    return new Date(Number(year), Number(month) - 1, Number(day))
-  }
-  
-  const formatDate = (date: Date) => {
-    return date.toLocaleDateString('en-US', { 
-      month: 'short', 
-      year: 'numeric' 
-    })
-  }
-  
-  const start = formatDate(parseDate(startDate))
-  const end = endDate ? formatDate(parseDate(endDate)) : 'Present'
-  
-  return start === end ? start : `${start} - ${end}`
-}
 </script>

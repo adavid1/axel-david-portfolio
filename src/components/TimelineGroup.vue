@@ -1,101 +1,39 @@
 <template>
   <div class="relative">
-    <!-- Timeline dot -->
-    <div class="absolute left-0 top-8 z-20 flex size-8 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-purple-700 shadow-lg md:left-1/2 md:-translate-x-1/2">
+    <!-- Timeline dot: sits on the line (left on mobile, centered on desktop) -->
+    <div class="absolute left-4 top-8 z-20 flex size-8 -translate-x-1/2 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-purple-700 shadow-lg md:left-1/2">
       <div class="size-3 rounded-full bg-white"></div>
     </div>
-    
-    <!-- Mobile layout: simple left margin -->
-    <div class="ml-12 md:hidden">
-      <!-- Date range indicator -->
-      <div class="mb-4 text-left">
+
+    <!--
+      Single content column.
+      Mobile: full width, offset to clear the line on the left.
+      Desktop: half width, alternating sides depending on `isLeft`.
+    -->
+    <div
+      class="pl-12 md:w-1/2 md:pl-0"
+      :class="isLeft ? 'md:pr-12' : 'md:ml-auto md:pl-12'"
+    >
+      <!-- Date range badge -->
+      <div class="mb-4">
         <span class="inline-block rounded-full bg-gradient-to-r from-violet-600/20 to-purple-600/20 px-4 py-2 text-sm font-medium text-violet-300 backdrop-blur-sm">
           {{ formatDateRange }}
           <span v-if="group.hasOngoingExperience" class="ml-2 inline-block size-2 rounded-full bg-green-500"></span>
         </span>
       </div>
-      
-      <!-- Experiences grid -->
-      <div class="grid grid-cols-1 gap-4">
+
+      <!-- Experiences grid (stacks on mobile, up to 2 columns when several overlap) -->
+      <div
+        class="grid gap-4"
+        :class="{ 'sm:grid-cols-2': group.experiences.length > 1 }"
+      >
         <ExperienceCard
           v-for="experience in group.experiences"
           :key="experience.title + (experience.company || experience.school)"
           :experience="experience"
+          :is-left="isLeft"
           @click="handleExperienceClick(experience)"
         />
-      </div>
-    </div>
-    
-    <!-- Desktop layout: alternating sides with clear separation -->
-    <div class="hidden md:block">
-      <div class="flex">
-        <!-- Left side content -->
-        <div 
-          class="w-1/2 pr-12"
-          :class="{ 'invisible': !isLeft }"
-        >
-          <div v-if="isLeft">
-            <!-- Date range indicator -->
-            <div class="mb-4">
-              <span class="inline-block rounded-full bg-gradient-to-r from-violet-600/20 to-purple-600/20 px-4 py-2 text-sm font-medium text-violet-300 backdrop-blur-sm">
-                {{ formatDateRange }}
-                <span v-if="group.hasOngoingExperience" class="ml-2 inline-block size-2 rounded-full bg-green-500"></span>
-              </span>
-            </div>
-            
-            <!-- Experiences grid -->
-            <div 
-              class="grid gap-4"
-              :class="{
-                'grid-cols-1': group.experiences.length === 1,
-                'grid-cols-2': group.experiences.length === 2,
-                'grid-cols-3': group.experiences.length > 2
-              }"
-            >
-              <ExperienceCard
-                v-for="experience in group.experiences"
-                :key="experience.title + (experience.company || experience.school)"
-                :experience="experience"
-                :isLeft="isLeft"
-                @click="handleExperienceClick(experience)"
-              />
-            </div>
-          </div>
-        </div>
-        
-        <!-- Right side content -->
-        <div 
-          class="w-1/2 pl-12"
-          :class="{ 'invisible': isLeft }"
-        >
-          <div v-if="!isLeft">
-            <!-- Date range indicator -->
-            <div class="mb-4">
-              <span class="inline-block rounded-full bg-gradient-to-r from-violet-600/20 to-purple-600/20 px-4 py-2 text-sm font-medium text-violet-300 backdrop-blur-sm">
-                {{ formatDateRange }}
-                <span v-if="group.hasOngoingExperience" class="ml-2 inline-block size-2 rounded-full bg-green-500"></span>
-              </span>
-            </div>
-            
-            <!-- Experiences grid -->
-            <div 
-              class="grid gap-4"
-              :class="{
-                'grid-cols-1': group.experiences.length === 1,
-                'grid-cols-2': group.experiences.length === 2,
-                'grid-cols-3': group.experiences.length > 2
-              }"
-            >
-              <ExperienceCard
-                v-for="experience in group.experiences"
-                :key="experience.title + (experience.company || experience.school)"
-                :experience="experience"
-                :isLeft="isLeft"
-                @click="handleExperienceClick(experience)"
-              />
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -103,8 +41,10 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import ExperienceCard from '@/components/ExperienceCard.vue'
 import { Experience } from '@/types'
+import { formatTimestampRange } from '@/utils'
 
 interface Props {
   group: {
@@ -123,25 +63,13 @@ interface Emits {
 const props = defineProps<Props>()
 const emit = defineEmits<Emits>()
 
+const { t, locale } = useI18n({ useScope: 'global' })
+
 function handleExperienceClick(experience: Experience) {
   emit('experience-click', experience)
 }
 
-const formatDateRange = computed(() => {
-  const startDate = new Date(props.group.startDate)
-  const endDate = new Date(props.group.endDate)
-  const now = new Date()
-  
-  const formatDate = (date: Date) => {
-    return date.toLocaleDateString('en-US', { 
-      month: 'short', 
-      year: 'numeric' 
-    })
-  }
-  
-  const start = formatDate(startDate)
-  const end = endDate.getTime() > now.getTime() - 86400000 ? 'Present' : formatDate(endDate)
-  
-  return start === end ? start : `${start} - ${end}`
-})
+const formatDateRange = computed(() =>
+  formatTimestampRange(props.group.startDate, props.group.endDate, locale.value, t('common.present'))
+)
 </script>
