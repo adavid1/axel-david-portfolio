@@ -134,6 +134,7 @@ export default Object.freeze({
         downloadAppStore: 'Télécharger sur l\'App Store',
         visitWebsite: 'Visiter le site',
         visitLiveSite: 'Voir le site en ligne',
+        viewSource: 'Voir le code source',
         notFound: 'Projet introuvable',
         notFoundDescription: 'Le projet que vous cherchez n\'existe pas.',
     },
