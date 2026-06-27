@@ -9,6 +9,13 @@
     "preview": "vite preview",
     "lint": "eslint . --fix"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@tailwindcss/oxide",
+      "@tsparticles/engine",
+      "esbuild"
+    ]
+  },
   "dependencies": {
     "@tsparticles/slim": "3.9.1",
     "@tsparticles/vue3": "^3.0.1",

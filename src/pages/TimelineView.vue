@@ -4,10 +4,10 @@
       <!-- Header -->
       <div class="mb-16 text-center">
         <h1 class="mb-4 text-4xl font-bold text-white md:text-5xl">
-          Professional Timeline
+          {{ $t('timeline.title') }}
         </h1>
         <p class="mx-auto max-w-3xl text-xl text-gray-300">
-          My journey from student to full-stack developer - experience, education, and continuous growth
+          {{ $t('timeline.subtitle') }}
         </p>
       </div>
 
@@ -44,14 +44,15 @@ import { computed, ref } from 'vue'
 import TimelineGroup from '@/components/TimelineGroup.vue'
 import ExperienceModal from '@/components/ExperienceModal.vue'
 import { Experience } from '@/types'
-import { 
-  breizhcardExp, 
+import {
+  davidServicesExp,
+  breizhcardExp,
   fivesSylepsMission,
-  navalGroupMission, 
+  navalGroupMission,
   atemeMission,
-  geApprenticeship, 
-  iutSchool, 
-  utbmSchool 
+  geApprenticeship,
+  iutSchool,
+  utbmSchool
 } from '@/data/experiences'
 
 const selectedExperience = ref<Experience | null>(null)
@@ -79,6 +80,7 @@ function doPeriodsOverlap(exp1: Experience, exp2: Experience): boolean {
 const timelineGroups = computed(() => {
   // All experiences with their types (now using separate missions)
   const allExperiences: Experience[] = [
+    { ...davidServicesExp, type: 'work', category: 'freelance' },
     { ...breizhcardExp, type: 'work', category: 'volunteer' },
     { ...atemeMission, type: 'work', category: 'mission' },
     { ...navalGroupMission, type: 'work', category: 'mission' },

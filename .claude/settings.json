@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(pnpm build 2>&1)",
+      "PowerShell(pnpm install 2>&1)",
+      "PowerShell(pnpm rebuild esbuild \"@tailwindcss/oxide\" \"@tsparticles/engine\" 2>&1)",
+      "PowerShell(pnpm config set verify-deps-before-run false 2>&1)",
+      "PowerShell(node node_modules/vue-tsc/bin/vue-tsc.js -b 2>&1 | Select-Object -Last 20; Write-Output \"=== TSC EXIT: $LASTEXITCODE ===\")",
+      "PowerShell(node node_modules/vite/bin/vite.js build 2>&1 | Select-Object -Last 20; Write-Output \"=== VITE EXIT: $LASTEXITCODE ===\")",
+      "PowerShell(node node_modules/vite/bin/vite.js --host 2>&1)",
+      "PowerShell(node node_modules/vue-tsc/bin/vue-tsc.js -b 2>&1 | Select-Object -Last 25; Write-Output \"=== TSC EXIT: $LASTEXITCODE ===\")",
+      "PowerShell(node node_modules/vite/bin/vite.js build 2>&1 | Select-Object -Last 12; Write-Output \"=== VITE EXIT: $LASTEXITCODE ===\")",
+      "PowerShell(node node_modules/eslint/bin/eslint.js . --fix 2>&1 | Select-Object -Last 30; Write-Output \"=== ESLINT EXIT: $LASTEXITCODE ===\")",
+      "Read(//c/Users/Axel/.claude/projects/c--Users-Axel-Documents-repositories-axel-david-portfolio/memory/**)",
+      "PowerShell(node node_modules/vite/bin/vite.js build 2>&1 | Select-Object -Last 8; Write-Output \"=== VITE: $LASTEXITCODE ===\"; node node_modules/eslint/bin/eslint.js . --fix 2>&1 | Select-Object -Last 10; Write-Output \"=== ESLINT: $LASTEXITCODE ===\")",
+      "PowerShell(node node_modules/vue-tsc/bin/vue-tsc.js -b 2>&1 | Select-Object -Last 30; Write-Output \"=== TSC: $LASTEXITCODE ===\")",
+      "PowerShell(node node_modules/vite/bin/vite.js build 2>&1 | Select-Object -Last 8; Write-Output \"=== VITE: $LASTEXITCODE ===\"; node node_modules/eslint/bin/eslint.js . --fix 2>&1 | Select-Object -Last 15; Write-Output \"=== ESLINT: $LASTEXITCODE ===\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\Axel\\.claude\\projects\\c--Users-Axel-Documents-repositories-axel-david-portfolio\\memory"
+    ]
+  }
+}

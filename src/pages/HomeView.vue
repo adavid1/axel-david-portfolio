@@ -36,7 +36,7 @@ import constants from "@/constants.ts"
             to="/timeline"
             class="group flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-purple-700 px-8 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-violet-500/25"
           >
-            View My Journey
+            {{ $t('home.viewJourney') }}
             <svg class="size-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
@@ -45,15 +45,15 @@ import constants from "@/constants.ts"
             to="/projects"
             class="rounded-xl border-2 border-violet-400 px-8 py-3 font-semibold text-violet-300 transition-all duration-300 hover:bg-violet-400 hover:text-black"
           >
-            Explore Projects
+            {{ $t('home.exploreProjects') }}
           </RouterLink>
         </div>
 
         <!-- Tech Stack Preview -->
         <div class="pt-12">
-          <p class="mb-6 text-sm text-gray-400">Technologies I work with</p>
+          <p class="mb-6 text-sm text-gray-400">{{ $t('home.techTitle') }}</p>
           <div class="flex flex-wrap justify-center gap-3">
-            <span v-for="tech in ['Vue.js', 'TypeScript', 'Node.js', 'Docker', 'C#', '.NET']" 
+            <span v-for="tech in ['Vue.js', 'TypeScript', 'Node.js', 'React Native', 'Docker', 'C#', '.NET']"
                   :key="tech"
                   class="rounded-full border border-gray-700 bg-gray-800/50 px-4 py-2 text-sm text-gray-300 transition-all duration-300 hover:border-violet-400 hover:text-violet-300">
               {{ tech }}

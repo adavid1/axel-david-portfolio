@@ -14,33 +14,32 @@ import constants from '@/constants'
             {{ constants.fullname }}
           </h3>
           <p class="text-sm leading-relaxed text-gray-400">
-            Full Stack Developer passionate about building scalable and maintainable web applications. 
-            Always eager to learn new technologies and solve complex problems.
+            {{ $t('footer.tagline') }}
           </p>
         </div>
 
         <!-- Quick Links -->
         <div class="space-y-4">
-          <h4 class="text-lg font-semibold text-white">Quick Links</h4>
+          <h4 class="text-lg font-semibold text-white">{{ $t('footer.quickLinks') }}</h4>
           <nav class="flex flex-col space-y-2">
             <RouterLink to="/" class="text-sm text-gray-400 transition-colors duration-300 hover:text-violet-400">
-              Home
+              {{ $t('nav.home') }}
             </RouterLink>
             <RouterLink to="/timeline" class="text-sm text-gray-400 transition-colors duration-300 hover:text-violet-400">
-              Professional Timeline
+              {{ $t('footer.timeline') }}
             </RouterLink>
             <RouterLink to="/projects" class="text-sm text-gray-400 transition-colors duration-300 hover:text-violet-400">
-              My Projects
+              {{ $t('footer.projects') }}
             </RouterLink>
             <RouterLink to="/projects/breizhcard" class="text-sm text-gray-400 transition-colors duration-300 hover:text-violet-400">
-              Featured: Breizhcard
+              {{ $t('footer.featuredBreizhcard') }}
             </RouterLink>
           </nav>
         </div>
 
         <!-- Contact & Social -->
         <div class="space-y-4">
-          <h4 class="text-lg font-semibold text-white">Connect With Me</h4>
+          <h4 class="text-lg font-semibold text-white">{{ $t('footer.connect') }}</h4>
           <div class="flex space-x-4">
             <a
               href="https://www.linkedin.com/in/axel-david-297346143/"
@@ -78,7 +77,7 @@ import constants from '@/constants'
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            Brittany, France
+            {{ $t('footer.location') }}
           </div>
         </div>
       </div>
@@ -86,7 +85,7 @@ import constants from '@/constants'
       <!-- Bottom Bar -->
       <div class="mt-12 flex flex-col items-center justify-between space-y-4 border-t border-gray-800/50 pt-6 md:flex-row md:space-y-0">
         <div class="text-sm text-gray-500">
-          © {{ new Date().getFullYear() }} {{ constants.fullname }}. Built with Vue.js & Tailwind CSS.
+          {{ $t('footer.copyright', { year: new Date().getFullYear() }) }}
         </div>
         
         <!-- Tech Stack Pills -->
