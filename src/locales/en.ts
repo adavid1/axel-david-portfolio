@@ -37,14 +37,52 @@ export default Object.freeze({
         techTitle: 'Technologies I work with',
     },
 
+    about: {
+        title: 'About',
+        p1: 'I\'m a 28-year-old IT engineer who has been building full-stack web and mobile applications for 8 years — from the database to the interface, all the way to deployment.',
+        p2: 'After starting out on a sandwich course at General Electric, then taking on missions at Fives Syleps, Naval Group and Ateme, I decided in late 2024 to go travelling. Rather than just a break, I turned it into a creative period: while on the road I set up my own company and shipped "Un Jour en France" on the App Store, while volunteering on the Breizhcard platform.',
+        p3: 'I also love working hand in hand with AI: Claude and ChatGPT have become real daily accelerators, and I integrate AI directly into my products — "Un Jour en France", for instance, features AI-generated audio narration.',
+        p4: 'Now back in France, I\'m looking for a permanent role (CDI) where I can put this dual profile — an engineer\'s technical solidity and a founder\'s autonomy — to work for a team and a product that matter.',
+    },
+
+    skills: {
+        title: 'Skills',
+        subtitle: 'The technologies and know-how I rely on every day',
+        groups: {
+            languages: 'Languages',
+            frontend: 'Front-end',
+            backend: 'Back-end',
+            databases: 'Databases',
+            devops: 'DevOps & tools',
+            testing: 'Testing & methodology',
+            ai: 'AI & Prompt engineering',
+        },
+        languagesTitle: 'Spoken languages',
+        spoken: {
+            french: 'French',
+            frenchLevel: 'Native',
+            english: 'English',
+            englishLevel: 'Fluent (C1)',
+            spanish: 'Spanish',
+            spanishLevel: 'Intermediate',
+        },
+    },
+
+    contact: {
+        title: 'Let\'s work together',
+        subtitle: 'Open to a permanent role (CDI) · Saint-Nazaire & remote. Got a project, an opening, or just want to chat?',
+        emailCta: 'Email me',
+        linkedinCta: 'LinkedIn',
+    },
+
     footer: {
         tagline: 'Full Stack Developer passionate about building scalable and maintainable web applications. Always eager to learn new technologies and solve complex problems.',
         quickLinks: 'Quick Links',
         timeline: 'Professional Timeline',
         projects: 'My Projects',
-        featuredBreizhcard: 'Featured: Breizhcard',
+        featuredUjef: 'Featured: Un Jour en France',
         connect: 'Connect With Me',
-        location: 'Brittany, France',
+        location: 'Saint-Nazaire, France',
         copyright: '© {year} Axel David. Built with Vue.js & Tailwind CSS.',
     },
 

@@ -44,7 +44,14 @@ const router = createRouter({
       component: ProjectDetailView,
       props: true
     }
-  ]
+  ],
+  // Without this, the previous page's scroll position is carried over to the
+  // next route (very visible now that the Home page is long).
+  scrollBehavior(to, _from, savedPosition) {
+    if (savedPosition) return savedPosition
+    if (to.hash) return { el: to.hash, behavior: 'smooth' }
+    return { top: 0 }
+  }
 })
 
 export default router
