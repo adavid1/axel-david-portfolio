@@ -89,6 +89,7 @@ export default Object.freeze({
         title: 'Professional Timeline',
         subtitle: 'My journey from student to full-stack developer — experience, education, and continuous growth',
         techStack: 'Tech Stack',
+        concurrent: '{count} in parallel',
     },
 
     expTypes: {

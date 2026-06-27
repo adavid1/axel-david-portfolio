@@ -89,6 +89,7 @@ export default Object.freeze({
         title: 'Parcours professionnel',
         subtitle: 'Mon évolution d\'étudiant à développeur full-stack — expériences, formation et progression continue',
         techStack: 'Stack technique',
+        concurrent: '{count} en parallèle',
     },
 
     expTypes: {

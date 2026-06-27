@@ -1,114 +1,133 @@
 <template>
-  <div 
-    class="group relative h-full cursor-pointer rounded-2xl border border-gray-800/50 bg-gray-900/50 p-6 transition-all duration-300 hover:scale-105 hover:border-violet-500/30 hover:shadow-xl"
+  <div
+    class="group relative cursor-pointer rounded-2xl border border-gray-800/50 bg-gray-900/50 p-6 transition-all duration-300 hover:border-violet-500/30 hover:shadow-xl md:hover:-translate-y-1"
     @click="$emit('click')"
   >
-    <!-- Type indicator -->
-    <div class="mb-4 flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-        <div
-          class="flex size-8 items-center justify-center rounded-full"
-          :class="typeConfig.bgColor"
-        >
-          <svg class="size-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="typeConfig.iconPath" />
-          </svg>
-        </div>
-        <span
-          class="text-xs font-medium uppercase tracking-wider"
-          :class="typeConfig.textColor"
-        >
-          {{ $t(typeConfig.label) }}
-        </span>
-      </div>
-      
-      <!-- External link if available -->
-      <a 
-        v-if="experience.companyLink || experience.schoolLink"
-        :href="experience.companyLink || experience.schoolLink"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex size-6 items-center justify-center rounded-full bg-gray-800/50 text-gray-400 transition-colors hover:bg-violet-600/20 hover:text-violet-400"
-        @click.stop
-      >
-        <svg class="size-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-        </svg>
-      </a>
-    </div>
+    <!-- External link, anchored top-right of the card -->
+    <a
+      v-if="experience.companyLink || experience.schoolLink"
+      :href="experience.companyLink || experience.schoolLink"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="absolute right-4 top-4 z-10 flex size-6 items-center justify-center rounded-full bg-gray-800/50 text-gray-400 transition-colors hover:bg-violet-600/20 hover:text-violet-400"
+      @click.stop
+    >
+      <svg class="size-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+      </svg>
+    </a>
 
-    <!-- Content -->
-    <div class="space-y-3">
-      <!-- Title -->
-      <h3 class="text-lg font-bold leading-tight text-white">
-        {{ $t(experience.title) }}
-      </h3>
-      
-      <!-- Institution/Company -->
-      <div class="space-y-1">
-        <p 
-          class="font-medium transition-colors"
-          :class="typeConfig.textColor"
-        >
-          {{ institution }}
-        </p>
-        
-        <!-- Consulting company reference -->
-        <p v-if="experience.consultingCompany" class="text-xs text-gray-500">
-          via 
-          <a 
-            :href="experience.consultingCompanyLink"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-violet-400 transition-colors hover:text-violet-300"
-            @click.stop
+    <!--
+      Mobile-first: everything stacks in a single column.
+      When the card is alone in its period (`!compact`), from md up the main info
+      moves left and the meta (dates / location / stack) right, so it fills the full
+      width. When several experiences share the period the card stays compact so two
+      can sit side by side without cramping.
+    -->
+    <div
+      class="flex flex-col gap-5"
+      :class="{ 'md:flex-row md:items-start md:justify-between md:gap-8': !compact }"
+    >
+      <!-- Main info -->
+      <div class="min-w-0 flex-1 space-y-3 pr-8" :class="{ 'md:pr-0': !compact }">
+        <!-- Type indicator -->
+        <div class="flex items-center space-x-2">
+          <div
+            class="flex size-8 shrink-0 items-center justify-center rounded-full"
+            :class="typeConfig.bgColor"
           >
-            {{ experience.consultingCompany }}
-          </a>
-        </p>
-      </div>
-      
-      <!-- Date range -->
-      <p class="text-sm text-gray-400">
-        {{ dateRange }}
-        <span v-if="!experience.endDate" class="ml-1 inline-block size-2 rounded-full bg-green-500"></span>
-      </p>
-      
-      <!-- Location (if available) -->
-      <p v-if="experience.location" class="flex items-center text-sm text-gray-500" :class="{ 'flex-row-reverse': !isLeft }">
-        <svg class="mx-1 size-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-        {{ experience.location }}
-      </p>
-      
-      <!-- Tech stack for work experiences -->
-      <div v-if="experience.stack && experience.stack.length > 0" class="mt-4">
-        <div class="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400" :class="{ 'text-right': !isLeft, 'text-left': isLeft }">
-          {{ $t('timeline.techStack') }}
+            <svg class="size-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="typeConfig.iconPath" />
+            </svg>
+          </div>
+          <span
+            class="text-xs font-medium uppercase tracking-wider"
+            :class="typeConfig.textColor"
+          >
+            {{ $t(typeConfig.label) }}
+          </span>
         </div>
-        <div class="flex flex-wrap gap-1" :class="{ 'flex-row-reverse': !isLeft }">
-          <span
-            v-for="tech in experience.stack.slice(0, 4)"
-            :key="tech"
-            class="rounded border px-2 py-1 text-xs transition-all"
-            :class="typeConfig.stackClasses"
+
+        <!-- Title -->
+        <h3 class="text-lg font-bold leading-tight text-white">
+          {{ $t(experience.title) }}
+        </h3>
+
+        <!-- Institution/Company -->
+        <div class="space-y-1">
+          <p
+            class="font-medium transition-colors"
+            :class="typeConfig.textColor"
           >
-            {{ tech }}
-          </span>
-          <span
-            v-if="experience.stack.length > 4"
-            class="rounded border border-gray-600/30 bg-gray-600/10 px-2 py-1 text-xs text-gray-400"
-          >
-            +{{ experience.stack.length - 4 }}
-          </span>
+            {{ institution }}
+          </p>
+
+          <!-- Consulting company reference -->
+          <p v-if="experience.consultingCompany" class="text-xs text-gray-500">
+            via
+            <a
+              :href="experience.consultingCompanyLink"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-violet-400 transition-colors hover:text-violet-300"
+              @click.stop
+            >
+              {{ experience.consultingCompany }}
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Meta column: dates, location, stack -->
+      <div
+        class="space-y-3"
+        :class="{
+          'md:max-w-xs md:shrink-0 md:text-right': !compact,
+          'md:pr-8': !compact && hasExternalLink,
+        }"
+      >
+        <!-- Date range -->
+        <p class="text-sm text-gray-400">
+          {{ dateRange }}
+          <span v-if="!experience.endDate" class="ml-1 inline-block size-2 rounded-full bg-green-500"></span>
+        </p>
+
+        <!-- Location (if available) -->
+        <p v-if="experience.location" class="flex items-center text-sm text-gray-500" :class="{ 'md:justify-end': !compact }">
+          <svg class="mr-1 size-3" :class="{ 'md:order-2 md:ml-1 md:mr-0': !compact }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <span :class="{ 'md:order-1': !compact }">{{ experience.location }}</span>
+        </p>
+
+        <!-- Tech stack -->
+        <div v-if="experience.stack && experience.stack.length > 0">
+          <div class="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
+            {{ $t('timeline.techStack') }}
+          </div>
+          <div class="flex flex-wrap gap-1" :class="{ 'md:justify-end': !compact }">
+            <span
+              v-for="tech in experience.stack.slice(0, 4)"
+              :key="tech"
+              class="rounded border px-2 py-1 text-xs transition-all"
+              :class="typeConfig.stackClasses"
+            >
+              {{ tech }}
+            </span>
+            <span
+              v-if="experience.stack.length > 4"
+              class="rounded border border-gray-600/30 bg-gray-600/10 px-2 py-1 text-xs text-gray-400"
+            >
+              +{{ experience.stack.length - 4 }}
+            </span>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Hover effect overlay -->
-    <div 
+    <div
       class="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
       :class="typeConfig.hoverOverlay"
     ></div>
@@ -135,8 +154,9 @@ interface Props {
     category?: string
     consultingCompany?: string
     consultingCompanyLink?: string
-  },
-  isLeft?: boolean
+  }
+  /** Forces the compact single-column layout (used when cards sit side by side). */
+  compact?: boolean
 }
 
 interface Emits {
@@ -148,6 +168,7 @@ defineEmits<Emits>()
 
 const { t, locale } = useI18n({ useScope: 'global' })
 
+const hasExternalLink = computed(() => !!(props.experience.companyLink || props.experience.schoolLink))
 const institution = computed(() => props.experience.company || t(props.experience.school || ''))
 const dateRange = computed(() =>
   formatDateRange(props.experience.startDate, props.experience.endDate, locale.value, t('common.present'))
