@@ -115,7 +115,7 @@ export default Object.freeze({
         appStore: 'App Store',
         badgeMobileIos: 'App mobile · iOS',
         badgePlatform: 'Plateforme full-stack',
-        breizhcardDescription: 'Plateforme de carte de fidélité numérique pour les commerces bretons — maîtrise complète de la conception produit, du développement et du déploiement.',
+        breizhcardDescription: 'Plateforme SaaS de carte de visite en bois connectée (NFC + QR code) — conception produit, développement full-stack, e-commerce et déploiement.',
     },
 
     detail: {
@@ -171,7 +171,7 @@ export default Object.freeze({
 - Participation aux cérémonies scrum : sprint planning, dailys, revues de sprint, rétrospectives
 - Qualité de code et bonnes pratiques : revues de code, tests (Jest, pytest), rédaction de documentation
 - Résolution de problèmes : débogage, optimisation des performances`,
-        breizhcard: `Plateforme de carte de fidélité numérique pour les commerces bretons — maîtrise complète de la conception produit, du développement et du déploiement.`,
+        breizhcard: `Plateforme SaaS de carte de visite en bois connectée (NFC + QR code) — conception produit, développement full-stack, e-commerce et déploiement.`,
         davidServices: `Fondateur de ma propre entreprise (auto-entreprise) 🚀
 - Conception, développement et publication de « Un Jour en France », une application mobile cross-platform (iOS disponible sur l'App Store, Android en test fermé)
 - Maîtrise de bout en bout : application mobile, backend serverless, abonnements in-app, pipeline de contenu et publication sur les stores

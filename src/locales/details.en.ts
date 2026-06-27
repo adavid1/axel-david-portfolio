@@ -95,44 +95,47 @@ This project demonstrates advanced automation capabilities, including web scrapi
     },
 
     breizhcard: {
-        description: 'A comprehensive digital loyalty card platform for Brittany businesses',
+        description: 'SaaS platform that turns a wooden business card (NFC + QR code) into a fully customizable digital contact page, shareable in a single scan',
         year: '2023 - Present',
-        overview: `Breizhcard is a digital loyalty card platform that I conceptualized, designed, and developed from scratch as a volunteer project. The platform connects local businesses in Brittany with customers through a modern digital loyalty system.
+        overview: `Breizhcard is a SaaS platform that turns a physical wooden business card — fitted with an NFC chip and a QR code — into a fully customizable digital contact page. On scan, the recipient lands on a personal page designed by the cardholder (contact details, links, social networks, logo, banner, colors) and can save the contact to their phone instantly.
 
-As the sole full-stack developer on this project, I handled everything from initial market research and UX design to backend architecture, frontend development, deployment, and ongoing maintenance. This project represents a complete end-to-end solution that serves real businesses and customers.
+It's an alternative to the paper business card: always up to date (no reprinting), reusable, cheaper and more eco-friendly. Several wood types are offered, with single-unit or volume sales and a premium subscription (Breizhcard+) that unlocks advanced customization.
 
-The platform allows businesses to create digital loyalty programs, manage customer relationships, and track engagement metrics, while customers can discover local businesses, collect loyalty points, and redeem rewards through an intuitive mobile-first interface.`,
+As the sole developer on the project, I designed and built 100% of the technical side: web app (Nuxt / Vue frontend, Node / Express backend), e-commerce and payments, data hosting and infrastructure, and the CI/CD pipeline. Business leadership and commercial development are handled by the CEO, Guillaume Jaecques.`,
         impact: {
-            businesses: 'Active Businesses',
-            users: 'Registered Users',
-            scratch: 'Built from Scratch',
+            architectureValue: '3 repos',
+            architecture: 'Decoupled front / back / infra architecture',
+            languagesValue: 'FR / EN',
+            languages: 'Fully bilingual application',
+            pipelineValue: 'CI/CD',
+            pipeline: 'Automated lint, tests, build, release and deploy',
         },
         roles: [
-            'Product Design & UX',
-            'Full-Stack Development',
-            'DevOps & Deployment',
-            'Business Development',
+            'Product design & UX',
+            'Full-stack development (Nuxt / Node)',
+            'E-commerce & payments (Stripe)',
+            'Infrastructure & DevOps (Docker, CI/CD)',
         ],
         features: [
-            { title: 'Business Dashboard', description: 'Comprehensive admin panel for businesses to manage their loyalty programs, view analytics, and engage with customers' },
-            { title: 'Customer Mobile App', description: 'Progressive Web App allowing customers to discover businesses, scan QR codes, and track their loyalty points' },
-            { title: 'QR Code System', description: 'Seamless point collection system using dynamic QR codes generated for each business transaction' },
-            { title: 'Real-time Analytics', description: 'Live dashboard showing customer engagement, popular rewards, and business performance metrics' },
-            { title: 'Multi-tenant Architecture', description: 'Scalable system supporting multiple businesses with isolated data and customizable branding' },
-            { title: 'Notification System', description: 'Automated email and push notifications for reward redemptions, special offers, and business updates' },
+            { title: 'Contact page editor', description: 'Customization of the design (colors, logo, banner, social icons) and content (contact details, links), with drag-and-drop reordering' },
+            { title: 'NFC + QR code sharing', description: 'Instant access to the page on scan and direct saving of the contact into the recipient\'s phone' },
+            { title: 'E-commerce & volume pricing', description: 'Volume-based pricing, cart, secure payment via Stripe and automatic invoice generation' },
+            { title: 'Premium subscription (Breizhcard+)', description: 'Subscription management, renewals and a billing area to unlock advanced customization' },
+            { title: 'Customer area & admin back-office', description: 'Customers manage their cards, profile and subscriptions; the team manages users, orders and demo requests' },
+            { title: 'Bilingual FR / EN app', description: 'Full internationalization of the interface across the whole application' },
         ],
         challenges: [
-            { title: 'Multi-tenant Data Isolation', problem: 'Ensuring complete data separation between different businesses while maintaining performance and simplicity', solution: 'Implemented a tenant-based database schema with middleware-level tenant resolution and comprehensive data access controls' },
-            { title: 'Real-time Point Management', problem: 'Handling concurrent point transactions and preventing double-spending or race conditions', solution: "Developed atomic transaction handling with MongoDB's ACID transactions and implemented optimistic locking mechanisms" },
-            { title: 'Mobile-first UX Design', problem: 'Creating an intuitive experience for users of all ages and technical backgrounds', solution: 'Conducted user testing sessions with local business owners and customers, iterating on design based on real feedback' },
-            { title: 'Performance Optimization', problem: 'Ensuring fast load times and smooth interactions across various devices and network conditions', solution: 'Implemented lazy loading, image optimization, service worker caching, and progressive enhancement strategies' },
+            { title: 'Decoupled architecture', problem: 'Keeping consistency and autonomy across frontend, backend and infrastructure split into three separate repositories', solution: 'Clear API contracts, end-to-end TypeScript and strict naming conventions, with a codebase written entirely in English' },
+            { title: 'Full CI/CD pipeline', problem: 'Shipping with confidence across separate production and development environments', solution: 'A GitHub Actions pipeline chaining lint, typecheck, tests (Vitest, Playwright), build, security audit, versioned release (Changesets) and automated deployment' },
+            { title: 'Reliable payments & subscriptions', problem: 'Handling volume sales, invoicing and premium renewals without storing any banking data', solution: 'Stripe integration for payments and subscriptions, invoice generation and no banking data ever stored' },
+            { title: 'GDPR compliance by design', problem: 'Respecting user privacy while still measuring product usage', solution: 'Self-hosted, cookie-free analytics, data minimization and GDPR compliance built into the design' },
         ],
         timeline: [
-            { phase: 'Research & Planning', duration: 'July 2023', description: 'Market research, competitor analysis, and initial concept validation with local business owners' },
-            { phase: 'MVP Development', duration: 'August - October 2023', description: 'Core platform development: user authentication, basic loyalty system, and business dashboard' },
-            { phase: 'Beta Testing', duration: 'November 2023 - January 2024', description: 'Closed beta with 5 local businesses, gathering feedback and iterating on user experience' },
-            { phase: 'Public Launch', duration: 'February 2024', description: 'Official launch with marketing campaign and onboarding of the first 20 businesses' },
-            { phase: 'Feature Expansion', duration: 'March 2024 - Present', description: 'Advanced analytics, automated marketing tools, and integration with existing POS systems' },
+            { phase: 'Concept & scoping', duration: '2023', description: 'Defining the product, the business model (unit/volume sales, premium) and the contact page experience' },
+            { phase: 'Web platform', duration: '2023 - 2024', description: 'Nuxt / Vue frontend and Node / Express backend: page editor, customer area and admin back-office' },
+            { phase: 'E-commerce & subscriptions', duration: '2024', description: 'Stripe integration: single-unit and volume sales, invoicing and the Breizhcard+ premium subscription' },
+            { phase: 'Infrastructure & CI/CD', duration: '2024', description: 'Docker containerization, Nginx reverse proxy, separate environments and automated deployment via GitHub Actions' },
+            { phase: 'Continuous improvements', duration: '2024 - Present', description: 'Advanced customization, FR / EN internationalization and stronger GDPR compliance' },
         ],
     },
 

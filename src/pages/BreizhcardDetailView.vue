@@ -88,16 +88,16 @@
               <h3 class="mb-4 text-xl font-bold text-white">{{ $t('detail.projectImpact') }}</h3>
               <div class="space-y-4">
                 <div>
-                  <p class="text-3xl font-bold text-violet-400">20+</p>
-                  <p class="text-sm text-gray-300">{{ $t('breizhcard.impact.businesses') }}</p>
+                  <p class="text-3xl font-bold text-violet-400">{{ $t('breizhcard.impact.architectureValue') }}</p>
+                  <p class="text-sm text-gray-300">{{ $t('breizhcard.impact.architecture') }}</p>
                 </div>
                 <div>
-                  <p class="text-3xl font-bold text-purple-400">500+</p>
-                  <p class="text-sm text-gray-300">{{ $t('breizhcard.impact.users') }}</p>
+                  <p class="text-3xl font-bold text-purple-400">{{ $t('breizhcard.impact.languagesValue') }}</p>
+                  <p class="text-sm text-gray-300">{{ $t('breizhcard.impact.languages') }}</p>
                 </div>
                 <div>
-                  <p class="text-3xl font-bold text-pink-400">100%</p>
-                  <p class="text-sm text-gray-300">{{ $t('breizhcard.impact.scratch') }}</p>
+                  <p class="text-3xl font-bold text-pink-400">{{ $t('breizhcard.impact.pipelineValue') }}</p>
+                  <p class="text-sm text-gray-300">{{ $t('breizhcard.impact.pipeline') }}</p>
                 </div>
               </div>
             </div>
@@ -202,7 +202,7 @@
   const { tm, rt, locale } = useI18n({ useScope: 'global' })
 
   const title = 'Breizhcard'
-  const gitHubLink = 'https://www.breizhcard.com/'
+  const gitHubLink = 'https://breizhcard.fr/'
   const stack = breizhcardExp.stack ?? []
 
   interface Feature { title: string; description: string }

@@ -115,7 +115,7 @@ export default Object.freeze({
         appStore: 'App Store',
         badgeMobileIos: 'Mobile app · iOS',
         badgePlatform: 'Full-stack platform',
-        breizhcardDescription: 'Digital loyalty card platform for Brittany businesses — full ownership of product design, development and deployment.',
+        breizhcardDescription: 'SaaS platform for connected wooden business cards (NFC + QR code) — product design, full-stack development, e-commerce and deployment.',
     },
 
     detail: {
@@ -171,7 +171,7 @@ export default Object.freeze({
 - Participated in scrum ceremonies: sprint planning, daily standups, sprint reviews, retrospectives
 - Code quality and best practices: code reviews, testing (Jest, pytest), documentation writing
 - Problem solving and troubleshooting: debugging, performance optimization`,
-        breizhcard: `Digital loyalty card platform for Brittany businesses — full ownership of product design, development, and deployment.`,
+        breizhcard: `SaaS platform for connected wooden business cards (NFC + QR code) — product design, full-stack development, e-commerce and deployment.`,
         davidServices: `Founder of my own company (auto-entreprise) 🚀
 - Designed, developed and published "Un Jour en France", a cross-platform mobile app (iOS live on the App Store, Android in closed testing)
 - End-to-end ownership: mobile app, serverless backend, in-app subscriptions, content pipeline and store releases

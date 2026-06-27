@@ -95,44 +95,47 @@ Ce projet illustre des capacités d'automatisation avancées : web scraping, tra
     },
 
     breizhcard: {
-        description: 'Une plateforme complète de carte de fidélité numérique pour les commerces bretons',
+        description: 'Plateforme SaaS qui transforme une carte de visite en bois (NFC + QR code) en page de contact numérique entièrement personnalisable, partageable en un scan',
         year: "2023 - Aujourd'hui",
-        overview: `Breizhcard est une plateforme de carte de fidélité numérique que j'ai imaginée, conçue et développée de zéro en tant que projet bénévole. La plateforme met en relation les commerces locaux bretons et leurs clients via un système de fidélité numérique moderne.
+        overview: `Breizhcard est une plateforme SaaS qui transforme une carte de visite physique en bois — équipée d'une puce NFC et d'un QR code — en une page de contact numérique entièrement personnalisable. Au scan, le destinataire arrive sur une landing page conçue par le titulaire (coordonnées, liens, réseaux sociaux, logo, bannière, couleurs) et peut enregistrer le contact instantanément dans son téléphone.
 
-En tant que seul développeur full-stack du projet, j'ai tout pris en charge : de l'étude de marché initiale et du design UX à l'architecture backend, au développement frontend, au déploiement et à la maintenance. Ce projet représente une solution complète de bout en bout, au service de vrais commerces et de vrais clients.
+C'est une alternative à la carte de visite papier : toujours à jour (aucune réimpression), réutilisable, plus économique et plus écologique. Plusieurs essences de bois sont proposées, avec une vente à l'unité ou en volume et un abonnement premium (Breizhcard+) qui débloque la personnalisation avancée.
 
-La plateforme permet aux commerces de créer des programmes de fidélité, de gérer la relation client et de suivre l'engagement, tandis que les clients peuvent découvrir des commerces locaux, cumuler des points et utiliser leurs récompenses via une interface intuitive pensée mobile-first.`,
+En tant que seul développeur du projet, j'ai conçu et réalisé 100 % de la partie technique : application web (frontend Nuxt / Vue, backend Node / Express), e-commerce et paiements, hébergement et infrastructure des données, ainsi que la chaîne d'intégration et de livraison continue. La direction et le développement commercial sont assurés par le CEO, Guillaume Jaecques.`,
         impact: {
-            businesses: 'Commerces actifs',
-            users: 'Utilisateurs inscrits',
-            scratch: 'Développé de zéro',
+            architectureValue: '3 dépôts',
+            architecture: 'Architecture découplée front / back / infra',
+            languagesValue: 'FR / EN',
+            languages: 'Application entièrement bilingue',
+            pipelineValue: 'CI/CD',
+            pipeline: 'Lint, tests, build, release et déploiement automatisés',
         },
         roles: [
-            'Design produit & UX',
-            'Développement full-stack',
-            'DevOps & déploiement',
-            'Développement commercial',
+            'Conception produit & UX',
+            'Développement full-stack (Nuxt / Node)',
+            'E-commerce & paiements (Stripe)',
+            'Infrastructure & DevOps (Docker, CI/CD)',
         ],
         features: [
-            { title: 'Tableau de bord commerçant', description: 'Panneau d’administration complet pour gérer les programmes de fidélité, consulter les statistiques et interagir avec les clients' },
-            { title: 'App mobile client', description: 'Progressive Web App permettant aux clients de découvrir les commerces, scanner des QR codes et suivre leurs points de fidélité' },
-            { title: 'Système de QR codes', description: 'Cumul de points fluide grâce à des QR codes dynamiques générés pour chaque transaction' },
-            { title: 'Statistiques en temps réel', description: 'Tableau de bord en direct montrant l’engagement client, les récompenses populaires et les performances du commerce' },
-            { title: 'Architecture multi-tenant', description: 'Système évolutif prenant en charge plusieurs commerces avec des données isolées et une image de marque personnalisable' },
-            { title: 'Système de notifications', description: 'Notifications e-mail et push automatisées pour les récompenses, offres spéciales et actualités des commerces' },
+            { title: 'Éditeur de page de contact', description: 'Personnalisation du design (couleurs, logo, bannière, icônes réseaux) et du contenu (coordonnées, liens), avec réorganisation des éléments' },
+            { title: 'Partage NFC + QR code', description: 'Accès instantané à la page au scan et enregistrement direct du contact dans le téléphone du destinataire' },
+            { title: 'E-commerce & tarification au volume', description: 'Tarification dégressive, panier, paiement sécurisé via Stripe et génération automatique des factures' },
+            { title: 'Abonnement premium (Breizhcard+)', description: 'Gestion des souscriptions, renouvellement et espace de facturation pour débloquer la personnalisation avancée' },
+            { title: 'Espace client & back-office', description: 'Gestion des cartes, du profil et des abonnements côté client ; administration des utilisateurs, commandes et demandes de démo côté équipe' },
+            { title: 'Application bilingue FR / EN', description: 'Internationalisation complète de l’interface sur l’ensemble de l’application' },
         ],
         challenges: [
-            { title: 'Isolation des données multi-tenant', problem: 'Garantir une séparation complète des données entre commerces tout en conservant performance et simplicité', solution: 'Schéma de base de données par tenant, résolution du tenant au niveau middleware et contrôles d’accès complets aux données' },
-            { title: 'Gestion des points en temps réel', problem: 'Gérer des transactions de points concurrentes et éviter la double dépense ou les conditions de course', solution: 'Transactions atomiques via les transactions ACID de MongoDB et verrouillage optimiste' },
-            { title: 'Design UX mobile-first', problem: 'Créer une expérience intuitive pour des utilisateurs de tous âges et niveaux techniques', solution: 'Sessions de test utilisateur avec des commerçants et des clients, et itérations sur le design à partir de retours réels' },
-            { title: 'Optimisation des performances', problem: 'Garantir des temps de chargement rapides et des interactions fluides sur des appareils et réseaux variés', solution: 'Lazy loading, optimisation des images, cache via service worker et amélioration progressive' },
+            { title: 'Architecture découplée', problem: 'Maintenir cohérence et autonomie entre frontend, backend et infrastructure répartis dans trois dépôts distincts', solution: 'Contrats d’API clairs, TypeScript de bout en bout et conventions de nommage strictes, avec un code intégralement en anglais' },
+            { title: 'Pipeline CI/CD complet', problem: 'Livrer en confiance sur des environnements production et développement séparés', solution: 'Pipeline GitHub Actions enchaînant lint, typecheck, tests (Vitest, Playwright), build, audit de sécurité, release versionnée (Changesets) et déploiement automatisé' },
+            { title: 'Paiements & abonnements fiables', problem: 'Gérer ventes au volume, facturation et renouvellements premium sans stocker de données bancaires', solution: 'Intégration Stripe pour les paiements et les abonnements, génération de factures et aucune donnée bancaire conservée' },
+            { title: 'Conformité RGPD dès la conception', problem: 'Respecter la vie privée des utilisateurs tout en mesurant l’usage du produit', solution: 'Analytics auto-hébergés sans cookie, minimisation des données et conformité RGPD intégrée à la conception' },
         ],
         timeline: [
-            { phase: 'Recherche & cadrage', duration: 'Juillet 2023', description: 'Étude de marché, analyse concurrentielle et validation du concept avec des commerçants locaux' },
-            { phase: 'Développement du MVP', duration: 'Août - Octobre 2023', description: 'Développement du cœur de la plateforme : authentification, système de fidélité de base et tableau de bord commerçant' },
-            { phase: 'Bêta-test', duration: 'Novembre 2023 - Janvier 2024', description: 'Bêta fermée avec 5 commerces locaux, collecte de retours et itérations sur l’expérience' },
-            { phase: 'Lancement public', duration: 'Février 2024', description: 'Lancement officiel avec campagne marketing et onboarding des 20 premiers commerces' },
-            { phase: 'Extension des fonctionnalités', duration: "Mars 2024 - Aujourd'hui", description: 'Statistiques avancées, outils marketing automatisés et intégration avec les systèmes de caisse existants' },
+            { phase: 'Conception & cadrage', duration: '2023', description: 'Définition du produit, du modèle économique (vente unitaire/volume, premium) et de l’expérience de la page de contact' },
+            { phase: 'Plateforme web', duration: '2023 - 2024', description: 'Frontend Nuxt / Vue et backend Node / Express : éditeur de page, espace client et back-office d’administration' },
+            { phase: 'E-commerce & abonnements', duration: '2024', description: 'Intégration Stripe : ventes à l’unité et au volume, facturation et abonnement premium Breizhcard+' },
+            { phase: 'Infrastructure & CI/CD', duration: '2024', description: 'Conteneurisation Docker, reverse proxy Nginx, environnements séparés et déploiement automatisé via GitHub Actions' },
+            { phase: 'Améliorations continues', duration: "2024 - Aujourd'hui", description: 'Personnalisation avancée, internationalisation FR / EN et renforcement de la conformité RGPD' },
         ],
     },
 
