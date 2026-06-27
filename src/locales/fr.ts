@@ -37,14 +37,52 @@ export default Object.freeze({
         techTitle: 'Technologies que j\'utilise',
     },
 
+    about: {
+        title: 'À propos',
+        p1: 'Ingénieur informatique de 28 ans, je construis des applications web et mobiles full-stack depuis 8 ans — de la base de données à l\'interface, jusqu\'au déploiement.',
+        p2: 'Après mes débuts en alternance chez General Electric, puis des missions chez Fives Syleps, Naval Group et Ateme, j\'ai choisi fin 2024 de partir voyager. Plutôt qu\'une simple pause, j\'en ai fait une période de création : c\'est en voyageant que j\'ai monté ma propre auto-entreprise et publié « Un Jour en France » sur l\'App Store, tout en contribuant bénévolement à la plateforme Breizhcard.',
+        p3: 'J\'aime aussi travailler main dans la main avec l\'IA : Claude et ChatGPT sont devenus de vrais accélérateurs au quotidien, et j\'intègre l\'IA directement dans mes produits — « Un Jour en France » propose par exemple une narration audio générée par IA.',
+        p4: 'De retour en France, je recherche un poste en CDI où mettre cette double casquette — la solidité technique d\'un ingénieur et l\'autonomie d\'un fondateur — au service d\'une équipe et d\'un produit qui ont du sens.',
+    },
+
+    skills: {
+        title: 'Compétences',
+        subtitle: 'Les technologies et savoir-faire que je mobilise au quotidien',
+        groups: {
+            languages: 'Langages',
+            frontend: 'Front-end',
+            backend: 'Back-end',
+            databases: 'Bases de données',
+            devops: 'DevOps & outils',
+            testing: 'Tests & méthodologies',
+            ai: 'IA & Prompt engineering',
+        },
+        languagesTitle: 'Langues',
+        spoken: {
+            french: 'Français',
+            frenchLevel: 'Langue maternelle',
+            english: 'Anglais',
+            englishLevel: 'Courant (C1)',
+            spanish: 'Espagnol',
+            spanishLevel: 'Intermédiaire',
+        },
+    },
+
+    contact: {
+        title: 'Travaillons ensemble',
+        subtitle: 'Disponible pour un CDI · Saint-Nazaire & télétravail. Un projet, un poste à pourvoir ou simplement envie d\'échanger ?',
+        emailCta: 'M\'écrire',
+        linkedinCta: 'LinkedIn',
+    },
+
     footer: {
         tagline: 'Développeur Full Stack passionné par la construction d\'applications web évolutives et maintenables. Toujours curieux d\'apprendre de nouvelles technologies et de résoudre des problèmes complexes.',
         quickLinks: 'Liens rapides',
         timeline: 'Parcours professionnel',
         projects: 'Mes projets',
-        featuredBreizhcard: 'À la une : Breizhcard',
+        featuredUjef: 'À la une : Un Jour en France',
         connect: 'Me contacter',
-        location: 'Bretagne, France',
+        location: 'Saint-Nazaire, France',
         copyright: '© {year} Axel David. Construit avec Vue.js & Tailwind CSS.',
     },
 

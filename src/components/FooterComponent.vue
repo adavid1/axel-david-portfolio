@@ -31,8 +31,8 @@ import constants from '@/constants'
             <RouterLink to="/projects" class="text-sm text-gray-400 transition-colors duration-300 hover:text-violet-400">
               {{ $t('footer.projects') }}
             </RouterLink>
-            <RouterLink to="/projects/breizhcard" class="text-sm text-gray-400 transition-colors duration-300 hover:text-violet-400">
-              {{ $t('footer.featuredBreizhcard') }}
+            <RouterLink to="/projects/un-jour-en-france" class="text-sm text-gray-400 transition-colors duration-300 hover:text-violet-400">
+              {{ $t('footer.featuredUjef') }}
             </RouterLink>
           </nav>
         </div>
