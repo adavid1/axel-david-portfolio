@@ -6,7 +6,6 @@ export default Object.freeze({
     // Profile / hero
     title: 'Full Stack Developer',
     intro: 'Full Stack Developer with 8 years of experience, passionate about building scalable and maintainable web applications.',
-    now: 'Today',
 
     // Experience titles
     iutTitle: 'DUT in Physical Measurements',

@@ -50,7 +50,7 @@
           <!-- Action Buttons -->
           <div class="flex flex-col justify-center gap-4 sm:flex-row">
             <a
-              :href="gitHubLink"
+              :href="liveSiteLink"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center rounded-xl bg-gradient-to-r from-violet-600 to-purple-700 px-6 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/25"
@@ -202,7 +202,7 @@
   const { tm, rt, locale } = useI18n({ useScope: 'global' })
 
   const title = 'Breizhcard'
-  const gitHubLink = 'https://breizhcard.fr/'
+  const liveSiteLink = 'https://breizhcard.fr/'
   const stack = breizhcardExp.stack ?? []
 
   interface Feature { title: string; description: string }

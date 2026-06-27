@@ -42,7 +42,7 @@ import constants from '@/constants'
           <h4 class="text-lg font-semibold text-white">{{ $t('footer.connect') }}</h4>
           <div class="flex space-x-4">
             <a
-              href="https://www.linkedin.com/in/axel-david-297346143/"
+              :href="constants.linkedin"
               target="_blank"
               rel="noopener noreferrer"
               class="group rounded-xl border border-gray-700/50 bg-gray-800/50 p-3 transition-all duration-300 hover:border-violet-500/50 hover:bg-violet-600/20"
@@ -56,7 +56,7 @@ import constants from '@/constants'
               >
             </a>
             <a
-              href="https://github.com/adavid1"
+              :href="constants.github"
               target="_blank"
               rel="noopener noreferrer"
               class="group rounded-xl border border-gray-700/50 bg-gray-800/50 p-3 transition-all duration-300 hover:border-violet-500/50 hover:bg-violet-600/20"
