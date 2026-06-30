@@ -35,7 +35,6 @@ export default Object.freeze({
         download: 'Télécharger en PDF',
         downloadHint: 'Ouvre la fenêtre d\'impression, choisissez « Enregistrer en PDF » comme destination.',
         backToSite: 'Retour au portfolio',
-        inkSaver: 'Version éco-encre',
         inkSaverHint: 'Choisissez la version claire (sans bandeau ni photo) pour économiser l\'encre à l\'impression papier.',
         ecoVersion: 'Éco-encre',
         availableForWork: 'Disponible pour un CDI',

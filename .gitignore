@@ -2,3 +2,7 @@ node_modules
 dist
 .vscode
 .claude/
+
+# Local env files (e.g. VITE_CV_PHONE) — never commit secrets/PII
+.env.local
+.env.*.local

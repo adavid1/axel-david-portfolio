@@ -159,23 +159,23 @@ onBeforeUnmount(() => {
         <!-- Contact -->
         <ul class="space-y-1.5 text-[11px]">
           <li class="flex items-center gap-2">
-            <svg class="size-3.5 shrink-0 cv-side-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+            <svg class="cv-side-icon size-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
             <span>Saint-Nazaire, France · {{ age }} {{ locale === 'fr' ? 'ans' : 'y.o.' }}</span>
           </li>
-          <li class="flex items-center gap-2">
-            <svg class="size-3.5 shrink-0 cv-side-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11 11 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+          <li v-if="constants.phone" class="flex items-center gap-2">
+            <svg class="cv-side-icon size-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11 11 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
             <a :href="phoneHref" class="hover:underline">{{ phoneDisplay }}</a>
           </li>
           <li class="flex items-center gap-2">
-            <svg class="size-3.5 shrink-0 cv-side-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            <svg class="cv-side-icon size-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
             <a :href="`mailto:${constants.email}`" class="break-all hover:underline">{{ constants.email }}</a>
           </li>
           <li class="flex items-center gap-2">
-            <svg class="size-3.5 shrink-0 cv-side-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12" /></svg>
+            <svg class="cv-side-icon size-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12" /></svg>
             <a :href="constants.github" target="_blank" rel="noopener noreferrer" class="break-all hover:underline">{{ githubLabel }}</a>
           </li>
           <li class="flex items-center gap-2">
-            <svg class="size-3.5 shrink-0 cv-side-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13l1.6-4.5A2 2 0 016.5 7h11a2 2 0 011.9 1.5L21 13v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z" /><path stroke-linecap="round" stroke-linejoin="round" d="M7 16h.01M17 16h.01" /></svg>
+            <svg class="cv-side-icon size-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13l1.6-4.5A2 2 0 016.5 7h11a2 2 0 011.9 1.5L21 13v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z" /><path stroke-linecap="round" stroke-linejoin="round" d="M7 16h.01M17 16h.01" /></svg>
             <span>{{ $t('cv.permis') }}</span>
           </li>
         </ul>
@@ -185,7 +185,7 @@ onBeforeUnmount(() => {
           <h2 class="cv-side-title">{{ $t('cv.sections.skills') }}</h2>
           <dl class="mt-2 space-y-1.5 text-[10px] leading-snug">
             <div v-for="group in skillGroups" :key="group.labelKey">
-              <dt class="font-semibold cv-side-strong">{{ $t(group.labelKey) }}</dt>
+              <dt class="cv-side-strong font-semibold">{{ $t(group.labelKey) }}</dt>
               <dd class="cv-side-muted">{{ group.items.join(' · ') }}</dd>
             </div>
           </dl>
@@ -196,7 +196,7 @@ onBeforeUnmount(() => {
           <h2 class="cv-side-title">{{ $t('cv.sections.languages') }}</h2>
           <ul class="mt-2 space-y-1 text-[11px]">
             <li v-for="lang in spokenLanguages" :key="lang.name">
-              <span class="font-semibold cv-side-strong">{{ lang.name }}</span>
+              <span class="cv-side-strong font-semibold">{{ lang.name }}</span>
               <span class="cv-side-muted"> · {{ lang.level }}</span>
             </li>
           </ul>
@@ -213,7 +213,7 @@ onBeforeUnmount(() => {
         <!-- Interests -->
         <div>
           <h2 class="cv-side-title">{{ $t('cv.sections.interests') }}</h2>
-          <p class="mt-2 text-[10.5px] leading-snug cv-side-muted">{{ $t('cv.interests') }}</p>
+          <p class="cv-side-muted mt-2 text-[10.5px] leading-snug">{{ $t('cv.interests') }}</p>
         </div>
       </aside>
 

@@ -18,6 +18,14 @@ export default defineConfigWithVueTs(
       parserOptions: {
         parser: '@typescript-eslint/parser'
       }
+    },
+    settings: {
+      // Semantic component classes defined in scoped <style> (e.g. cv-sheet,
+      // cv-side-title) are not Tailwind utilities — whitelist them so
+      // tailwindcss/no-custom-classname doesn't flag every usage.
+      tailwindcss: {
+        whitelist: ['cv-.*']
+      }
     }
   }
 )
