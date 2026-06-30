@@ -3,6 +3,20 @@ export function parseDate(date: string): Date {
     return new Date(Number(year), Number(month) - 1, Number(day))
 }
 
+/**
+ * Whole years elapsed since a dd-mm-yyyy date — i.e. completed anniversaries.
+ * Used for the "N years of experience" copy so it never goes stale.
+ */
+export function yearsSince(date: string, now: Date = new Date()): number {
+    const start = parseDate(date)
+    let years = now.getFullYear() - start.getFullYear()
+    const monthDiff = now.getMonth() - start.getMonth()
+    if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < start.getDate())) {
+        years--
+    }
+    return years
+}
+
 function intlLocale(locale: string): string {
     return locale.startsWith("fr") ? "fr-FR" : "en-US"
 }

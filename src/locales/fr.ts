@@ -5,7 +5,7 @@ export default Object.freeze({
 
     // Profil / hero
     title: 'Développeur Full Stack',
-    intro: 'Développeur Full Stack avec 8 ans d\'expérience, passionné par la construction d\'applications web évolutives et maintenables.',
+    intro: 'Développeur Full Stack avec {years} ans d\'expérience, passionné par la construction d\'applications web évolutives et maintenables.',
 
     // Intitulés d'expériences
     iutTitle: 'DUT Mesures Physiques',
@@ -38,7 +38,7 @@ export default Object.freeze({
 
     about: {
         title: 'À propos',
-        p1: 'Ingénieur informatique de 28 ans, je construis des applications web et mobiles full-stack depuis 8 ans — de la base de données à l\'interface, jusqu\'au déploiement.',
+        p1: 'Ingénieur informatique de {age} ans, je construis des applications web et mobiles full-stack depuis {years} ans — de la base de données à l\'interface, jusqu\'au déploiement.',
         p2: 'Après mes débuts en alternance chez General Electric, puis des missions chez Fives Syleps, Naval Group et Ateme, j\'ai choisi fin 2024 de partir voyager. Plutôt qu\'une simple pause, j\'en ai fait une période de création : c\'est en voyageant que j\'ai monté ma propre auto-entreprise et publié « Un Jour en France » sur l\'App Store, tout en contribuant bénévolement à la plateforme Breizhcard.',
         p3: 'J\'aime aussi travailler main dans la main avec l\'IA : Claude et ChatGPT sont devenus de vrais accélérateurs au quotidien, et j\'intègre l\'IA directement dans mes produits — « Un Jour en France » propose par exemple une narration audio générée par IA.',
         p4: 'De retour en France, je recherche un poste en CDI où mettre cette double casquette — la solidité technique d\'un ingénieur et l\'autonomie d\'un fondateur — au service d\'une équipe et d\'un produit qui ont du sens.',

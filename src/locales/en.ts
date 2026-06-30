@@ -5,7 +5,7 @@ export default Object.freeze({
 
     // Profile / hero
     title: 'Full Stack Developer',
-    intro: 'Full Stack Developer with 8 years of experience, passionate about building scalable and maintainable web applications.',
+    intro: 'Full Stack Developer with {years} years of experience, passionate about building scalable and maintainable web applications.',
 
     // Experience titles
     iutTitle: 'DUT in Physical Measurements',
@@ -38,7 +38,7 @@ export default Object.freeze({
 
     about: {
         title: 'About',
-        p1: 'I\'m a 28-year-old IT engineer who has been building full-stack web and mobile applications for 8 years — from the database to the interface, all the way to deployment.',
+        p1: 'I\'m a {age}-year-old IT engineer who has been building full-stack web and mobile applications for {years} years — from the database to the interface, all the way to deployment.',
         p2: 'After starting out on a sandwich course at General Electric, then taking on missions at Fives Syleps, Naval Group and Ateme, I decided in late 2024 to go travelling. Rather than just a break, I turned it into a creative period: while on the road I set up my own company and shipped "Un Jour en France" on the App Store, while volunteering on the Breizhcard platform.',
         p3: 'I also love working hand in hand with AI: Claude and ChatGPT have become real daily accelerators, and I integrate AI directly into my products — "Un Jour en France", for instance, features AI-generated audio narration.',
         p4: 'Now back in France, I\'m looking for a permanent role (CDI) where I can put this dual profile — an engineer\'s technical solidity and a founder\'s autonomy — to work for a team and a product that matter.',
