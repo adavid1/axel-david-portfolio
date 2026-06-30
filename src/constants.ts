@@ -7,6 +7,8 @@ export default Object.freeze({
     birthDate: '31-12-1997',
     // TODO: swap to contact@axel-david.fr once the domain mailbox is live
     email: 'axeldvi.pro@gmail.com',
-    linkedin: 'https://www.linkedin.com/in/axel-david-297346143/',
+    // Shown on the downloadable CV. Note: bundled into the public site JS too.
+    phone: '+33 6 45 19 79 17',
+    linkedin: 'https://www.linkedin.com/in/axeldavid44/',
     github: 'https://github.com/adavid1',
 })

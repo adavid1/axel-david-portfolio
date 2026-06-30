@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import TimelineView from '@/pages/TimelineView.vue'
 import HomeView from '@/pages/HomeView.vue'
 import ProjectsView from '@/pages/ProjectsView.vue'
+import CvView from '@/pages/CvView.vue'
 import BreizhcardDetailView from '@/pages/BreizhcardDetailView.vue'
 import UnJourEnFranceDetailView from '@/pages/UnJourEnFranceDetailView.vue'
 import ProjectDetailView from '@/pages/ProjectDetailView.vue'
@@ -27,6 +28,11 @@ const router = createRouter({
       path: '/projects',
       name: 'projects',
       component: ProjectsView
+    },
+    {
+      path: '/cv',
+      name: 'cv',
+      component: CvView
     },
     {
       path: '/projects/breizhcard',
