@@ -64,6 +64,16 @@ const otherLocaleLabel = () => (locale.value === 'fr' ? 'EN' : 'FR')
           >
             {{ $t('nav.projects') }}
           </RouterLink>
+          <RouterLink
+            to="/cv"
+            class="rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300"
+            :class="{
+              'bg-violet-600 text-white shadow-lg shadow-violet-600/25': $route.path === '/cv',
+              'text-gray-300 hover:bg-gray-800/50 hover:text-white': $route.path !== '/cv'
+            }"
+          >
+            {{ $t('nav.cv') }}
+          </RouterLink>
 
           <!-- Language switcher -->
           <button
@@ -154,6 +164,17 @@ const otherLocaleLabel = () => (locale.value === 'fr' ? 'EN' : 'FR')
             }"
           >
             {{ $t('nav.projects') }}
+          </RouterLink>
+          <RouterLink
+            to="/cv"
+            @click="isMobileMenuOpen = false"
+            class="block rounded-lg px-3 py-2 text-base font-medium transition-all duration-300"
+            :class="{
+              'bg-violet-600 text-white': $route.path === '/cv',
+              'text-gray-300 hover:bg-gray-800/50 hover:text-white': $route.path !== '/cv'
+            }"
+          >
+            {{ $t('nav.cv') }}
           </RouterLink>
         </div>
       </div>

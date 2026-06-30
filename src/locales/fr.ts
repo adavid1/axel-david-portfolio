@@ -27,7 +27,43 @@ export default Object.freeze({
         home: 'Accueil',
         timeline: 'Parcours',
         projects: 'Projets',
+        cv: 'CV',
         switchTo: 'Passer en anglais',
+    },
+
+    cv: {
+        download: 'Télécharger en PDF',
+        downloadHint: 'Ouvre la fenêtre d\'impression, choisissez « Enregistrer en PDF » comme destination.',
+        backToSite: 'Retour au portfolio',
+        inkSaverHint: 'Choisissez la version claire (sans bandeau ni photo) pour économiser l\'encre à l\'impression papier.',
+        ecoVersion: 'Éco-encre',
+        availableForWork: 'Disponible pour un CDI',
+        present: 'Aujourd\'hui',
+        sections: {
+            profile: 'Profil',
+            experience: 'Expériences professionnelles',
+            education: 'Formation',
+            skills: 'Compétences',
+            languages: 'Langues',
+            certifications: 'Diplômes & certifications',
+            interests: 'Centres d\'intérêt',
+        },
+        certs: {
+            bnssa: 'BNSSA, brevet de sauvetage aquatique',
+            pse1: 'PSE1, premiers secours en équipe',
+        },
+        interests: 'Code · Sport · Voyage · Musique · Bricolage · Culture numérique',
+        summary: 'Ingénieur informatique avec {years} ans d\'expérience, je développe des applications web et mobiles full-stack, de la base de données jusqu\'au déploiement. Double profil d\'ingénieur et de fondateur, à l\'aise avec l\'intégration de l\'IA dans les produits. Je recherche un poste en CDI.',
+        permis: 'Permis B',
+        oneLiner: 'Ingénieur informatique · Développeur Full Stack',
+        exp: {
+            davidServices: 'Conception et publication de « Un Jour en France » (iOS/Android) : application cross-platform, backend serverless, abonnements in-app, gamification et narration audio générée par IA.',
+            ateme: 'Développement full-stack (Vue, Node, Express, GraphQL) et intégration (Docker, Kubernetes) en équipe Scrum ; revues de code, tests et optimisation des performances.',
+            naval: 'Administration et maintien en condition opérationnelle du logiciel X3 (support N1 à N3), extraction et migration de données vers eBusiness Suite R12, automatisation SQL.',
+            fives: 'Développement logiciel (C#, PL/SQL), intégration et configuration d\'outils, support et formation des utilisateurs.',
+            ge: 'Développement d\'applications de dématérialisation (C#, WPF) et des bases de données associées, en lien direct avec les utilisateurs et en méthodologie agile.',
+            breizhcard: 'Développement full-stack (Nuxt, Vue, Node, MongoDB, Stripe) de la plateforme SaaS de carte de visite connectée (NFC + QR code), du produit au déploiement.',
+        },
     },
 
     home: {

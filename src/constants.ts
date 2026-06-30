@@ -7,6 +7,10 @@ export default Object.freeze({
     birthDate: '31-12-1997',
     // TODO: swap to contact@axel-david.fr once the domain mailbox is live
     email: 'axeldvi.pro@gmail.com',
-    linkedin: 'https://www.linkedin.com/in/axel-david-297346143/',
+    // Shown on the downloadable CV. Kept out of the committed source / public
+    // bundle: set VITE_CV_PHONE in a local .env.local (gitignored). Empty here
+    // means the CV simply omits the phone line.
+    phone: import.meta.env.VITE_CV_PHONE ?? '',
+    linkedin: 'https://www.linkedin.com/in/axeldavid44/',
     github: 'https://github.com/adavid1',
 })
