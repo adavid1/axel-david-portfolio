@@ -1,7 +1,12 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 import constants from '@/constants.ts'
 import { skillGroups } from '@/data/skills'
+import { yearsSince } from '@/utils'
+
+const experienceYears = computed(() => yearsSince(constants.careerStart))
+const age = computed(() => yearsSince(constants.birthDate))
 </script>
 
 <template>
@@ -31,7 +36,7 @@ import { skillGroups } from '@/data/skills'
           <!-- Description -->
           <div class="mx-auto max-w-2xl">
             <p class="text-lg leading-relaxed text-gray-300">
-              {{ $t('intro') }}
+              {{ $t('intro', { years: experienceYears }) }}
             </p>
           </div>
 
@@ -63,7 +68,7 @@ import { skillGroups } from '@/data/skills'
         <span class="bg-gradient-to-r from-violet-400 to-purple-500 bg-clip-text text-transparent">{{ $t('about.title') }}</span>
       </h2>
       <div class="space-y-5 text-lg leading-relaxed text-gray-300">
-        <p>{{ $t('about.p1') }}</p>
+        <p>{{ $t('about.p1', { age, years: experienceYears }) }}</p>
         <p>{{ $t('about.p2') }}</p>
         <p>{{ $t('about.p3') }}</p>
         <p>{{ $t('about.p4') }}</p>
