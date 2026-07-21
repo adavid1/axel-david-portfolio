@@ -57,7 +57,7 @@ export default Object.freeze({
         permis: 'Driving licence (cat. B)',
         oneLiner: 'IT Engineer · Full Stack Developer',
         exp: {
-            davidServices: 'Designed and shipped "Un Jour en France" (iOS/Android): cross-platform app, serverless backend, in-app subscriptions, gamification and AI-generated audio narration.',
+            davidServices: 'Designed and shipped several mobile apps on the App Store and Google Play ("Un Jour en France", "Puffless", "WakeVerse"): React Native apps, serverless backends, in-app subscriptions, gamification and AI.',
             ateme: 'Full-stack development (Vue, Node, Express, GraphQL) and integration (Docker, Kubernetes) within a Scrum team; code reviews, testing and performance optimisation.',
             naval: 'Administration and operational maintenance of the X3 software (level 1-3 support), data extraction and migration to eBusiness Suite R12, SQL automation.',
             fives: 'Software development (C#, PL/SQL), tooling integration and configuration, user support and training.',
@@ -75,7 +75,7 @@ export default Object.freeze({
     about: {
         title: 'About',
         p1: 'I\'m a {age}-year-old IT engineer who has been building full-stack web and mobile applications for {years} years — from the database to the interface, all the way to deployment.',
-        p2: 'After starting out on a sandwich course at General Electric, then taking on missions at Fives Syleps, Naval Group and Ateme, I decided in late 2024 to go travelling. Rather than just a break, I turned it into a creative period: while on the road I set up my own company and shipped "Un Jour en France" on the App Store, while volunteering on the Breizhcard platform.',
+        p2: 'After starting out on a sandwich course at General Electric, then taking on missions at Fives Syleps, Naval Group and Ateme, I decided in late 2024 to go travelling. Rather than just a break, I turned it into a creative period: while on the road I set up my own company (David Services) and shipped several mobile apps — "Un Jour en France" on the App Store and Google Play, then "Puffless" and "WakeVerse" on the App Store — while volunteering on the Breizhcard platform.',
         p3: 'I also love working hand in hand with AI: Claude and ChatGPT have become real daily accelerators, and I integrate AI directly into my products — "Un Jour en France", for instance, features AI-generated audio narration.',
         p4: 'Now back in France, I\'m looking for a permanent role (CDI) where I can put this dual profile — an engineer\'s technical solidity and a founder\'s autonomy — to work for a team and a product that matter.',
     },
@@ -149,7 +149,9 @@ export default Object.freeze({
         other: 'Other Projects',
         website: 'Website',
         appStore: 'App Store',
+        playStore: 'Google Play',
         badgeMobileIos: 'Mobile app · iOS',
+        badgeMobileCrossPlatform: 'Mobile app · iOS & Android',
         badgePlatform: 'Full-stack platform',
         breizhcardDescription: 'SaaS platform for connected wooden business cards (NFC + QR code) — product design, full-stack development, e-commerce and deployment.',
     },
@@ -168,6 +170,7 @@ export default Object.freeze({
         availability: 'Availability',
         premium: 'Premium',
         downloadAppStore: 'Download on the App Store',
+        downloadPlayStore: 'Get it on Google Play',
         visitWebsite: 'Visit Website',
         visitLiveSite: 'Visit Live Site',
         viewSource: 'View Source Code',
@@ -210,9 +213,11 @@ export default Object.freeze({
 - Problem solving and troubleshooting: debugging, performance optimization`,
         breizhcard: `SaaS platform for connected wooden business cards (NFC + QR code) — product design, full-stack development, e-commerce and deployment.`,
         davidServices: `Founder of my own company (auto-entreprise) 🚀
-- Designed, developed and published "Un Jour en France", a cross-platform mobile app (iOS live on the App Store, Android in closed testing)
-- End-to-end ownership: mobile app, serverless backend, in-app subscriptions, content pipeline and store releases
-- Built a full freemium product: daily content, quizzes, gamification (streaks, badges, monthly leaderboard) and AI audio narration
+- Designed, developed and published several mobile apps on the App Store and Google Play
+- "Un Jour en France" (iOS & Android): French-culture freemium product — daily content, quizzes, gamification (streaks, badges, monthly leaderboard) and AI audio narration
+- "Puffless" (iOS): quit-vaping companion app — personalized quit plan, money-saved and health tracking, craving management
+- "WakeVerse" (iOS): alarm clock that surfaces a Bible verse on wake-up — reliable alarm even on silent, English and French
+- End-to-end ownership: mobile app (React Native / Expo), serverless backend, in-app subscriptions, content pipeline and store releases
 - Enforced Premium access and tamper-proof subscription status at the server level`,
     },
 
@@ -224,6 +229,8 @@ export default Object.freeze({
         optymo: 'Tool that splits daily radio recordings into sorted and timestamped conversations',
         bobRaoul: "A fun project providing visual and audio feedback whenever a cap is successfully thrown in Bob's head",
         ncg: 'Automation project that streamlines the process of sourcing, editing, and publishing royalty-free music content to YouTube',
-        unJourEnFrance: 'Daily French culture mobile app — a historical or cultural event every day, with an interactive quiz, AI audio narration and gamification (streaks, badges, monthly leaderboard). Live on the App Store.',
+        unJourEnFrance: 'Daily French culture mobile app — a historical or cultural event every day, with an interactive quiz, AI audio narration and gamification (streaks, badges, monthly leaderboard). Live on the App Store and Google Play.',
+        puffless: 'Mobile app to help quit vaping — personalized quit plan, money-saved and health tracking, craving management and gamification to stay motivated. Live on the App Store.',
+        wakeverse: 'Alarm clock that replaces morning doomscrolling with a Bible verse — reliable alarm even on silent, verses by theme, streaks and sharing, in English and French. Live on the App Store.',
     },
 })

@@ -8,6 +8,7 @@ export const unJourEnFrance: Project = {
     description: "proj.unJourEnFrance",
     websiteLink: "https://unjourenfrance.axel-david.fr/",
     appStoreLink: "https://apps.apple.com/app/6759555494",
+    playStoreLink: "https://play.google.com/store/apps/details?id=com.adavid1.unjourenfrance",
     stack: [
         "React Native",
         "Expo",
@@ -21,6 +22,42 @@ export const unJourEnFrance: Project = {
         "EAS",
     ],
     year: "2025"
+}
+
+export const puffless: Project = {
+    title: "Puffless",
+    description: "proj.puffless",
+    websiteLink: "https://puffless.axel-david.fr/",
+    appStoreLink: "https://apps.apple.com/fr/app/puffless/id6786660266",
+    stack: [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "RevenueCat",
+        "Zustand",
+        "MMKV",
+        "Reanimated",
+        "EAS",
+    ],
+    year: "2026"
+}
+
+export const wakeVerse: Project = {
+    title: "WakeVerse",
+    description: "proj.wakeverse",
+    websiteLink: "https://wakeverse.axel-david.fr/",
+    appStoreLink: "https://apps.apple.com/us/app/wakeverse/id6788754980",
+    stack: [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "RevenueCat",
+        "Zustand",
+        "MMKV",
+        "i18next",
+        "EAS",
+    ],
+    year: "2026"
 }
 
 export const portfolio: Project = {

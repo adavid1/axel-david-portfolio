@@ -16,6 +16,9 @@
 
       <!-- Project Header -->
       <div class="mb-12 text-center">
+        <div v-if="logo" class="app-icon mx-auto mb-6 size-24 overflow-hidden rounded-2xl md:size-28">
+          <img :src="logo" :alt="`${project.title} logo`" class="size-full object-cover" />
+        </div>
         <h1 class="mb-4 text-4xl font-bold text-white md:text-5xl">
           {{ project.title }}
         </h1>
@@ -148,7 +151,7 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import type { Project } from '@/types'
-import { portfolio, streamingMultichat, bulk, optymoRecordSplitter, bobRaoul, ncg } from '@/data/projects'
+import { portfolio, streamingMultichat, bulk, optymoRecordSplitter, bobRaoul, ncg, puffless, wakeVerse } from '@/data/projects'
 
 interface Feature { title: string; description: string }
 interface Challenge { title: string; problem: string; solution: string }
@@ -158,17 +161,20 @@ const { t, tm, rt, locale } = useI18n({ useScope: 'global' })
 
 const slug = route.params.slug as string
 
-const bySlug: Record<string, { project: Project; contentKey: string }> = {
+const bySlug: Record<string, { project: Project; contentKey: string; logo?: string }> = {
   'portfolio': { project: portfolio, contentKey: 'portfolio' },
   'streaming-multichat': { project: streamingMultichat, contentKey: 'streamingMultichat' },
   'bulk': { project: bulk, contentKey: 'bulk' },
   'optymo-record-splitter': { project: optymoRecordSplitter, contentKey: 'optymoRecordSplitter' },
   'bob-raoul': { project: bobRaoul, contentKey: 'bobRaoul' },
   'no-copyright-gang': { project: ncg, contentKey: 'noCopyrightGang' },
+  'puffless': { project: puffless, contentKey: 'puffless', logo: '/puffless-icon.png' },
+  'wakeverse': { project: wakeVerse, contentKey: 'wakeverse', logo: '/wakeverse-icon.png' },
 }
 
 const entry = bySlug[slug] ?? null
 const project = computed(() => entry?.project ?? null)
+const logo = entry?.logo ?? null
 
 const overview = computed(() => (entry && locale.value ? t(`projDetail.${entry.contentKey}.overview`) : ''))
 const features = computed<Feature[]>(() =>

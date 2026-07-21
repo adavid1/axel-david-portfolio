@@ -88,6 +88,18 @@
                 {{ $t('projects.appStore') }}
               </a>
               <a
+                v-if="project.playStoreLink"
+                :href="project.playStoreLink"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 rounded-lg border border-gray-700 px-4 py-2.5 text-sm font-medium text-gray-300 transition-colors hover:border-violet-500/50 hover:text-white"
+              >
+                <svg class="size-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.297 12l2.401-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z" />
+                </svg>
+                {{ $t('projects.playStore') }}
+              </a>
+              <a
                 v-if="project.websiteLink"
                 :href="project.websiteLink"
                 target="_blank"
@@ -182,18 +194,19 @@
 </template>
 
 <script setup lang="ts">
-import { portfolio, streamingMultichat, bulk, optymoRecordSplitter, bobRaoul, ncg, unJourEnFrance } from '@/data/projects'
+import { portfolio, streamingMultichat, bulk, optymoRecordSplitter, bobRaoul, ncg, unJourEnFrance, puffless, wakeVerse } from '@/data/projects'
 import { breizhcardExp } from '@/data/experiences'
 
 const featuredProjects = [
   {
     title: unJourEnFrance.title,
-    badge: 'projects.badgeMobileIos',
+    badge: 'projects.badgeMobileCrossPlatform',
     year: unJourEnFrance.year,
     description: unJourEnFrance.description,
     stack: unJourEnFrance.stack,
     detailRoute: '/projects/un-jour-en-france',
     appStoreLink: unJourEnFrance.appStoreLink,
+    playStoreLink: unJourEnFrance.playStoreLink,
     websiteLink: unJourEnFrance.websiteLink,
     logo: '/ujef-icon.png',
     logoWrapClass: '',
@@ -207,10 +220,39 @@ const featuredProjects = [
     stack: breizhcardExp.stack ?? [],
     detailRoute: '/projects/breizhcard',
     appStoreLink: undefined as string | undefined,
+    playStoreLink: undefined as string | undefined,
     websiteLink: breizhcardExp.companyLink,
     logo: '/breizhcard-logo.svg',
     logoWrapClass: 'app-icon--light bg-[#b4d383]',
     logoImgClass: 'object-contain p-2 brightness-0',
+  },
+  {
+    title: puffless.title,
+    badge: 'projects.badgeMobileIos',
+    year: puffless.year,
+    description: puffless.description,
+    stack: puffless.stack,
+    detailRoute: '/projects/puffless',
+    appStoreLink: puffless.appStoreLink,
+    playStoreLink: undefined as string | undefined,
+    websiteLink: puffless.websiteLink,
+    logo: '/puffless-icon.png',
+    logoWrapClass: '',
+    logoImgClass: 'object-cover',
+  },
+  {
+    title: wakeVerse.title,
+    badge: 'projects.badgeMobileIos',
+    year: wakeVerse.year,
+    description: wakeVerse.description,
+    stack: wakeVerse.stack,
+    detailRoute: '/projects/wakeverse',
+    appStoreLink: wakeVerse.appStoreLink,
+    playStoreLink: undefined as string | undefined,
+    websiteLink: wakeVerse.websiteLink,
+    logo: '/wakeverse-icon.png',
+    logoWrapClass: '',
+    logoImgClass: 'object-cover',
   },
 ]
 

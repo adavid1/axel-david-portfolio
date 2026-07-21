@@ -92,6 +92,42 @@ This project demonstrates advanced automation capabilities, including web scrapi
                 { title: 'YouTube API Limitations', problem: "Working within YouTube's API rate limits and upload restrictions", solution: 'Developed intelligent queuing and retry mechanisms to optimize upload success rates' },
             ],
         },
+        puffless: {
+            overview: `Puffless is a Health & Fitness mobile app designed to help people quit vaping by making the process motivating and concrete. Rather than relying on guilt, it turns every vape-free day into visible progress: money saved, nicotine avoided and health benefits that stack up along a recovery timeline.
+
+The app starts with a short quiz that generates a personalized quit plan based on the user's habits and triggers, then offers two approaches — cold turkey or gradual reduction. A "panic" button triggers a 60-second guided breathing exercise to get through a craving, while a daily-growing "Life Tree" and healing lungs keep motivation alive. Built under my own company (David Services), it works entirely offline, with no account required.`,
+            features: [
+                { title: 'Personalized quit plan', description: 'An initial quiz generates a cessation strategy tailored to each person’s habits and triggers' },
+                { title: 'Concrete progress tracking', description: 'Streak counter, money saved, nicotine avoided and health milestones along a timeline' },
+                { title: 'Craving management', description: 'Panic button with a 60-second guided breathing exercise and customizable support notifications' },
+                { title: 'Visual motivation', description: 'A daily-growing Life Tree and healing lungs make recovery tangible' },
+                { title: 'Two quit approaches', description: 'Cold turkey or gradual reduction, depending on the user’s pace' },
+                { title: '100% offline', description: 'Works without a connection or account; progress cards can be shared on social media' },
+            ],
+            challenges: [
+                { title: 'Fully offline operation', problem: 'Delivering tracking, plan and stats with no backend and no user account', solution: 'All logic and state are handled locally on the device (MMKV storage), for an instant, privacy-friendly app' },
+                { title: 'Long-term motivation', problem: 'Keeping users engaged well past the first few days, when most quit attempts fail', solution: 'Concrete metrics (money, health), gamification (Life Tree, streaks) and emergency tools to get through cravings' },
+                { title: 'Reliable subscriptions', problem: 'Offering a freemium model without degrading the offline experience', solution: 'RevenueCat integration for subscription management, with status checks and purchase restoration' },
+            ],
+        },
+        wakeverse: {
+            overview: `WakeVerse is an alarm clock that replaces the morning phone reflex — notifications and social feeds — with a Bible verse. Users wake to a reliable alarm that rings even on silent or Do Not Disturb, then discover a verse chosen for the theme they need that morning: peace, courage, strength, hope, trust or gratitude.
+
+Designed as "the opposite of doomscrolling", the app cares for the reading experience with sunrise backgrounds and elegant typography. It tracks daily streaks, lets you share a verse as an image, and offers Scripture in English (Berean Standard Bible) and French (Segond 1910). Built under my own company (David Services), it relies on Apple's native alarm technology to guarantee a dependable wake-up.`,
+            features: [
+                { title: 'Reliable alarm', description: 'Built on Apple’s native technology, it rings even on silent and Do Not Disturb' },
+                { title: 'Theme-based verse', description: 'Verse selection by theme — peace, courage, strength, hope, trust or gratitude — to match the morning’s mindset' },
+                { title: 'Customizable wake-up', description: 'Choose times and days, with optional progressive volume' },
+                { title: 'Calm reading experience', description: 'Sunrise backgrounds and elegant typography for a peaceful moment' },
+                { title: 'Streaks & sharing', description: 'Daily streak tracking and one-tap verse sharing as a formatted image' },
+                { title: 'Bilingual EN / FR', description: 'Scripture in English (Berean Standard Bible) and French (Segond 1910)' },
+            ],
+            challenges: [
+                { title: 'Alarm reliability', problem: 'Ensuring the alarm always rings, even on silent or Do Not Disturb, where a regular notification would stay muted', solution: 'Using the native iOS alarm API rather than plain notifications, for a guaranteed wake-up' },
+                { title: 'The right verse at the right time', problem: 'Surfacing a verse suited to the user’s emotional or spiritual state in the morning', solution: 'A theme-based selection (peace, courage, strength…) that shapes the content shown on wake-up' },
+                { title: 'Bilingual Scripture support', problem: 'Serving consistent scriptural content across two languages and translations', solution: 'Dedicated translations (Berean Standard Bible in English, Segond 1910 in French) with language switching' },
+            ],
+        },
     },
 
     breizhcard: {
@@ -148,7 +184,7 @@ The product follows a generous freemium model — free daily content for everyon
 I designed, built and shipped the whole thing end to end as the founder of my company (DAVID SERVICES): the mobile app, the serverless backend, the in-app subscription system, the content pipeline, and the store releases.`,
         status: [
             { label: 'iOS', value: 'Live on the App Store' },
-            { label: 'Android', value: 'Closed testing — Google Play (summer 2026)' },
+            { label: 'Android', value: 'Live on Google Play' },
             { label: 'Model', value: 'Freemium + Premium (7-day free trial)' },
             { label: 'Language', value: 'French' },
         ],

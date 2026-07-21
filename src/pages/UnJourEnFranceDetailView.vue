@@ -57,6 +57,18 @@
             {{ $t('detail.downloadAppStore') }}
           </a>
           <a
+            v-if="playStoreLink"
+            :href="playStoreLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center rounded-xl border border-gray-700 bg-gray-800/50 px-6 py-3 font-semibold text-gray-300 transition-colors hover:border-violet-500/50 hover:text-white"
+          >
+            <svg class="mr-2 size-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.297 12l2.401-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z" />
+            </svg>
+            {{ $t('detail.downloadPlayStore') }}
+          </a>
+          <a
             :href="websiteLink"
             target="_blank"
             rel="noopener noreferrer"
@@ -172,6 +184,7 @@ const { tm, rt, locale } = useI18n({ useScope: 'global' })
 const title = unJourEnFrance.title
 const stack = unJourEnFrance.stack
 const appStoreLink = unJourEnFrance.appStoreLink
+const playStoreLink = unJourEnFrance.playStoreLink
 const websiteLink = unJourEnFrance.websiteLink
 
 // Which feature cards carry the Premium badge (kept here: it is layout, not text).

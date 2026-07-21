@@ -92,6 +92,42 @@ Ce projet illustre des capacités d'automatisation avancées : web scraping, tra
                 { title: 'Limites de l’API YouTube', problem: 'Respecter les limites de débit et les restrictions de mise en ligne de l’API YouTube', solution: 'Files d’attente intelligentes et mécanismes de réessai pour optimiser le taux de réussite des mises en ligne' },
             ],
         },
+        puffless: {
+            overview: `Puffless est une application mobile de santé conçue pour aider à arrêter de vapoter en rendant le sevrage motivant et concret. Plutôt que de culpabiliser, elle transforme chaque jour sans vape en progression visible : économies réalisées, nicotine évitée et bénéfices santé qui s'accumulent au fil d'une frise chronologique.
+
+L'app démarre par un court questionnaire qui génère un plan de sevrage personnalisé selon les habitudes et les déclencheurs de l'utilisateur, puis propose deux approches — arrêt net ou réduction progressive. Un bouton « panique » déclenche un exercice de respiration guidée de 60 secondes pour passer une envie, tandis qu'un « arbre de vie » qui grandit chaque jour et des poumons qui se régénèrent entretiennent la motivation. Développée sous mon auto-entreprise (David Services), elle fonctionne entièrement hors ligne, sans compte.`,
+            features: [
+                { title: 'Plan de sevrage personnalisé', description: 'Un questionnaire initial génère une stratégie d’arrêt adaptée aux habitudes et aux déclencheurs de chacun' },
+                { title: 'Suivi de progression concret', description: 'Compteur de série, économies réalisées, nicotine évitée et jalons santé sur une frise chronologique' },
+                { title: 'Gestion des envies', description: 'Bouton panique avec respiration guidée de 60 secondes et notifications de soutien personnalisables' },
+                { title: 'Motivation visuelle', description: 'Un arbre de vie qui grandit chaque jour et des poumons qui se régénèrent illustrent les progrès' },
+                { title: 'Deux approches d’arrêt', description: 'Mode arrêt net ou réduction progressive, selon le rythme de l’utilisateur' },
+                { title: '100 % hors ligne', description: 'Fonctionne sans connexion ni création de compte ; cartes de progression partageables sur les réseaux' },
+            ],
+            challenges: [
+                { title: 'Fonctionnement hors ligne complet', problem: 'Offrir suivi, plan et statistiques sans backend ni compte utilisateur', solution: 'Toute la logique et l’état sont gérés localement sur l’appareil (stockage MMKV), pour une app instantanée et respectueuse de la vie privée' },
+                { title: 'Motivation dans la durée', problem: 'Maintenir l’engagement bien au-delà des premiers jours, moment où la plupart des tentatives échouent', solution: 'Métriques concrètes (argent, santé), gamification (arbre de vie, séries) et outils d’urgence pour passer les moments de craving' },
+                { title: 'Abonnement fiable', problem: 'Proposer un modèle freemium sans dégrader l’expérience hors ligne', solution: 'Intégration RevenueCat pour la gestion des abonnements, avec vérification du statut et restauration des achats' },
+            ],
+        },
+        wakeverse: {
+            overview: `WakeVerse est un réveil qui remplace le réflexe matinal du téléphone — notifications et réseaux sociaux — par un verset biblique. L'utilisateur se réveille avec une alarme fiable qui sonne même en mode silencieux ou « Ne pas déranger », puis découvre un verset choisi selon le thème dont il a besoin ce matin-là : paix, courage, force, espérance, confiance ou gratitude.
+
+Pensée comme « l'inverse du doomscrolling », l'app soigne l'expérience de lecture avec des fonds de lever de soleil et une typographie élégante. Elle suit les séries quotidiennes, permet de partager un verset en image et propose les Écritures en anglais (Berean Standard Bible) et en français (Segond 1910). Développée sous mon auto-entreprise (David Services), elle repose sur l'alarme native d'Apple pour garantir la fiabilité du réveil.`,
+            features: [
+                { title: 'Alarme fiable', description: 'Basée sur la technologie native d’Apple, elle sonne même en mode silencieux et « Ne pas déranger »' },
+                { title: 'Verset selon le thème', description: 'Sélection par thème — paix, courage, force, espérance, confiance ou gratitude — pour coller à l’état d’esprit du matin' },
+                { title: 'Réveil personnalisable', description: 'Horaires et jours au choix, avec montée progressive du volume en option' },
+                { title: 'Expérience de lecture apaisante', description: 'Fonds de lever de soleil et typographie soignée pour un moment calme' },
+                { title: 'Séries & partage', description: 'Suivi des séries quotidiennes et partage d’un verset sous forme d’image formatée en un geste' },
+                { title: 'Bilingue FR / EN', description: 'Écritures en anglais (Berean Standard Bible) et en français (Segond 1910)' },
+            ],
+            challenges: [
+                { title: 'Fiabilité de l’alarme', problem: 'Garantir que l’alarme sonne toujours, même en silencieux ou « Ne pas déranger », là où une notification classique resterait muette', solution: 'Utilisation de l’API d’alarme native d’iOS plutôt que de simples notifications, pour un réveil garanti' },
+                { title: 'Verset pertinent au bon moment', problem: 'Proposer un verset adapté à l’état émotionnel ou spirituel du matin', solution: 'Une sélection par thème (paix, courage, force…) qui oriente le contenu affiché au réveil' },
+                { title: 'Support bilingue des Écritures', problem: 'Servir un contenu scripturaire cohérent en deux langues et traductions', solution: 'Intégration de traductions dédiées (Berean Standard Bible en anglais, Segond 1910 en français) avec bascule de langue' },
+            ],
+        },
     },
 
     breizhcard: {
@@ -148,7 +184,7 @@ Le produit suit un modèle freemium généreux — du contenu quotidien gratuit 
 J'ai conçu, développé et publié l'ensemble de bout en bout en tant que fondateur de mon entreprise (DAVID SERVICES) : l'application mobile, le backend serverless, le système d'abonnement in-app, le pipeline de contenu et la mise en production sur les stores.`,
         status: [
             { label: 'iOS', value: 'Disponible sur l’App Store' },
-            { label: 'Android', value: 'Test fermé — Google Play (été 2026)' },
+            { label: 'Android', value: 'Disponible sur Google Play' },
             { label: 'Modèle', value: 'Freemium + Premium (essai gratuit 7 jours)' },
             { label: 'Langue', value: 'Français' },
         ],

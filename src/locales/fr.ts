@@ -57,7 +57,7 @@ export default Object.freeze({
         permis: 'Permis B',
         oneLiner: 'Ingénieur informatique · Développeur Full Stack',
         exp: {
-            davidServices: 'Conception et publication de « Un Jour en France » (iOS/Android) : application cross-platform, backend serverless, abonnements in-app, gamification et narration audio générée par IA.',
+            davidServices: 'Conception et publication de plusieurs applications mobiles sur l\'App Store et Google Play (« Un Jour en France », « Puffless », « WakeVerse ») : apps React Native, backend serverless, abonnements in-app, gamification et IA.',
             ateme: 'Développement full-stack (Vue, Node, Express, GraphQL) et intégration (Docker, Kubernetes) en équipe Scrum ; revues de code, tests et optimisation des performances.',
             naval: 'Administration et maintien en condition opérationnelle du logiciel X3 (support N1 à N3), extraction et migration de données vers eBusiness Suite R12, automatisation SQL.',
             fives: 'Développement logiciel (C#, PL/SQL), intégration et configuration d\'outils, support et formation des utilisateurs.',
@@ -75,7 +75,7 @@ export default Object.freeze({
     about: {
         title: 'À propos',
         p1: 'Ingénieur informatique de {age} ans, je construis des applications web et mobiles full-stack depuis {years} ans — de la base de données à l\'interface, jusqu\'au déploiement.',
-        p2: 'Après mes débuts en alternance chez General Electric, puis des missions chez Fives Syleps, Naval Group et Ateme, j\'ai choisi fin 2024 de partir voyager. Plutôt qu\'une simple pause, j\'en ai fait une période de création : c\'est en voyageant que j\'ai monté ma propre auto-entreprise et publié « Un Jour en France » sur l\'App Store, tout en contribuant bénévolement à la plateforme Breizhcard.',
+        p2: 'Après mes débuts en alternance chez General Electric, puis des missions chez Fives Syleps, Naval Group et Ateme, j\'ai choisi fin 2024 de partir voyager. Plutôt qu\'une simple pause, j\'en ai fait une période de création : c\'est en voyageant que j\'ai monté ma propre auto-entreprise (David Services) et publié plusieurs applications mobiles — « Un Jour en France » sur l\'App Store et Google Play, puis « Puffless » et « WakeVerse » sur l\'App Store — tout en contribuant bénévolement à la plateforme Breizhcard.',
         p3: 'J\'aime aussi travailler main dans la main avec l\'IA : Claude et ChatGPT sont devenus de vrais accélérateurs au quotidien, et j\'intègre l\'IA directement dans mes produits — « Un Jour en France » propose par exemple une narration audio générée par IA.',
         p4: 'De retour en France, je recherche un poste en CDI où mettre cette double casquette — la solidité technique d\'un ingénieur et l\'autonomie d\'un fondateur — au service d\'une équipe et d\'un produit qui ont du sens.',
     },
@@ -149,7 +149,9 @@ export default Object.freeze({
         other: 'Autres projets',
         website: 'Site web',
         appStore: 'App Store',
+        playStore: 'Google Play',
         badgeMobileIos: 'App mobile · iOS',
+        badgeMobileCrossPlatform: 'App mobile · iOS & Android',
         badgePlatform: 'Plateforme full-stack',
         breizhcardDescription: 'Plateforme SaaS de carte de visite en bois connectée (NFC + QR code) — conception produit, développement full-stack, e-commerce et déploiement.',
     },
@@ -168,6 +170,7 @@ export default Object.freeze({
         availability: 'Disponibilité',
         premium: 'Premium',
         downloadAppStore: 'Télécharger sur l\'App Store',
+        downloadPlayStore: 'Télécharger sur Google Play',
         visitWebsite: 'Visiter le site',
         visitLiveSite: 'Voir le site en ligne',
         viewSource: 'Voir le code source',
@@ -210,9 +213,11 @@ export default Object.freeze({
 - Résolution de problèmes : débogage, optimisation des performances`,
         breizhcard: `Plateforme SaaS de carte de visite en bois connectée (NFC + QR code) — conception produit, développement full-stack, e-commerce et déploiement.`,
         davidServices: `Fondateur de ma propre entreprise (auto-entreprise) 🚀
-- Conception, développement et publication de « Un Jour en France », une application mobile cross-platform (iOS disponible sur l'App Store, Android en test fermé)
-- Maîtrise de bout en bout : application mobile, backend serverless, abonnements in-app, pipeline de contenu et publication sur les stores
-- Produit freemium complet : contenu quotidien, quiz, gamification (séries, badges, classement mensuel) et narration audio par IA
+- Conception, développement et publication de plusieurs applications mobiles sur l'App Store et Google Play
+- « Un Jour en France » (iOS & Android) : produit freemium de culture française — contenu quotidien, quiz, gamification (séries, badges, classement mensuel) et narration audio par IA
+- « Puffless » (iOS) : app d'aide à l'arrêt de la vape — plan personnalisé, suivi des économies et de la santé, gestion des cravings
+- « WakeVerse » (iOS) : réveil qui affiche un verset biblique au réveil — alarme fiable même en silencieux, français et anglais
+- Maîtrise de bout en bout : app mobile (React Native / Expo), backend serverless, abonnements in-app, pipeline de contenu et publication sur les stores
 - Accès Premium et statut d'abonnement infalsifiables, vérifiés côté serveur`,
     },
 
@@ -224,6 +229,8 @@ export default Object.freeze({
         optymo: 'Outil qui découpe les enregistrements radio quotidiens en conversations triées et horodatées',
         bobRaoul: 'Un projet fun qui fournit un retour visuel et sonore à chaque fois qu\'une capsule est lancée avec succès dans la tête de Bob',
         ncg: 'Projet d\'automatisation qui simplifie la recherche, le montage et la publication de musiques libres de droits sur YouTube',
-        unJourEnFrance: 'Application mobile de culture française au quotidien — un événement historique ou culturel chaque jour, avec un quiz interactif, une narration audio par IA et de la gamification (séries, badges, classement mensuel). Disponible sur l\'App Store.',
+        unJourEnFrance: 'Application mobile de culture française au quotidien — un événement historique ou culturel chaque jour, avec un quiz interactif, une narration audio par IA et de la gamification (séries, badges, classement mensuel). Disponible sur l\'App Store et Google Play.',
+        puffless: 'Application mobile d\'aide à l\'arrêt de la vape — plan personnalisé, suivi des économies et de la santé, gestion des cravings et gamification pour rester motivé. Disponible sur l\'App Store.',
+        wakeverse: 'Réveil qui remplace le doomscrolling matinal par un verset biblique — alarme fiable même en mode silencieux, versets par thème, streaks et partage, en français et en anglais. Disponible sur l\'App Store.',
     },
 })
