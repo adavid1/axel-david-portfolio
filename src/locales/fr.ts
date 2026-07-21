@@ -213,11 +213,9 @@ export default Object.freeze({
 - Résolution de problèmes : débogage, optimisation des performances`,
         breizhcard: `Plateforme SaaS de carte de visite en bois connectée (NFC + QR code) — conception produit, développement full-stack, e-commerce et déploiement.`,
         davidServices: `Fondateur de ma propre entreprise (auto-entreprise) 🚀
-- Conception, développement et publication de plusieurs applications mobiles sur l'App Store et Google Play
-- « Un Jour en France » (iOS & Android) : produit freemium de culture française — contenu quotidien, quiz, gamification (séries, badges, classement mensuel) et narration audio par IA
-- « Puffless » (iOS) : app d'aide à l'arrêt de la vape — plan personnalisé, suivi des économies et de la santé, gestion des cravings
-- « WakeVerse » (iOS) : réveil qui affiche un verset biblique au réveil — alarme fiable même en silencieux, français et anglais
-- Maîtrise de bout en bout : app mobile (React Native / Expo), backend serverless, abonnements in-app, pipeline de contenu et publication sur les stores
+- Conception, développement et publication de plusieurs applications mobiles cross-platform, dont « Un Jour en France » (disponible sur l'App Store et Google Play)
+- Maîtrise de bout en bout : application mobile, backend serverless, abonnements in-app, pipeline de contenu et publication sur les stores
+- Produit freemium complet avec « Un Jour en France » : contenu quotidien, quiz, gamification (séries, badges, classement mensuel) et narration audio par IA
 - Accès Premium et statut d'abonnement infalsifiables, vérifiés côté serveur`,
     },
 

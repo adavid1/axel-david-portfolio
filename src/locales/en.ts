@@ -213,11 +213,9 @@ export default Object.freeze({
 - Problem solving and troubleshooting: debugging, performance optimization`,
         breizhcard: `SaaS platform for connected wooden business cards (NFC + QR code) — product design, full-stack development, e-commerce and deployment.`,
         davidServices: `Founder of my own company (auto-entreprise) 🚀
-- Designed, developed and published several mobile apps on the App Store and Google Play
-- "Un Jour en France" (iOS & Android): French-culture freemium product — daily content, quizzes, gamification (streaks, badges, monthly leaderboard) and AI audio narration
-- "Puffless" (iOS): quit-vaping companion app — personalized quit plan, money-saved and health tracking, craving management
-- "WakeVerse" (iOS): alarm clock that surfaces a Bible verse on wake-up — reliable alarm even on silent, English and French
-- End-to-end ownership: mobile app (React Native / Expo), serverless backend, in-app subscriptions, content pipeline and store releases
+- Designed, developed and published several cross-platform mobile apps, including "Un Jour en France" (live on the App Store and Google Play)
+- End-to-end ownership: mobile app, serverless backend, in-app subscriptions, content pipeline and store releases
+- Built a full freemium product with "Un Jour en France": daily content, quizzes, gamification (streaks, badges, monthly leaderboard) and AI audio narration
 - Enforced Premium access and tamper-proof subscription status at the server level`,
     },
 
