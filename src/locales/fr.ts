@@ -119,6 +119,20 @@ export default Object.freeze({
         connect: 'Me contacter',
         location: 'Saint-Nazaire, France',
         copyright: '© {year} Axel David. Construit avec Vue.js & Tailwind CSS.',
+        legal: 'Mentions légales',
+    },
+
+    legal: {
+        title: 'Mentions légales',
+        subtitle: 'Informations sur l\'éditeur de ce site.',
+        publisher: 'Éditeur du site',
+        publisherValue: 'DAVID SERVICES, entreprise individuelle Axel David',
+        siren: 'SIREN',
+        siret: 'SIRET',
+        headOffice: 'Siège',
+        headOfficeValue: 'Saint-Nazaire, France',
+        contact: 'Contact',
+        apps: 'Applications éditées',
     },
 
     timeline: {

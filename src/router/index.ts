@@ -3,6 +3,7 @@ import TimelineView from '@/pages/TimelineView.vue'
 import HomeView from '@/pages/HomeView.vue'
 import ProjectsView from '@/pages/ProjectsView.vue'
 import CvView from '@/pages/CvView.vue'
+import LegalNoticeView from '@/pages/LegalNoticeView.vue'
 import BreizhcardDetailView from '@/pages/BreizhcardDetailView.vue'
 import UnJourEnFranceDetailView from '@/pages/UnJourEnFranceDetailView.vue'
 import ProjectDetailView from '@/pages/ProjectDetailView.vue'
@@ -33,6 +34,11 @@ const router = createRouter({
       path: '/cv',
       name: 'cv',
       component: CvView
+    },
+    {
+      path: '/mentions-legales',
+      name: 'legal-notice',
+      component: LegalNoticeView
     },
     {
       path: '/projects/breizhcard',

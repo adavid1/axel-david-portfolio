@@ -119,6 +119,20 @@ export default Object.freeze({
         connect: 'Connect With Me',
         location: 'Saint-Nazaire, France',
         copyright: '© {year} Axel David. Built with Vue.js & Tailwind CSS.',
+        legal: 'Legal notice',
+    },
+
+    legal: {
+        title: 'Legal notice',
+        subtitle: 'Information about the publisher of this website.',
+        publisher: 'Site publisher',
+        publisherValue: 'DAVID SERVICES, sole proprietorship owned by Axel David',
+        siren: 'SIREN',
+        siret: 'SIRET',
+        headOffice: 'Registered office',
+        headOfficeValue: 'Saint-Nazaire, France',
+        contact: 'Contact',
+        apps: 'Published apps',
     },
 
     timeline: {

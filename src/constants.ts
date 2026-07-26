@@ -12,4 +12,8 @@ export default Object.freeze({
     phone: import.meta.env.VITE_CV_PHONE ?? '',
     linkedin: 'https://www.linkedin.com/in/axeldavid44/',
     github: 'https://github.com/adavid1',
+    // Legal identity of the publishing entity, shown on /mentions-legales.
+    // Digits are locale-independent, so they live here rather than in i18n.
+    siren: '988 861 340',
+    siret: '988 861 340 00012',
 })

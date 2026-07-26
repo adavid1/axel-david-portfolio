@@ -84,8 +84,14 @@ import constants from '@/constants'
 
       <!-- Bottom Bar -->
       <div class="mt-12 flex flex-col items-center justify-between space-y-4 border-t border-gray-800/50 pt-6 md:flex-row md:space-y-0">
-        <div class="text-sm text-gray-500">
-          {{ $t('footer.copyright', { year: new Date().getFullYear() }) }}
+        <div class="flex flex-col items-center gap-2 text-sm text-gray-500 sm:flex-row sm:gap-4">
+          <span>{{ $t('footer.copyright', { year: new Date().getFullYear() }) }}</span>
+          <RouterLink
+            to="/mentions-legales"
+            class="transition-colors duration-300 hover:text-violet-400"
+          >
+            {{ $t('footer.legal') }}
+          </RouterLink>
         </div>
         
         <!-- Tech Stack Pills -->
