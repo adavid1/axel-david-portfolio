@@ -59,7 +59,7 @@ export default Object.freeze({
         exp: {
             davidServices: 'Designed and shipped several mobile apps on the App Store and Google Play ("Un Jour en France", "Puffless", "WakeVerse"): React Native apps, serverless backends, in-app subscriptions, gamification and AI.',
             ateme: 'Full-stack development (Vue, Node, Express, GraphQL) and integration (Docker, Kubernetes) within a Scrum team; code reviews, testing and performance optimisation.',
-            naval: 'Administration and operational maintenance of the X3 software (level 1-3 support), data extraction and migration to eBusiness Suite R12, SQL automation.',
+            naval: 'Administration and operational maintenance of the Sage X3 software (level 1-3 support), data extraction and migration to eBusiness Suite R12, SQL automation.',
             fives: 'Software development (C#, PL/SQL), tooling integration and configuration, user support and training.',
             ge: 'Built paperless applications (C#, WPF) and their underlying databases, working directly with end users in an agile setup.',
             breizhcard: 'Full-stack development (Nuxt, Vue, Node, MongoDB, Stripe) of the connected business-card SaaS platform (NFC + QR code), from product to deployment.',
@@ -212,10 +212,10 @@ export default Object.freeze({
 - Support and training
 - Activity reporting`,
         naval: `Via Astek
-- Ensured the operational maintenance and stability of the X3 software
-- Provided comprehensive support for the X3 software at Levels 1, 2, and 3
-- Conducted data extractions from X3 for migration to the eBusiness Suite R12
-- Archived X3 data using the MEMORY system
+- Ensured the operational maintenance and stability of the Sage X3 software
+- Provided comprehensive support for the Sage X3 software at Levels 1, 2, and 3
+- Conducted data extractions from Sage X3 for migration to the eBusiness Suite R12
+- Archived Sage X3 data using the MEMORY system
 - Finalized documentation related to the archiving of production management data (GPAO)
 - Coordinated and supervised the deletion of automatic scheduling plans
 - Decommissioned servers utilized by GPAO NA Cherbourg

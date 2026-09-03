@@ -59,7 +59,7 @@ export default Object.freeze({
         exp: {
             davidServices: 'Conception et publication de plusieurs applications mobiles sur l\'App Store et Google Play (« Un Jour en France », « Puffless », « WakeVerse ») : apps React Native, backend serverless, abonnements in-app, gamification et IA.',
             ateme: 'Développement full-stack (Vue, Node, Express, GraphQL) et intégration (Docker, Kubernetes) en équipe Scrum ; revues de code, tests et optimisation des performances.',
-            naval: 'Administration et maintien en condition opérationnelle du logiciel X3 (support N1 à N3), extraction et migration de données vers eBusiness Suite R12, automatisation SQL.',
+            naval: 'Administration et maintien en condition opérationnelle du logiciel Sage X3 (support N1 à N3), extraction et migration de données vers eBusiness Suite R12, automatisation SQL.',
             fives: 'Développement logiciel (C#, PL/SQL), intégration et configuration d\'outils, support et formation des utilisateurs.',
             ge: 'Développement d\'applications de dématérialisation (C#, WPF) et des bases de données associées, en lien direct avec les utilisateurs et en méthodologie agile.',
             breizhcard: 'Développement full-stack (Nuxt, Vue, Node, MongoDB, Stripe) de la plateforme SaaS de carte de visite connectée (NFC + QR code), du produit au déploiement.',
@@ -212,10 +212,10 @@ export default Object.freeze({
 - Support et formation
 - Reporting d'activité`,
         naval: `Via Astek
-- Maintien en condition opérationnelle et stabilité du logiciel X3
-- Support complet du logiciel X3 (niveaux 1, 2 et 3)
-- Extractions de données X3 pour migration vers eBusiness Suite R12
-- Archivage des données X3 via le système MEMORY
+- Maintien en condition opérationnelle et stabilité du logiciel Sage X3
+- Support complet du logiciel Sage X3 (niveaux 1, 2 et 3)
+- Extractions de données Sage X3 pour migration vers eBusiness Suite R12
+- Archivage des données Sage X3 via le système MEMORY
 - Finalisation de la documentation d'archivage des données de gestion de production (GPAO)
 - Coordination et supervision de la suppression des plans d'ordonnancement automatiques
 - Décommissionnement des serveurs utilisés par la GPAO NA Cherbourg

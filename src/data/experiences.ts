@@ -65,7 +65,7 @@ export const navalGroupMission: Experience = {
     startDate: "01-08-2021",
     endDate: "31-08-2022",
     description: "exp.naval",
-    stack: ["X3", "eBusiness Suite R12", "MEMORY system", "GPAO", "Visual Basic"],
+    stack: ["Sage X3", "eBusiness Suite R12", "MEMORY system", "GPAO", "Visual Basic"],
     type: "work",
     category: "mission",
     consultingCompany: "Astek",
