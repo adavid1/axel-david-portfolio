@@ -6,3 +6,6 @@ dist
 # Local env files (e.g. VITE_CV_PHONE) — never commit secrets/PII
 .env.local
 .env.*.local
+
+# Personal documents (cover letters, etc.), local only
+private/
