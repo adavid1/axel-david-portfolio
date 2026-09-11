@@ -95,7 +95,7 @@ This project demonstrates advanced automation capabilities, including web scrapi
         puffless: {
             overview: `Puffless is a Health & Fitness mobile app designed to help people quit vaping by making the process motivating and concrete. Rather than relying on guilt, it turns every vape-free day into visible progress: money saved, nicotine avoided and health benefits that stack up along a recovery timeline.
 
-The app starts with a short quiz that generates a personalized quit plan based on the user's habits and triggers, then offers two approaches — cold turkey or gradual reduction. A "panic" button triggers a 60-second guided breathing exercise to get through a craving, while a daily-growing "Life Tree" and healing lungs keep motivation alive. Built under my own company (David Services), it works entirely offline, with no account required.`,
+The app starts with a short quiz that generates a personalized quit plan based on the user's habits and triggers, then offers two approaches: cold turkey or gradual reduction. A "panic" button triggers a 60-second guided breathing exercise to get through a craving, while a daily-growing "Life Tree" and healing lungs keep motivation alive. Built under my own company (David Services), it works entirely offline, with no account required.`,
             features: [
                 { title: 'Personalized quit plan', description: 'An initial quiz generates a cessation strategy tailored to each person’s habits and triggers' },
                 { title: 'Concrete progress tracking', description: 'Streak counter, money saved, nicotine avoided and health milestones along a timeline' },
@@ -111,12 +111,12 @@ The app starts with a short quiz that generates a personalized quit plan based o
             ],
         },
         wakeverse: {
-            overview: `WakeVerse is an alarm clock that replaces the morning phone reflex — notifications and social feeds — with a Bible verse. Users wake to a reliable alarm that rings even on silent or Do Not Disturb, then discover a verse chosen for the theme they need that morning: peace, courage, strength, hope, trust or gratitude.
+            overview: `WakeVerse is an alarm clock that replaces the morning phone reflex (notifications and social feeds) with a Bible verse. Users wake to a reliable alarm that rings even on silent or Do Not Disturb, then discover a verse chosen for the theme they need that morning: peace, courage, strength, hope, trust or gratitude.
 
 Designed as "the opposite of doomscrolling", the app cares for the reading experience with sunrise backgrounds and elegant typography. It tracks daily streaks, lets you share a verse as an image, and offers Scripture in English (Berean Standard Bible) and French (Segond 1910). Built under my own company (David Services), it relies on Apple's native alarm technology to guarantee a dependable wake-up.`,
             features: [
                 { title: 'Reliable alarm', description: 'Built on Apple’s native technology, it rings even on silent and Do Not Disturb' },
-                { title: 'Theme-based verse', description: 'Verse selection by theme — peace, courage, strength, hope, trust or gratitude — to match the morning’s mindset' },
+                { title: 'Theme-based verse', description: 'Verse selection by theme (peace, courage, strength, hope, trust or gratitude) to match the morning’s mindset' },
                 { title: 'Customizable wake-up', description: 'Choose times and days, with optional progressive volume' },
                 { title: 'Calm reading experience', description: 'Sunrise backgrounds and elegant typography for a peaceful moment' },
                 { title: 'Streaks & sharing', description: 'Daily streak tracking and one-tap verse sharing as a formatted image' },
@@ -133,7 +133,7 @@ Designed as "the opposite of doomscrolling", the app cares for the reading exper
     breizhcard: {
         description: 'SaaS platform that turns a wooden business card (NFC + QR code) into a fully customizable digital contact page, shareable in a single scan',
         year: '2023 - Present',
-        overview: `Breizhcard is a SaaS platform that turns a physical wooden business card — fitted with an NFC chip and a QR code — into a fully customizable digital contact page. On scan, the recipient lands on a personal page designed by the cardholder (contact details, links, social networks, logo, banner, colors) and can save the contact to their phone instantly.
+        overview: `Breizhcard is a SaaS platform that turns a physical wooden business card, fitted with an NFC chip and a QR code, into a fully customizable digital contact page. On scan, the recipient lands on a personal page designed by the cardholder (contact details, links, social networks, logo, banner, colors) and can save the contact to their phone instantly.
 
 It's an alternative to the paper business card: always up to date (no reprinting), reusable, cheaper and more eco-friendly. Several wood types are offered, with single-unit or volume sales and a premium subscription (Breizhcard+) that unlocks advanced customization.
 
@@ -179,7 +179,7 @@ As the sole developer on the project, I designed and built 100% of the technical
         description: 'A daily dose of French history and culture: one event a day, an interactive quiz, AI audio narration and a gamified experience.',
         overview: `Un Jour en France turns French culture into a daily ritual. Every day, users discover a notable historical or cultural event, test their knowledge with a short quiz, and progress through time thanks to an engagement system inspired by the best learning apps.
 
-The product follows a generous freemium model — free daily content for everyone, enriched with a Premium subscription (full articles, AI audio narration, archives and streak protection) for enthusiasts.
+The product follows a generous freemium model: free daily content for everyone, enriched with a Premium subscription (full articles, AI audio narration, archives and streak protection) for enthusiasts.
 
 I designed, built and shipped the whole thing end to end as the founder of my company (DAVID SERVICES): the mobile app, the serverless backend, the in-app subscription system, the content pipeline, and the store releases.`,
         status: [
@@ -200,15 +200,15 @@ I designed, built and shipped the whole thing end to end as the founder of my co
             { title: 'Daily French event', description: 'A notable historical or cultural French event surfaced every day, with a concise summary to read in minutes.' },
             { title: 'Interactive daily quiz', description: 'A short 3-question quiz with scoring and points to test and reinforce what you just learned.' },
             { title: 'Gamification & retention', description: 'Daily streaks with protection shields, unlockable badges and a monthly leaderboard recomputed server-side.' },
-            { title: 'Frictionless guest mode', description: 'Play immediately without an account — read, take the quiz and progress, then keep all your progress when you sign up.' },
+            { title: 'Frictionless guest mode', description: 'Play immediately without an account: read, take the quiz and progress, then keep all your progress when you sign up.' },
             { title: 'AI audio narration', description: 'Every event narrated through AI text-to-speech, so you can listen to the day’s story hands-free.' },
             { title: 'In-depth content', description: 'Full 800–1,200 word articles, detailed quiz answer explanations, exclusive anecdotes and access to the full archive.' },
         ],
         challenges: [
-            { title: 'Cross-platform iOS development without a Mac', description: 'The entire iOS chain — build, signing and App Store publication — is handled from Windows through cloud builds, with on-device testing via a dedicated development client.' },
+            { title: 'Cross-platform iOS development without a Mac', description: 'The entire iOS chain (build, signing and App Store publication) is handled from Windows through cloud builds, with on-device testing via a dedicated development client.' },
             { title: 'Server-side protection of Premium content', description: 'Paid content is never exposed to free users, even through a direct API call: isolation is guaranteed by database-level security rules, not just by what the UI chooses to render.' },
             { title: 'Tamper-proof subscription status', description: 'Going Premium can only be triggered through a trusted server channel; any attempt to flip the flag from the app is rejected. The server is the single source of truth.' },
-            { title: 'A complete gamification system', description: 'Daily streaks with protection shields, conditional badges and a monthly leaderboard recomputed on the server — logic designed end to end for retention and fairness.' },
+            { title: 'A complete gamification system', description: 'Daily streaks with protection shields, conditional badges and a monthly leaderboard recomputed on the server, with logic designed end to end for retention and fairness.' },
         ],
     },
 }

@@ -4,8 +4,8 @@ export default Object.freeze({
     ...details,
 
     // Profile / hero
-    title: 'Full Stack Developer',
-    intro: 'Full Stack Developer with {years} years of experience, passionate about building scalable and maintainable web applications.',
+    title: 'IT Engineer',
+    intro: 'IT engineer with {years} years of experience, passionate about building scalable and maintainable web and mobile applications.',
 
     // Experience titles
     iutTitle: 'DUT in Physical Measurements',
@@ -55,7 +55,7 @@ export default Object.freeze({
         interests: 'Coding · Sports · Travel · Music · DIY · Digital culture',
         summary: 'IT engineer with {years} years of experience, building full-stack web and mobile applications, from the database to deployment. A dual engineer-and-founder profile, comfortable integrating AI into products. Looking for a permanent role (CDI).',
         permis: 'Driving licence (cat. B)',
-        oneLiner: 'IT Engineer · Full Stack Developer',
+        oneLiner: 'IT Engineer',
         exp: {
             davidServices: 'Designed and shipped several mobile apps on the App Store and Google Play ("Un Jour en France", "Puffless", "WakeVerse"): React Native apps, serverless backends, in-app subscriptions, gamification and AI.',
             ateme: 'Full-stack development (Vue, Node, Express, GraphQL) and integration (Docker, Kubernetes) within a Scrum team; code reviews, testing and performance optimisation.',
@@ -74,10 +74,10 @@ export default Object.freeze({
 
     about: {
         title: 'About',
-        p1: 'I\'m a {age}-year-old IT engineer who has been building full-stack web and mobile applications for {years} years — from the database to the interface, all the way to deployment.',
-        p2: 'After starting out on a sandwich course at General Electric, then taking on missions at Fives Syleps, Naval Group and Ateme, I decided in late 2024 to go travelling. Rather than just a break, I turned it into a creative period: while on the road I set up my own company (David Services) and shipped several mobile apps — "Un Jour en France" on the App Store and Google Play, then "Puffless" and "WakeVerse" on the App Store — while volunteering on the Breizhcard platform.',
-        p3: 'I also love working hand in hand with AI: Claude and ChatGPT have become real daily accelerators, and I integrate AI directly into my products — "Un Jour en France", for instance, features AI-generated audio narration.',
-        p4: 'Now back in France, I\'m looking for a permanent role (CDI) where I can put this dual profile — an engineer\'s technical solidity and a founder\'s autonomy — to work for a team and a product that matter.',
+        p1: 'I\'m a {age}-year-old IT engineer who has been building full-stack web and mobile applications for {years} years, from the database to the interface, all the way to deployment.',
+        p2: 'After starting out on a sandwich course at General Electric, then taking on missions at Fives Syleps, Naval Group and Ateme, I decided in late 2024 to focus on my own projects. I set up my own company (David Services) and shipped several mobile apps: "Un Jour en France" on the App Store and Google Play, then "Puffless" and "WakeVerse" on the App Store, while volunteering on the Breizhcard platform.',
+        p3: 'I also love working hand in hand with AI: Claude and ChatGPT have become real daily accelerators, and I integrate AI directly into my products. "Un Jour en France", for instance, features AI-generated audio narration.',
+        p4: 'I\'m now looking for a permanent role (CDI) where I can put this dual profile (an engineer\'s technical solidity and a founder\'s autonomy) to work for a team and a product that matter.',
     },
 
     skills: {
@@ -111,7 +111,7 @@ export default Object.freeze({
     },
 
     footer: {
-        tagline: 'Full Stack Developer passionate about building scalable and maintainable web applications. Always eager to learn new technologies and solve complex problems.',
+        tagline: 'IT engineer passionate about building scalable and maintainable web and mobile applications. Always eager to learn new technologies and solve complex problems.',
         quickLinks: 'Quick Links',
         timeline: 'Professional Timeline',
         projects: 'My Projects',
@@ -137,7 +137,7 @@ export default Object.freeze({
 
     timeline: {
         title: 'Professional Timeline',
-        subtitle: 'My journey from student to full-stack developer — experience, education, and continuous growth',
+        subtitle: 'My journey from student to today: experience, education, and continuous growth',
         techStack: 'Tech Stack',
         concurrent: '{count} in parallel',
     },
@@ -167,7 +167,7 @@ export default Object.freeze({
         badgeMobileIos: 'Mobile app · iOS',
         badgeMobileCrossPlatform: 'Mobile app · iOS & Android',
         badgePlatform: 'Full-stack platform',
-        breizhcardDescription: 'SaaS platform for connected wooden business cards (NFC + QR code) — product design, full-stack development, e-commerce and deployment.',
+        breizhcardDescription: 'SaaS platform for connected wooden business cards (NFC + QR code): product design, full-stack development, e-commerce and deployment.',
     },
 
     detail: {
@@ -225,7 +225,7 @@ export default Object.freeze({
 - Participated in scrum ceremonies: sprint planning, daily standups, sprint reviews, retrospectives
 - Code quality and best practices: code reviews, testing (Jest, pytest), documentation writing
 - Problem solving and troubleshooting: debugging, performance optimization`,
-        breizhcard: `SaaS platform for connected wooden business cards (NFC + QR code) — product design, full-stack development, e-commerce and deployment.`,
+        breizhcard: `SaaS platform for connected wooden business cards (NFC + QR code): product design, full-stack development, e-commerce and deployment.`,
         davidServices: `Founder of my own company (auto-entreprise) 🚀
 - Designed, developed and published several cross-platform mobile apps, including "Un Jour en France" (live on the App Store and Google Play)
 - End-to-end ownership: mobile app, serverless backend, in-app subscriptions, content pipeline and store releases
@@ -241,8 +241,8 @@ export default Object.freeze({
         optymo: 'Tool that splits daily radio recordings into sorted and timestamped conversations',
         bobRaoul: "A fun project providing visual and audio feedback whenever a cap is successfully thrown in Bob's head",
         ncg: 'Automation project that streamlines the process of sourcing, editing, and publishing royalty-free music content to YouTube',
-        unJourEnFrance: 'Daily French culture mobile app — a historical or cultural event every day, with an interactive quiz, AI audio narration and gamification (streaks, badges, monthly leaderboard). Live on the App Store and Google Play.',
-        puffless: 'Mobile app to help quit vaping — personalized quit plan, money-saved and health tracking, craving management and gamification to stay motivated. Live on the App Store.',
-        wakeverse: 'Alarm clock that replaces morning doomscrolling with a Bible verse — reliable alarm even on silent, verses by theme, streaks and sharing, in English and French. Live on the App Store.',
+        unJourEnFrance: 'Daily French culture mobile app: a historical or cultural event every day, with an interactive quiz, AI audio narration and gamification (streaks, badges, monthly leaderboard). Live on the App Store and Google Play.',
+        puffless: 'Mobile app to help quit vaping: personalized quit plan, money-saved and health tracking, craving management and gamification to stay motivated. Live on the App Store.',
+        wakeverse: 'Alarm clock that replaces morning doomscrolling with a Bible verse: reliable alarm even on silent, verses by theme, streaks and sharing, in English and French. Live on the App Store.',
     },
 })

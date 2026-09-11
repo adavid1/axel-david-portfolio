@@ -95,7 +95,7 @@ Ce projet illustre des capacités d'automatisation avancées : web scraping, tra
         puffless: {
             overview: `Puffless est une application mobile de santé conçue pour aider à arrêter de vapoter en rendant le sevrage motivant et concret. Plutôt que de culpabiliser, elle transforme chaque jour sans vape en progression visible : économies réalisées, nicotine évitée et bénéfices santé qui s'accumulent au fil d'une frise chronologique.
 
-L'app démarre par un court questionnaire qui génère un plan de sevrage personnalisé selon les habitudes et les déclencheurs de l'utilisateur, puis propose deux approches — arrêt net ou réduction progressive. Un bouton « panique » déclenche un exercice de respiration guidée de 60 secondes pour passer une envie, tandis qu'un « arbre de vie » qui grandit chaque jour et des poumons qui se régénèrent entretiennent la motivation. Développée sous mon auto-entreprise (David Services), elle fonctionne entièrement hors ligne, sans compte.`,
+L'app démarre par un court questionnaire qui génère un plan de sevrage personnalisé selon les habitudes et les déclencheurs de l'utilisateur, puis propose deux approches : arrêt net ou réduction progressive. Un bouton « panique » déclenche un exercice de respiration guidée de 60 secondes pour passer une envie, tandis qu'un « arbre de vie » qui grandit chaque jour et des poumons qui se régénèrent entretiennent la motivation. Développée sous mon auto-entreprise (David Services), elle fonctionne entièrement hors ligne, sans compte.`,
             features: [
                 { title: 'Plan de sevrage personnalisé', description: 'Un questionnaire initial génère une stratégie d’arrêt adaptée aux habitudes et aux déclencheurs de chacun' },
                 { title: 'Suivi de progression concret', description: 'Compteur de série, économies réalisées, nicotine évitée et jalons santé sur une frise chronologique' },
@@ -111,12 +111,12 @@ L'app démarre par un court questionnaire qui génère un plan de sevrage person
             ],
         },
         wakeverse: {
-            overview: `WakeVerse est un réveil qui remplace le réflexe matinal du téléphone — notifications et réseaux sociaux — par un verset biblique. L'utilisateur se réveille avec une alarme fiable qui sonne même en mode silencieux ou « Ne pas déranger », puis découvre un verset choisi selon le thème dont il a besoin ce matin-là : paix, courage, force, espérance, confiance ou gratitude.
+            overview: `WakeVerse est un réveil qui remplace le réflexe matinal du téléphone (notifications et réseaux sociaux) par un verset biblique. L'utilisateur se réveille avec une alarme fiable qui sonne même en mode silencieux ou « Ne pas déranger », puis découvre un verset choisi selon le thème dont il a besoin ce matin-là : paix, courage, force, espérance, confiance ou gratitude.
 
 Pensée comme « l'inverse du doomscrolling », l'app soigne l'expérience de lecture avec des fonds de lever de soleil et une typographie élégante. Elle suit les séries quotidiennes, permet de partager un verset en image et propose les Écritures en anglais (Berean Standard Bible) et en français (Segond 1910). Développée sous mon auto-entreprise (David Services), elle repose sur l'alarme native d'Apple pour garantir la fiabilité du réveil.`,
             features: [
                 { title: 'Alarme fiable', description: 'Basée sur la technologie native d’Apple, elle sonne même en mode silencieux et « Ne pas déranger »' },
-                { title: 'Verset selon le thème', description: 'Sélection par thème — paix, courage, force, espérance, confiance ou gratitude — pour coller à l’état d’esprit du matin' },
+                { title: 'Verset selon le thème', description: 'Sélection par thème (paix, courage, force, espérance, confiance ou gratitude) pour coller à l’état d’esprit du matin' },
                 { title: 'Réveil personnalisable', description: 'Horaires et jours au choix, avec montée progressive du volume en option' },
                 { title: 'Expérience de lecture apaisante', description: 'Fonds de lever de soleil et typographie soignée pour un moment calme' },
                 { title: 'Séries & partage', description: 'Suivi des séries quotidiennes et partage d’un verset sous forme d’image formatée en un geste' },
@@ -133,7 +133,7 @@ Pensée comme « l'inverse du doomscrolling », l'app soigne l'expérience de le
     breizhcard: {
         description: 'Plateforme SaaS qui transforme une carte de visite en bois (NFC + QR code) en page de contact numérique entièrement personnalisable, partageable en un scan',
         year: "2023 - Aujourd'hui",
-        overview: `Breizhcard est une plateforme SaaS qui transforme une carte de visite physique en bois — équipée d'une puce NFC et d'un QR code — en une page de contact numérique entièrement personnalisable. Au scan, le destinataire arrive sur une landing page conçue par le titulaire (coordonnées, liens, réseaux sociaux, logo, bannière, couleurs) et peut enregistrer le contact instantanément dans son téléphone.
+        overview: `Breizhcard est une plateforme SaaS qui transforme une carte de visite physique en bois, équipée d'une puce NFC et d'un QR code, en une page de contact numérique entièrement personnalisable. Au scan, le destinataire arrive sur une landing page conçue par le titulaire (coordonnées, liens, réseaux sociaux, logo, bannière, couleurs) et peut enregistrer le contact instantanément dans son téléphone.
 
 C'est une alternative à la carte de visite papier : toujours à jour (aucune réimpression), réutilisable, plus économique et plus écologique. Plusieurs essences de bois sont proposées, avec une vente à l'unité ou en volume et un abonnement premium (Breizhcard+) qui débloque la personnalisation avancée.
 
@@ -179,7 +179,7 @@ En tant que seul développeur du projet, j'ai conçu et réalisé 100 % de la pa
         description: 'Une dose quotidienne d’histoire et de culture françaises : un événement par jour, un quiz interactif, une narration audio par IA et une expérience gamifiée.',
         overview: `Un Jour en France transforme la culture française en rituel quotidien. Chaque jour, l'utilisateur découvre un événement historique ou culturel marquant, teste ses connaissances avec un court quiz et progresse dans le temps grâce à un système d'engagement inspiré des meilleures applications d'apprentissage.
 
-Le produit suit un modèle freemium généreux — du contenu quotidien gratuit pour tous, enrichi d'un abonnement Premium (articles complets, narration audio par IA, archives et protection des séries) pour les passionnés.
+Le produit suit un modèle freemium généreux : du contenu quotidien gratuit pour tous, enrichi d'un abonnement Premium (articles complets, narration audio par IA, archives et protection des séries) pour les passionnés.
 
 J'ai conçu, développé et publié l'ensemble de bout en bout en tant que fondateur de mon entreprise (DAVID SERVICES) : l'application mobile, le backend serverless, le système d'abonnement in-app, le pipeline de contenu et la mise en production sur les stores.`,
         status: [
@@ -200,15 +200,15 @@ J'ai conçu, développé et publié l'ensemble de bout en bout en tant que fonda
             { title: 'Événement français du jour', description: 'Un événement historique ou culturel français marquant chaque jour, avec un résumé concis à lire en quelques minutes.' },
             { title: 'Quiz quotidien interactif', description: 'Un court quiz de 3 questions avec score et points pour tester et ancrer ce que l’on vient d’apprendre.' },
             { title: 'Gamification & rétention', description: 'Séries quotidiennes avec boucliers de protection, badges à débloquer et classement mensuel recalculé côté serveur.' },
-            { title: 'Mode invité sans friction', description: 'On joue immédiatement sans compte — lecture, quiz et progression — puis toute la progression est conservée à l’inscription.' },
+            { title: 'Mode invité sans friction', description: 'On joue immédiatement sans compte : lecture, quiz et progression, puis toute la progression est conservée à l’inscription.' },
             { title: 'Narration audio par IA', description: 'Chaque événement est narré par synthèse vocale IA, pour écouter l’histoire du jour les mains libres.' },
             { title: 'Contenu approfondi', description: 'Articles complets de 800 à 1 200 mots, explications détaillées des réponses, anecdotes exclusives et accès à toutes les archives.' },
         ],
         challenges: [
-            { title: 'Développement iOS multiplateforme sans Mac', description: 'Toute la chaîne iOS — build, signature et publication sur l’App Store — est gérée depuis Windows via des builds cloud, avec test sur appareil réel grâce à un client de développement dédié.' },
+            { title: 'Développement iOS multiplateforme sans Mac', description: 'Toute la chaîne iOS (build, signature et publication sur l’App Store) est gérée depuis Windows via des builds cloud, avec test sur appareil réel grâce à un client de développement dédié.' },
             { title: 'Protection du contenu Premium côté serveur', description: 'Le contenu payant n’est jamais exposé aux utilisateurs gratuits, même via un appel API direct : l’isolation est garantie par des règles de sécurité au niveau de la base de données, pas seulement par l’affichage.' },
             { title: 'Statut d’abonnement infalsifiable', description: 'Le passage en Premium ne peut être déclenché que par un canal serveur de confiance ; toute tentative de modification depuis l’app est rejetée. Le serveur est l’unique source de vérité.' },
-            { title: 'Un système de gamification complet', description: 'Séries quotidiennes avec boucliers, badges conditionnels et classement mensuel recalculé côté serveur — une logique pensée de bout en bout pour la rétention et l’équité.' },
+            { title: 'Un système de gamification complet', description: 'Séries quotidiennes avec boucliers, badges conditionnels et classement mensuel recalculé côté serveur, une logique pensée de bout en bout pour la rétention et l’équité.' },
         ],
     },
 }

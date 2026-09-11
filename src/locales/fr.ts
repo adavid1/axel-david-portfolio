@@ -4,8 +4,8 @@ export default Object.freeze({
     ...details,
 
     // Profil / hero
-    title: 'Développeur Full Stack',
-    intro: 'Développeur Full Stack avec {years} ans d\'expérience, passionné par la construction d\'applications web évolutives et maintenables.',
+    title: 'Ingénieur informatique',
+    intro: 'Ingénieur informatique avec {years} ans d\'expérience, passionné par la construction d\'applications web et mobiles évolutives et maintenables.',
 
     // Intitulés d'expériences
     iutTitle: 'DUT Mesures Physiques',
@@ -55,7 +55,7 @@ export default Object.freeze({
         interests: 'Code · Sport · Voyage · Musique · Bricolage · Culture numérique',
         summary: 'Ingénieur informatique avec {years} ans d\'expérience, je développe des applications web et mobiles full-stack, de la base de données jusqu\'au déploiement. Double profil d\'ingénieur et de fondateur, à l\'aise avec l\'intégration de l\'IA dans les produits. Je recherche un poste en CDI.',
         permis: 'Permis B',
-        oneLiner: 'Ingénieur informatique · Développeur Full Stack',
+        oneLiner: 'Ingénieur informatique',
         exp: {
             davidServices: 'Conception et publication de plusieurs applications mobiles sur l\'App Store et Google Play (« Un Jour en France », « Puffless », « WakeVerse ») : apps React Native, backend serverless, abonnements in-app, gamification et IA.',
             ateme: 'Développement full-stack (Vue, Node, Express, GraphQL) et intégration (Docker, Kubernetes) en équipe Scrum ; revues de code, tests et optimisation des performances.',
@@ -74,10 +74,10 @@ export default Object.freeze({
 
     about: {
         title: 'À propos',
-        p1: 'Ingénieur informatique de {age} ans, je construis des applications web et mobiles full-stack depuis {years} ans — de la base de données à l\'interface, jusqu\'au déploiement.',
-        p2: 'Après mes débuts en alternance chez General Electric, puis des missions chez Fives Syleps, Naval Group et Ateme, j\'ai choisi fin 2024 de partir voyager. Plutôt qu\'une simple pause, j\'en ai fait une période de création : c\'est en voyageant que j\'ai monté ma propre auto-entreprise (David Services) et publié plusieurs applications mobiles — « Un Jour en France » sur l\'App Store et Google Play, puis « Puffless » et « WakeVerse » sur l\'App Store — tout en contribuant bénévolement à la plateforme Breizhcard.',
-        p3: 'J\'aime aussi travailler main dans la main avec l\'IA : Claude et ChatGPT sont devenus de vrais accélérateurs au quotidien, et j\'intègre l\'IA directement dans mes produits — « Un Jour en France » propose par exemple une narration audio générée par IA.',
-        p4: 'De retour en France, je recherche un poste en CDI où mettre cette double casquette — la solidité technique d\'un ingénieur et l\'autonomie d\'un fondateur — au service d\'une équipe et d\'un produit qui ont du sens.',
+        p1: 'Ingénieur informatique de {age} ans, je construis des applications web et mobiles full-stack depuis {years} ans, de la base de données à l\'interface, jusqu\'au déploiement.',
+        p2: 'Après mes débuts en alternance chez General Electric, puis des missions chez Fives Syleps, Naval Group et Ateme, j\'ai choisi fin 2024 de me consacrer à mes propres projets. J\'ai monté mon auto-entreprise (David Services) et publié plusieurs applications mobiles : « Un Jour en France » sur l\'App Store et Google Play, puis « Puffless » et « WakeVerse » sur l\'App Store, tout en contribuant bénévolement à la plateforme Breizhcard.',
+        p3: 'J\'aime aussi travailler main dans la main avec l\'IA : Claude et ChatGPT sont devenus de vrais accélérateurs au quotidien, et j\'intègre l\'IA directement dans mes produits. « Un Jour en France » propose par exemple une narration audio générée par IA.',
+        p4: 'Je recherche aujourd\'hui un poste en CDI où mettre cette double casquette (la solidité technique d\'un ingénieur et l\'autonomie d\'un fondateur) au service d\'une équipe et d\'un produit qui ont du sens.',
     },
 
     skills: {
@@ -111,7 +111,7 @@ export default Object.freeze({
     },
 
     footer: {
-        tagline: 'Développeur Full Stack passionné par la construction d\'applications web évolutives et maintenables. Toujours curieux d\'apprendre de nouvelles technologies et de résoudre des problèmes complexes.',
+        tagline: 'Ingénieur informatique passionné par la construction d\'applications web et mobiles évolutives et maintenables. Toujours curieux d\'apprendre de nouvelles technologies et de résoudre des problèmes complexes.',
         quickLinks: 'Liens rapides',
         timeline: 'Parcours professionnel',
         projects: 'Mes projets',
@@ -137,7 +137,7 @@ export default Object.freeze({
 
     timeline: {
         title: 'Parcours professionnel',
-        subtitle: 'Mon évolution d\'étudiant à développeur full-stack — expériences, formation et progression continue',
+        subtitle: 'Mon parcours, des études à aujourd\'hui : expériences, formation et progression continue',
         techStack: 'Stack technique',
         concurrent: '{count} en parallèle',
     },
@@ -167,7 +167,7 @@ export default Object.freeze({
         badgeMobileIos: 'App mobile · iOS',
         badgeMobileCrossPlatform: 'App mobile · iOS & Android',
         badgePlatform: 'Plateforme full-stack',
-        breizhcardDescription: 'Plateforme SaaS de carte de visite en bois connectée (NFC + QR code) — conception produit, développement full-stack, e-commerce et déploiement.',
+        breizhcardDescription: 'Plateforme SaaS de carte de visite en bois connectée (NFC + QR code) : conception produit, développement full-stack, e-commerce et déploiement.',
     },
 
     detail: {
@@ -225,7 +225,7 @@ export default Object.freeze({
 - Participation aux cérémonies scrum : sprint planning, dailys, revues de sprint, rétrospectives
 - Qualité de code et bonnes pratiques : revues de code, tests (Jest, pytest), rédaction de documentation
 - Résolution de problèmes : débogage, optimisation des performances`,
-        breizhcard: `Plateforme SaaS de carte de visite en bois connectée (NFC + QR code) — conception produit, développement full-stack, e-commerce et déploiement.`,
+        breizhcard: `Plateforme SaaS de carte de visite en bois connectée (NFC + QR code) : conception produit, développement full-stack, e-commerce et déploiement.`,
         davidServices: `Fondateur de ma propre entreprise (auto-entreprise) 🚀
 - Conception, développement et publication de plusieurs applications mobiles cross-platform, dont « Un Jour en France » (disponible sur l'App Store et Google Play)
 - Maîtrise de bout en bout : application mobile, backend serverless, abonnements in-app, pipeline de contenu et publication sur les stores
@@ -241,8 +241,8 @@ export default Object.freeze({
         optymo: 'Outil qui découpe les enregistrements radio quotidiens en conversations triées et horodatées',
         bobRaoul: 'Un projet fun qui fournit un retour visuel et sonore à chaque fois qu\'une capsule est lancée avec succès dans la tête de Bob',
         ncg: 'Projet d\'automatisation qui simplifie la recherche, le montage et la publication de musiques libres de droits sur YouTube',
-        unJourEnFrance: 'Application mobile de culture française au quotidien — un événement historique ou culturel chaque jour, avec un quiz interactif, une narration audio par IA et de la gamification (séries, badges, classement mensuel). Disponible sur l\'App Store et Google Play.',
-        puffless: 'Application mobile d\'aide à l\'arrêt de la vape — plan personnalisé, suivi des économies et de la santé, gestion des cravings et gamification pour rester motivé. Disponible sur l\'App Store.',
-        wakeverse: 'Réveil qui remplace le doomscrolling matinal par un verset biblique — alarme fiable même en mode silencieux, versets par thème, streaks et partage, en français et en anglais. Disponible sur l\'App Store.',
+        unJourEnFrance: 'Application mobile de culture française au quotidien : un événement historique ou culturel chaque jour, avec un quiz interactif, une narration audio par IA et de la gamification (séries, badges, classement mensuel). Disponible sur l\'App Store et Google Play.',
+        puffless: 'Application mobile d\'aide à l\'arrêt de la vape : plan personnalisé, suivi des économies et de la santé, gestion des cravings et gamification pour rester motivé. Disponible sur l\'App Store.',
+        wakeverse: 'Réveil qui remplace le doomscrolling matinal par un verset biblique : alarme fiable même en mode silencieux, versets par thème, streaks et partage, en français et en anglais. Disponible sur l\'App Store.',
     },
 })
