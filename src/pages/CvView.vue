@@ -15,6 +15,14 @@ import {
   breizhcardExp,
 } from '@/data/experiences'
 import { formatDateRange, yearsSince } from '@/utils'
+// Self-hosted so the CV (and its PDFs, printed on a Linux build server) looks
+// the same everywhere. Static weights rather than the variable font: Chrome
+// embeds variable fonts in PDFs as heavier Type 3 fonts.
+import '@fontsource/inter/400.css'
+import '@fontsource/inter/400-italic.css'
+import '@fontsource/inter/500.css'
+import '@fontsource/inter/600.css'
+import '@fontsource/inter/700.css'
 
 const { t, locale } = useI18n({ useScope: 'global' })
 
@@ -70,11 +78,20 @@ function updateSheetScale() {
   sheetScale.value = Math.min(1, (window.innerWidth - horizontalPadding) / A4_WIDTH_PX)
 }
 
-function downloadCv() {
-  window.print()
-}
+// The PDFs are generated at build time from this page, one per language and
+// ink-saver mode (scripts/generate-cv-pdfs.mjs, which reads this link's href to
+// know where to write each file).
+const pdf = computed(() => {
+  const slug = locale.value === 'fr' ? 'cv' : 'resume'
+  const title = `${constants.fullname} - ${t('nav.cv')}`
+  const ecoSuffix = ` (${t('cv.ecoVersion').toLocaleLowerCase(locale.value)})`
+  return {
+    href: `/pdf/axel-david-${slug}${inkSaver.value ? '-eco' : ''}.pdf`,
+    filename: `${title}${inkSaver.value ? ecoSuffix : ''}.pdf`,
+  }
+})
 
-// Make the browser's "Save as PDF" suggest a clean filename, then restore it.
+// Make Ctrl+P / "Save as PDF" suggest a clean filename, then restore it.
 const baseTitle = document.title
 const setPrintTitle = () => { document.title = `${constants.fullname} - ${t('nav.cv')}` }
 const restoreTitle = () => { document.title = baseTitle }
@@ -127,16 +144,17 @@ onBeforeUnmount(() => {
           {{ $t('cv.ecoVersion') }}
         </button>
 
-        <button
-          @click="downloadCv"
-          :title="$t('cv.downloadHint')"
+        <a
+          :href="pdf.href"
+          :download="pdf.filename"
+          data-cv-pdf
           class="flex items-center gap-2 rounded-lg bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-violet-600/25 transition-all duration-300 hover:bg-violet-500"
         >
           <svg class="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
           </svg>
           {{ $t('cv.download') }}
-        </button>
+        </a>
       </div>
     </div>
 
@@ -245,7 +263,7 @@ onBeforeUnmount(() => {
                 <h3 class="text-[13px] font-bold text-gray-900">
                   {{ $t(exp.title) }}
                   <span class="text-slate-700">· {{ exp.company }}</span>
-                  <span v-if="exp.consultingCompany" class="text-[11px] font-normal text-gray-500"> (via {{ exp.consultingCompany }})</span>
+                  <span v-if="exp.consultingCompany" class="text-[11px] font-normal text-gray-500"> (via&nbsp;{{ exp.consultingCompany }})</span>
                   <span v-else-if="exp.category === 'volunteer'" class="text-[11px] font-normal text-gray-500"> ({{ $t('expTypes.volunteer') }})</span>
                 </h3>
                 <span class="shrink-0 text-[11px] font-medium text-gray-500">{{ dateRange(exp.startDate, exp.endDate) }}</span>
@@ -277,6 +295,13 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
+/* Inter runs wider than the system fonts the layout was tuned with: matching
+   their x-height keeps the same line breaks, so the CV still fills one A4. */
+.cv-sheet {
+  font-family: Inter, system-ui, sans-serif;
+  font-size-adjust: 0.5;
+}
+
 .cv-main-title {
   @apply text-[13px] font-bold uppercase tracking-wider text-slate-700;
   border-bottom: 2px solid theme('colors.slate.200');

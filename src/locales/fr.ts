@@ -33,7 +33,6 @@ export default Object.freeze({
 
     cv: {
         download: 'Télécharger en PDF',
-        downloadHint: 'Ouvre la fenêtre d\'impression, choisissez « Enregistrer en PDF » comme destination.',
         backToSite: 'Retour au portfolio',
         inkSaverHint: 'Choisissez la version claire (sans bandeau ni photo) pour économiser l\'encre à l\'impression papier.',
         ecoVersion: 'Éco-encre',
@@ -57,8 +56,8 @@ export default Object.freeze({
         permis: 'Permis B',
         oneLiner: 'Ingénieur informatique',
         exp: {
-            davidServices: 'Conception et publication de plusieurs applications mobiles sur l\'App Store et Google Play (« Un Jour en France », « Puffless », « WakeVerse ») : apps React Native, backend serverless, abonnements in-app, gamification et IA.',
-            ateme: 'Développement full-stack (Vue, Node, Express, GraphQL) et intégration (Docker, Kubernetes) en équipe Scrum ; revues de code, tests et optimisation des performances.',
+            davidServices: 'Conception et publication de plusieurs applications mobiles sur l\'App Store et Google Play («\u00A0Un Jour en France\u00A0», «\u00A0Puffless\u00A0», «\u00A0WakeVerse\u00A0»)\u00A0: apps React Native, backend serverless, abonnements in-app, gamification et IA.',
+            ateme: 'Développement full-stack (Vue, Node, Express, GraphQL) et intégration (Docker, Kubernetes) en équipe Scrum\u00A0; revues de code, tests et optimisation des performances.',
             naval: 'Administration et maintien en condition opérationnelle du logiciel Sage X3 (support N1 à N3), extraction et migration de données vers eBusiness Suite R12, automatisation SQL.',
             fives: 'Développement logiciel (C#, PL/SQL), intégration et configuration d\'outils, support et formation des utilisateurs.',
             ge: 'Développement d\'applications de dématérialisation (C#, WPF) et des bases de données associées, en lien direct avec les utilisateurs et en méthodologie agile.',

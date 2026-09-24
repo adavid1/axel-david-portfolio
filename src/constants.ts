@@ -8,8 +8,9 @@ export default Object.freeze({
     email: 'contact@axel-david.fr',
     // Shown on the downloadable CV. Kept out of the committed source / public
     // bundle: set VITE_CV_PHONE in a local .env.local (gitignored). Empty here
-    // means the CV simply omits the phone line.
-    phone: import.meta.env.VITE_CV_PHONE ?? '',
+    // means the CV simply omits the phone line. Optional chaining because a
+    // Netlify function also imports this module, outside Vite.
+    phone: import.meta.env?.VITE_CV_PHONE ?? '',
     linkedin: 'https://www.linkedin.com/in/axeldavid44/',
     github: 'https://github.com/adavid1',
     // Legal identity of the publishing entity, shown on /mentions-legales.

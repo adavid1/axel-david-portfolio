@@ -33,7 +33,6 @@ export default Object.freeze({
 
     cv: {
         download: 'Download as PDF',
-        downloadHint: 'Opens the print dialog, choose "Save as PDF" as the destination.',
         backToSite: 'Back to portfolio',
         inkSaverHint: 'Pick the light version (no dark band or photo) to save ink when printing on paper.',
         ecoVersion: 'Ink-saver',
