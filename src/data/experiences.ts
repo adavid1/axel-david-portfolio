@@ -97,7 +97,7 @@ export const atemeMission: Experience = {
 }
 
 export const davidServicesExp: Experience = {
-    title: "founderAndDeveloperTitle",
+    title: "mobileFullStackDeveloperTitle",
     company: "David Services",
     location: "Saint-Nazaire, France",
     startDate: "01-07-2025",

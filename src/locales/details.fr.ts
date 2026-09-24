@@ -181,7 +181,7 @@ En tant que seul développeur du projet, j'ai conçu et réalisé 100 % de la pa
 
 Le produit suit un modèle freemium généreux : du contenu quotidien gratuit pour tous, enrichi d'un abonnement Premium (articles complets, narration audio par IA, archives et protection des séries) pour les passionnés.
 
-J'ai conçu, développé et publié l'ensemble de bout en bout en tant que fondateur de mon entreprise (DAVID SERVICES) : l'application mobile, le backend serverless, le système d'abonnement in-app, le pipeline de contenu et la mise en production sur les stores.`,
+J'ai conçu, développé et publié l'ensemble de bout en bout dans le cadre de mon auto-entreprise (David Services) : l'application mobile, le backend serverless, le système d'abonnement in-app, le pipeline de contenu et la mise en production sur les stores.`,
         status: [
             { label: 'iOS', value: 'Disponible sur l’App Store' },
             { label: 'Android', value: 'Disponible sur Google Play' },
