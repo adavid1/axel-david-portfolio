@@ -164,7 +164,7 @@ onBeforeUnmount(() => {
       :style="{ zoom: sheetScale }"
     >
       <!-- Sidebar -->
-      <aside class="cv-sidebar flex w-[34%] flex-col gap-4 px-5 py-6" :class="{ 'cv-sidebar--light': inkSaver }">
+      <aside class="cv-sidebar flex w-[31%] flex-col gap-4 px-5 py-6" :class="{ 'cv-sidebar--light': inkSaver }">
         <!-- Photo (hidden in ink-saver mode to spare toner) -->
         <div v-if="!inkSaver" class="flex justify-center">
           <img
@@ -204,7 +204,12 @@ onBeforeUnmount(() => {
           <dl class="mt-2 space-y-1.5 text-[10px] leading-snug">
             <div v-for="group in skillGroups" :key="group.labelKey">
               <dt class="cv-side-strong font-semibold">{{ $t(group.labelKey) }}</dt>
-              <dd class="cv-side-muted">{{ group.items.join(' · ') }}</dd>
+              <!-- Lines only break between skills, never inside one ("MS SQL Server"). -->
+              <dd class="cv-side-muted">
+                <template v-for="(item, i) in group.items" :key="item">
+                  <span class="whitespace-nowrap">{{ item }}</span>{{ i < group.items.length - 1 ? ' · ' : '' }}
+                </template>
+              </dd>
             </div>
           </dl>
         </div>
