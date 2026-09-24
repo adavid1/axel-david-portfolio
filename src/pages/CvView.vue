@@ -56,6 +56,10 @@ const phoneDisplay = computed(() =>
 
 const certifications = computed(() => [t('cv.certs.bnssa'), t('cv.certs.pse1')])
 
+// Skills and interests are rendered item by item, each kept on one line with
+// its trailing "·": lines only break between items, and never start with "·".
+const interests = computed(() => t('cv.interests').split(' · '))
+
 const spokenLanguages = computed(() => [
   { name: t('skills.spoken.french'), level: t('skills.spoken.frenchLevel') },
   { name: t('skills.spoken.english'), level: t('skills.spoken.englishLevel') },
@@ -164,7 +168,7 @@ onBeforeUnmount(() => {
       :style="{ zoom: sheetScale }"
     >
       <!-- Sidebar -->
-      <aside class="cv-sidebar flex w-[31%] flex-col gap-4 px-5 py-6" :class="{ 'cv-sidebar--light': inkSaver }">
+      <aside class="cv-sidebar flex w-[30%] flex-col gap-4 px-5 py-6" :class="{ 'cv-sidebar--light': inkSaver }">
         <!-- Photo (hidden in ink-saver mode to spare toner) -->
         <div v-if="!inkSaver" class="flex justify-center">
           <img
@@ -204,10 +208,9 @@ onBeforeUnmount(() => {
           <dl class="mt-2 space-y-1.5 text-[10px] leading-snug">
             <div v-for="group in skillGroups" :key="group.labelKey">
               <dt class="cv-side-strong font-semibold">{{ $t(group.labelKey) }}</dt>
-              <!-- Lines only break between skills, never inside one ("MS SQL Server"). -->
               <dd class="cv-side-muted">
                 <template v-for="(item, i) in group.items" :key="item">
-                  <span class="whitespace-nowrap">{{ item }}</span>{{ i < group.items.length - 1 ? ' · ' : '' }}
+                  <span class="whitespace-nowrap">{{ item }}{{ i < group.items.length - 1 ? ' ·' : '' }}</span>{{ ' ' }}
                 </template>
               </dd>
             </div>
@@ -236,7 +239,11 @@ onBeforeUnmount(() => {
         <!-- Interests -->
         <div>
           <h2 class="cv-side-title">{{ $t('cv.sections.interests') }}</h2>
-          <p class="cv-side-muted mt-2 text-[10.5px] leading-snug">{{ $t('cv.interests') }}</p>
+          <p class="cv-side-muted mt-2 text-[10.5px] leading-snug">
+            <template v-for="(item, i) in interests" :key="item">
+              <span class="whitespace-nowrap">{{ item }}{{ i < interests.length - 1 ? ' ·' : '' }}</span>{{ ' ' }}
+            </template>
+          </p>
         </div>
       </aside>
 
@@ -269,7 +276,7 @@ onBeforeUnmount(() => {
                   {{ $t(exp.title) }}
                   <span class="text-slate-700">· {{ exp.company }}</span>
                   <span v-if="exp.consultingCompany" class="text-[11px] font-normal text-gray-500"> (via&nbsp;{{ exp.consultingCompany }})</span>
-                  <span v-else-if="exp.category === 'volunteer'" class="text-[11px] font-normal text-gray-500"> ({{ $t('expTypes.volunteer') }})</span>
+                  <span v-else-if="exp.category === 'volunteer' || exp.category === 'freelance'" class="text-[11px] font-normal text-gray-500"> ({{ $t(`expTypes.${exp.category}`) }})</span>
                 </h3>
                 <span class="shrink-0 text-[11px] font-medium text-gray-500">{{ dateRange(exp.startDate, exp.endDate) }}</span>
               </div>
