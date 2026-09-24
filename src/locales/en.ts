@@ -16,7 +16,7 @@ export default Object.freeze({
     fivesSylepsMissionTitle: 'Database Developer',
     fullStackDeveloper: 'Full Stack Developer',
     dbAdminAndDev: 'Database Admin & Developer',
-    founderAndDeveloperTitle: 'Founder & Developer',
+    mobileFullStackDeveloperTitle: 'Mobile Full Stack Developer',
 
     common: {
         present: 'Present',
@@ -52,7 +52,7 @@ export default Object.freeze({
             pse1: 'PSE1, first aid (team, level 1)',
         },
         interests: 'Coding · Sports · Travel · Music · DIY · Digital culture',
-        summary: 'IT engineer with {years} years of experience, building full-stack web and mobile applications, from the database to deployment. A dual engineer-and-founder profile, comfortable integrating AI into products. Looking for a permanent role (CDI).',
+        summary: 'IT engineer with {years} years of experience, building full-stack web and mobile applications. Able to own the whole product lifecycle, from design to production, and comfortable integrating AI. Looking for a permanent role (CDI).',
         permis: 'Driving licence (cat. B)',
         oneLiner: 'IT Engineer',
         exp: {
@@ -76,7 +76,7 @@ export default Object.freeze({
         p1: 'I\'m a {age}-year-old IT engineer who has been building full-stack web and mobile applications for {years} years, from the database to the interface, all the way to deployment.',
         p2: 'After starting out on a sandwich course at General Electric, then taking on missions at Fives Syleps, Naval Group and Ateme, I decided in late 2024 to focus on my own projects. I set up my own company (David Services) and shipped several mobile apps: "Un Jour en France" on the App Store and Google Play, then "Puffless" and "WakeVerse" on the App Store, while volunteering on the Breizhcard platform.',
         p3: 'I also love working hand in hand with AI: Claude and ChatGPT have become real daily accelerators, and I integrate AI directly into my products. "Un Jour en France", for instance, features AI-generated audio narration.',
-        p4: 'I\'m now looking for a permanent role (CDI) where I can put this dual profile (an engineer\'s technical solidity and a founder\'s autonomy) to work for a team and a product that matter.',
+        p4: 'I\'m now looking for a permanent role (CDI) where I can bring this experience, from large industrial groups to my own apps shipped end to end, to a team and a product that matter.',
     },
 
     skills: {
@@ -225,7 +225,7 @@ export default Object.freeze({
 - Code quality and best practices: code reviews, testing (Jest, pytest), documentation writing
 - Problem solving and troubleshooting: debugging, performance optimization`,
         breizhcard: `SaaS platform for connected wooden business cards (NFC + QR code): product design, full-stack development, e-commerce and deployment.`,
-        davidServices: `Founder of my own company (auto-entreprise) 🚀
+        davidServices: `My own mobile apps, built through my one-person business (auto-entreprise) 🚀
 - Designed, developed and published several cross-platform mobile apps, including "Un Jour en France" (live on the App Store and Google Play)
 - End-to-end ownership: mobile app, serverless backend, in-app subscriptions, content pipeline and store releases
 - Built a full freemium product with "Un Jour en France": daily content, quizzes, gamification (streaks, badges, monthly leaderboard) and AI audio narration

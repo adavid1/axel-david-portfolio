@@ -181,7 +181,7 @@ As the sole developer on the project, I designed and built 100% of the technical
 
 The product follows a generous freemium model: free daily content for everyone, enriched with a Premium subscription (full articles, AI audio narration, archives and streak protection) for enthusiasts.
 
-I designed, built and shipped the whole thing end to end as the founder of my company (DAVID SERVICES): the mobile app, the serverless backend, the in-app subscription system, the content pipeline, and the store releases.`,
+I designed, built and shipped the whole thing end to end through my own business (David Services): the mobile app, the serverless backend, the in-app subscription system, the content pipeline, and the store releases.`,
         status: [
             { label: 'iOS', value: 'Live on the App Store' },
             { label: 'Android', value: 'Live on Google Play' },

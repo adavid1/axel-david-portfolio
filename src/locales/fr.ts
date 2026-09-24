@@ -16,7 +16,7 @@ export default Object.freeze({
     fivesSylepsMissionTitle: 'Développeur de bases de données',
     fullStackDeveloper: 'Développeur Full Stack',
     dbAdminAndDev: 'Administrateur et Développeur de BDD',
-    founderAndDeveloperTitle: 'Fondateur & Développeur',
+    mobileFullStackDeveloperTitle: 'Développeur Full Stack Mobile',
 
     common: {
         present: 'Aujourd\'hui',
@@ -52,7 +52,7 @@ export default Object.freeze({
             pse1: 'PSE1, premiers secours en équipe',
         },
         interests: 'Code · Sport · Voyage · Musique · Bricolage · Culture numérique',
-        summary: 'Ingénieur informatique avec {years} ans d\'expérience, je développe des applications web et mobiles full-stack, de la base de données jusqu\'au déploiement. Double profil d\'ingénieur et de fondateur, à l\'aise avec l\'intégration de l\'IA dans les produits. Je recherche un poste en CDI.',
+        summary: 'Ingénieur informatique avec {years} ans d\'expérience, je développe des applications web et mobiles full-stack. Autonome sur tout le cycle de vie d\'un produit, de la conception à la mise en production, et à l\'aise avec l\'intégration de l\'IA. Je recherche un poste en CDI.',
         permis: 'Permis B',
         oneLiner: 'Ingénieur informatique',
         exp: {
@@ -76,7 +76,7 @@ export default Object.freeze({
         p1: 'Ingénieur informatique de {age} ans, je construis des applications web et mobiles full-stack depuis {years} ans, de la base de données à l\'interface, jusqu\'au déploiement.',
         p2: 'Après mes débuts en alternance chez General Electric, puis des missions chez Fives Syleps, Naval Group et Ateme, j\'ai choisi fin 2024 de me consacrer à mes propres projets. J\'ai monté mon auto-entreprise (David Services) et publié plusieurs applications mobiles : « Un Jour en France » sur l\'App Store et Google Play, puis « Puffless » et « WakeVerse » sur l\'App Store, tout en contribuant bénévolement à la plateforme Breizhcard.',
         p3: 'J\'aime aussi travailler main dans la main avec l\'IA : Claude et ChatGPT sont devenus de vrais accélérateurs au quotidien, et j\'intègre l\'IA directement dans mes produits. « Un Jour en France » propose par exemple une narration audio générée par IA.',
-        p4: 'Je recherche aujourd\'hui un poste en CDI où mettre cette double casquette (la solidité technique d\'un ingénieur et l\'autonomie d\'un fondateur) au service d\'une équipe et d\'un produit qui ont du sens.',
+        p4: 'Je recherche aujourd\'hui un poste en CDI où mettre à profit cette expérience, des grands groupes industriels à mes propres applications menées de bout en bout, au service d\'une équipe et d\'un produit qui ont du sens.',
     },
 
     skills: {
@@ -225,7 +225,7 @@ export default Object.freeze({
 - Qualité de code et bonnes pratiques : revues de code, tests (Jest, pytest), rédaction de documentation
 - Résolution de problèmes : débogage, optimisation des performances`,
         breizhcard: `Plateforme SaaS de carte de visite en bois connectée (NFC + QR code) : conception produit, développement full-stack, e-commerce et déploiement.`,
-        davidServices: `Fondateur de ma propre entreprise (auto-entreprise) 🚀
+        davidServices: `Mes propres applications mobiles, développées en auto-entreprise 🚀
 - Conception, développement et publication de plusieurs applications mobiles cross-platform, dont « Un Jour en France » (disponible sur l'App Store et Google Play)
 - Maîtrise de bout en bout : application mobile, backend serverless, abonnements in-app, pipeline de contenu et publication sur les stores
 - Produit freemium complet avec « Un Jour en France » : contenu quotidien, quiz, gamification (séries, badges, classement mensuel) et narration audio par IA
