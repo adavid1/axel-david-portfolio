@@ -12,7 +12,7 @@ function serveBuiltCvPdfs(): Plugin {
     apply: 'serve',
     configureServer(server) {
       server.middlewares.use('/pdf', (req, res) => {
-        const name = decodeURIComponent((req.url ?? '').split('?')[0]).replace(/^\//, '')
+        const name = (req.url ?? '').split('?')[0].replace(/^\//, '')
         const file = join('dist', 'pdf', name)
         if (/^[a-z0-9-]+\.pdf$/.test(name) && existsSync(file)) {
           res.setHeader('Content-Type', 'application/pdf')

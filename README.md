@@ -59,6 +59,7 @@ The `/cv` page is also published as one-page A4 PDFs, in French and English, eac
 | English | `/pdf/axel-david-resume.pdf` | `/pdf/axel-david-resume-eco.pdf` |
 
 - `pnpm build` prints them from the built `/cv` page with headless Chrome (Puppeteer) into `dist/pdf/`, next to a `manifest.json`. The build fails if a PDF doesn't fit on one page.
+- `pnpm dev` serves the PDFs from the last build in `dist/pdf/`, so run `pnpm build` again to see content changes in them.
 - `pnpm cv:pdf` writes personal copies that include the phone number from `.env.local` (`VITE_CV_PHONE`) to the gitignored `private/cv/` folder. Local builds read `.env.local` too, so their PDFs also include it: keep them local. Netlify builds never do.
 - The CV shows an age and years of experience computed at build time. Every night, the `refresh-cv-pdfs` Netlify scheduled function checks whether either value changed since the PDFs were generated, and if so triggers a production build.
 
