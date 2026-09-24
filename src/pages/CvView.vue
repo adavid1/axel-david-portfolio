@@ -169,7 +169,8 @@ onBeforeUnmount(() => {
     >
       <!-- Sidebar -->
       <aside class="cv-sidebar flex w-[30%] flex-col gap-4 px-5 py-6" :class="{ 'cv-sidebar--light': inkSaver }">
-        <!-- Photo (hidden in ink-saver mode to spare toner) -->
+        <!-- Photo, or in ink-saver mode (meant for paper) a QR code to the
+             portfolio in the same slot, so the layout doesn't shift. -->
         <div v-if="!inkSaver" class="flex justify-center">
           <img
             src="/profile.jpg"
@@ -177,6 +178,10 @@ onBeforeUnmount(() => {
             class="size-28 rounded-full object-cover ring-2 ring-white/25"
           />
         </div>
+        <a v-else href="https://axel-david.fr" class="flex h-28 flex-col items-center justify-center gap-1.5">
+          <img src="/cv-qr.svg" alt="QR code: axel-david.fr" class="size-[88px]" />
+          <span class="cv-side-muted text-[10px] font-medium tracking-wide">axel-david.fr</span>
+        </a>
 
         <!-- Contact -->
         <ul class="space-y-1.5 text-[11px]">
