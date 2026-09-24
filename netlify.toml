@@ -1,0 +1,4 @@
+[build]
+  # Also prints the CV PDFs into dist/pdf/ (scripts/generate-cv-pdfs.mjs).
+  command = "pnpm build"
+  publish = "dist"
