@@ -31,7 +31,7 @@ export const utbmSchool: Experience = {
 // Professional experience
 export const geApprenticeship: Experience = {
     title: "geApprenticeshipTitle",
-    company: "GENERAL ELECTRIC",
+    company: "General Electric",
     companyLink: "https://www.ge.com/",
     location: "Belfort, France",
     startDate: "01-09-2017",
@@ -59,7 +59,7 @@ export const fivesSylepsMission: Experience = {
 
 export const navalGroupMission: Experience = {
     title: "dbAdminAndDev",
-    company: "NAVAL GROUP",
+    company: "Naval Group",
     companyLink: "https://www.naval-group.com/en/",
     location: "Brest, France",
     startDate: "01-08-2021",
@@ -98,7 +98,7 @@ export const atemeMission: Experience = {
 
 export const davidServicesExp: Experience = {
     title: "founderAndDeveloperTitle",
-    company: "DAVID SERVICES",
+    company: "David Services",
     location: "Saint-Nazaire, France",
     startDate: "01-07-2025",
     endDate: null,
