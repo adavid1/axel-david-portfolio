@@ -87,6 +87,7 @@ export const atemeMission: Experience = {
         "GraphQL",
         "Docker",
         "Kubernetes",
+        "Grafana",
         "Jest",
         "pytest",
     ],

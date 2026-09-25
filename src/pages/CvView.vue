@@ -54,7 +54,7 @@ const phoneDisplay = computed(() =>
   locale.value === 'fr' ? constants.phone.replace(/^\+33\s/, '0') : constants.phone
 )
 
-const certifications = computed(() => [t('cv.certs.bnssa'), t('cv.certs.pse1')])
+const certifications = computed(() => [t('cv.certs.cisco'), t('cv.certs.bnssa'), t('cv.certs.pse1')])
 
 // Skills and interests are rendered item by item, each kept on one line with
 // its trailing "·": lines only break between items, and never start with "·".
