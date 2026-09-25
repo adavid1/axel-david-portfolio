@@ -48,6 +48,7 @@ export default Object.freeze({
             interests: 'Centres d\'intérêt',
         },
         certs: {
+            cisco: 'Cisco CCNA 2, routage et commutation',
             bnssa: 'BNSSA, brevet de sauvetage aquatique',
             pse1: 'PSE1, premiers secours en équipe',
         },
@@ -96,7 +97,7 @@ export default Object.freeze({
             french: 'Français',
             frenchLevel: 'Langue maternelle',
             english: 'Anglais',
-            englishLevel: 'Courant (C1)',
+            englishLevel: 'Courant (C1, BULATS)',
             spanish: 'Espagnol',
             spanishLevel: 'Intermédiaire',
         },
