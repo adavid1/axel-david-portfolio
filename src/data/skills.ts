@@ -10,7 +10,7 @@ export interface SkillGroup {
 export const skillGroups: SkillGroup[] = [
     {
         labelKey: 'skills.groups.languages',
-        items: ['TypeScript', 'JavaScript', 'C#', 'Python', 'SQL'],
+        items: ['TypeScript', 'JavaScript', 'C#', 'Java', 'Python', 'SQL'],
     },
     {
         labelKey: 'skills.groups.frontend',
@@ -18,7 +18,7 @@ export const skillGroups: SkillGroup[] = [
     },
     {
         labelKey: 'skills.groups.backend',
-        items: ['Node.js', 'Express', 'NestJS', 'GraphQL', '.NET'],
+        items: ['Node.js', 'Express', 'GraphQL', '.NET', 'NestJS'],
     },
     {
         labelKey: 'skills.groups.databases',
